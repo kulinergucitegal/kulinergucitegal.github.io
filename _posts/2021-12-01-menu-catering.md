@@ -2,8 +2,8 @@
 title: Menu Catering
 description: Minimal order 30 pax
 date: 2021-12-01 08:29:00 +0700
-tags: [kulinergucitegal]
-categories: [menu]
+# tags: [kulinergucitegal]
+# categories: [menu]
 pin: false
 math: true
 mermaid: true

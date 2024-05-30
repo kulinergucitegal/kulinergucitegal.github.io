@@ -2,8 +2,8 @@
 title: Menu Utama
 description: Tidak ada minimal order
 date: 2021-12-01 08:30:00 +0700
-tags: [kulinergucitegal]
-categories: [menu]
+# tags: [kulinergucitegal]
+# categories: [menu]
 pin: false
 math: true
 mermaid: true

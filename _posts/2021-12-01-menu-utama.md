@@ -1,6 +1,6 @@
 ---
 title: Menu Utama
-description: Tidak ada minimal order
+description: Tanpa minimal order
 date: 2021-12-01 08:30:00 +0700
 # tags: [kulinergucitegal]
 # categories: [menu]

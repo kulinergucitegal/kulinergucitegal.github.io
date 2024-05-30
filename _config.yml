@@ -189,7 +189,7 @@ defaults:
       type: tabs # see `site.collections`
     values:
       layout: page
-      permalink: /tab/:title/
+      permalink: /tabs/:title/
   - scope:
       path: assets/js/dist
     values:
@@ -223,5 +223,5 @@ jekyll-archives:
     category: category
     tag: tag
   permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
+    tag: /tabs/tags/:name/
+    category: /tabs/categories/:name/

@@ -189,7 +189,7 @@ defaults:
       type: tabs # see `site.collections`
     values:
       layout: page
-      permalink: /tabs/:title/
+      permalink: /tab/:title/
   - scope:
       path: assets/js/dist
     values:

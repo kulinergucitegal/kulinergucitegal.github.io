@@ -21,15 +21,6 @@ layout: post
 </div>
 
 <style>
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
 .whatsapp-button-container {
     text-align: center;
 }

@@ -15,15 +15,6 @@ order: 4
 </div>
  
 <style>
-body {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
 .whatsapp-button-container {
     text-align: left;
 }
@@ -31,7 +22,7 @@ body {
 .whatsapp-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #25D366; /* WhatsApp green color */
+    background-color: #25D366;
     color: white;
     font-size: 16px;
     text-decoration: none;
@@ -40,7 +31,7 @@ body {
 }
 
 .whatsapp-button:hover {
-    background-color: #128C7E; /* Darker green on hover */
+    background-color: #128C7E;
 }
 </style>
 

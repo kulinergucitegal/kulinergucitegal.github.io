@@ -49,3 +49,30 @@ _Golden Park_
 
 
 Dengan berbagai pilihan tempat menarik seperti Pancuran 5, Pancuran 13, The Geong, dan Golden Park, Wisata Guci Tegal menawarkan pengalaman yang lengkap bagi setiap pengunjung. Jadi, kapan berkunjung ke Wisata Guci? Jangan lupa mampir ke RM. APAYAA untuk menikmati kuliner khas yang lezat!
+
+<div class="whatsapp-button-container">
+    <a href="/tabs/whatsapp" class="whatsapp-button">
+        Order Sekarang !
+    </a>
+</div>
+
+<style>
+.whatsapp-button-container {
+    text-align: center;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF9F10;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #FFFFFF;
+}
+</style>

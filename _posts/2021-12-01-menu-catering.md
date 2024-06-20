@@ -4,7 +4,7 @@ description: Minimal order 30 pax
 date: 2021-12-01 08:29:00 +0700
 # tags: [kulinergucitegal]
 # categories: [menu]
-pin: false
+pin: true
 math: true
 mermaid: true
 image:

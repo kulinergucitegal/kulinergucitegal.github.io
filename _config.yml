@@ -14,9 +14,9 @@ timezone: Asia/Jakarta
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: RM. APAYAA # the main title
+title: RM. APAYAA Kuliner Guci Tegal # the main title
 
-tagline: Kuliner Guci Tegal # it will display as the sub-title
+# tagline: Makan kenyang, kantong aman ! # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   RM. APAYAA, Kuliner Guci Tegal. Makan kenyang, kantong aman

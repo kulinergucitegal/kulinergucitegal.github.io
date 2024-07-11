@@ -16,7 +16,7 @@ Wisata Guci Tegal adalah destinasi wisata yang populer di Kabupaten Tegal, Jawa 
 ## Tiket Retribusi
 Tiket retribusi merupakan biaya dasar untuk masuk ke area wisata Guci. Tiket retribusi ini diperlukan sebagai kontribusi untuk pemeliharaan dan pengembangan fasilitas wisata di Guci, sehingga setiap pengunjung dapat menikmati pengalaman yang menyenangkan dan nyaman.
 ![Desktop View](/assets/img/posts/retribusi-guci.jpg){: width="972" height="589" }
-_Harga tiket retribusi_
+_Harga Tiket Retribusi_
 
 ## Pancuran 5
 Setelah membayar tiket retribusi, pengunjung dapat menikmati Pancuran 5 Air Panas Guci secara gratis, sebagai bagian dari fasilitas yang disediakan di area wisata.
@@ -47,8 +47,12 @@ _Golden Park_
 > Harga Tiket `Rp. 30.000`.
 {: .prompt-tip }
 
+## Guci Forest
+Guci Forest menawarkan hutan yang rimbun, udara segar, serta sejumlah sumber air panas alami. Pengunjung dapat menikmati beragam aktivitas, seperti berjalan-jalan di tengah pepohonan, berendam di air panas, serta menikmati fasilitas rekreasi yang disediakan.
+![Desktop View](/assets/img/posts/guci-forest.jpg){: width="972" height="589" }
+_Harga Tiket Guci Forest_
 
-Dengan berbagai pilihan tempat menarik seperti Pancuran 5, Pancuran 13, The Geong, dan Golden Park, Wisata Guci Tegal menawarkan pengalaman yang lengkap bagi setiap pengunjung. Jadi, kapan berkunjung ke Wisata Guci? Jangan lupa mampir ke RM. APAYAA untuk menikmati kuliner khas yang lezat!
+Dengan berbagai pilihan tempat menarik seperti Pancuran 5, Pancuran 13, The Geong, Golden Park dan Guci Forest, Wisata Guci Tegal menawarkan pengalaman yang lengkap bagi setiap pengunjung. Jadi, kapan berkunjung ke Wisata Guci? Jangan lupa mampir ke RM. APAYAA untuk menikmati kuliner khas yang lezat!
 
 <div class="whatsapp-button-container">
     <a href="/tabs/whatsapp" class="whatsapp-button">

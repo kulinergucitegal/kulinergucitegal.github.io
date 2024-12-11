@@ -12,7 +12,7 @@ Terima kasih telah mempercayakan pengalaman kuliner Anda kepada kami.
 
 ## Informasi Pemilik
 **Nama**: ADHIB ARFAN  
-**Email**: adhib.arfan@gmail.com
+**Email**: adhib.arfan@gmail.com 
 
 
 

@@ -2,6 +2,7 @@
 icon: fas fa-utensils
 order: 1
 layout: post
+date: 2021-12-01 08:29:00 +0700
 ---
 ![image-center]({{ '/assets/img/menus/utama/menu-paket.jpg' | absolute_url }}){: .align-center}
 

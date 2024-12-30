@@ -2,6 +2,7 @@
 icon: fas fa-cubes
 order: 3
 layout: post
+date: 2021-12-01 08:29:00 +0700
 ---
 
 ![image-center]({{ '/assets/img/menus/catering-prasmanan/menu-box.jpg' | absolute_url }}){: .align-center}

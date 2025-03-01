@@ -10,9 +10,5 @@ RM. APAYAA adalah restoran yang berfokus pada hidangan khas Tegal dengan cita ra
 
 Terima kasih telah mempercayakan pengalaman kuliner Anda kepada kami.
 
-## Informasi Pemilik
-**Nama**: ADHIB ARFAN  
-**Email**: adhib.arfan@gmail.com
-
 
 

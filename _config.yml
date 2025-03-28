@@ -14,12 +14,12 @@ timezone: Asia/Jakarta
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Kuliner Guci Tegal RM. APAYAA # the main title
+title: Kuliner Khas Guci Tegal - RM. APAYAA # the main title
 
 # tagline: Makan kenyang, kantong aman ! # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  RM. APAYAA, Kuliner Guci Tegal. Makan kenyang, kantong aman
+  Kuliner Guci Tegal, Restoran
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.

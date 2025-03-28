@@ -9,7 +9,7 @@ math: true
 mermaid: true
 image:
   path: /assets/img/covers/cover-menu-catering-rm-apayaa.jpg
-  alt: Tampilan depan RM. APAYAA, kuliner guci tegal
+  alt: Menu Catering RM. APAYAA
 ---
 
 ![image-center]({{ '/assets/img/menus/catering-prasmanan/menu-box.jpg' | absolute_url }}){: .align-center}

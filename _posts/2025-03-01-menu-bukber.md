@@ -9,7 +9,7 @@ math: true
 mermaid: true
 image:
   path: /assets/img/covers/cover-menu-bukber-rm-apayaa.jpg
-  alt: menu buka bersama 2025
+  alt: Menu Bukber 2025 RM. APAYAA
 ---
 
 ![image-center]({{ '/assets/img/menus/catering-prasmanan/menu-bukber.jpg' | absolute_url }}){: .align-center}

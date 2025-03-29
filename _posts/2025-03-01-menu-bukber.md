@@ -4,7 +4,7 @@ description: Minimal order 10 pax
 date: 2025-03-01 10:00:00 +0700
 # tags: [kulinergucitegal]
 # categories: [menu]
-pin: true
+pin: false
 math: true
 mermaid: true
 image:

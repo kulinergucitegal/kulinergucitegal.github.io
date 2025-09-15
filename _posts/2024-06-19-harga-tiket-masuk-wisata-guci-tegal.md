@@ -8,13 +8,13 @@ math: true
 mermaid: true
 image:
   path: /assets/img/covers/cover-daftar-harga-wisata-guci.jpg
-  alt: Daftar harga tiket Wisata Guci Tegal 2024
+  alt: Daftar harga tiket Wisata Guci Tegal 2025
 ---
 Wisata Guci Tegal adalah destinasi wisata yang populer di Kabupaten Tegal, Jawa Tengah. Terkenal dengan pemandian air panas alaminya, Guci menawarkan pemandangan alam yang indah dan udara yang sejuk, menjadikannya tempat yang ideal untuk bersantai dan melepas penat. Dengan berbagai fasilitas yang tersedia, mulai dari kolam renang hingga penginapan, Guci selalu menjadi pilihan favorit bagi wisatawan lokal maupun luar daerah. Sebelum merencanakan kunjungan, penting untuk mengetahui informasi terkini mengenai harga tiket masuk dan fasilitas yang tersedia.
 
 ## Tiket Retribusi
 Tiket retribusi merupakan biaya dasar untuk masuk ke area wisata Guci. Tiket retribusi ini diperlukan sebagai kontribusi untuk pemeliharaan dan pengembangan fasilitas wisata di Guci, sehingga setiap pengunjung dapat menikmati pengalaman yang menyenangkan dan nyaman.
-![Desktop View](/assets/img/posts/retribusi-guci.jpg){: width="972" height="589" }
+![Desktop View](/assets/img/posts/retribusi-guci-2025.jpg){: width="972" height="589" }
 _Harga Tiket Retribusi_
 
 ## Pancuran 5
@@ -26,9 +26,9 @@ _Pancuran 5_
 
 ## Pancuran 13 
 Pancuran 13 adalah ikon dari wisata Guci, menawarkan pengalaman berendam yang menyegarkan dengan air panas alami yang menjadi daya tarik utama bagi para pengunjung.
-![Desktop View](/assets/img/posts/pancuran13-guci.jpg){: width="972" height="589" }
+![Desktop View](/assets/img/posts/pancuran13-guci-2025.jpg){: width="972" height="589" }
 _Pancuran 13_
-> Harga Tiket `Rp. 20.000`.
+> Harga Tiket Weekday `Rp. 25.000`, Weekend `Rp. 27.500`.
 {: .prompt-tip }
 
 ## The Geong

@@ -1,7 +1,15 @@
 ---
 title: Harga Tiket Masuk Wisata Guci
-description: Harga tiket berbagai wisata
+description: Panduan harga tiket masuk wisata Guci Tegal, mulai dari tiket retribusi sampai beberapa spot wisata populer di kawasan Guci.
 date: 2024-06-19 08:30:00 +0700
+layout: restaurant-tourism-post
+seo_title: Harga Tiket Masuk Wisata Guci Tegal
+page_key: tourism
+hero_eyebrow: Info Wisata Guci
+hero_title: Harga tiket masuk wisata Guci Tegal.
+hero_description: Referensi singkat sebelum berangkat ke kawasan Guci, sekaligus rekomendasi singgah makan di jalur Tuwel.
+panel_title: Cek ulang harga sebelum berangkat.
+panel_text: Harga tiket dan aturan destinasi dapat berubah mengikuti pengelola wisata, hari kunjungan, dan musim liburan.
 # tags: [kulinergucitegal]
 pin: false
 math: true
@@ -54,28 +62,7 @@ _Harga Tiket Guci Forest_
 Dengan berbagai pilihan tempat menarik seperti Pancuran 5, Pancuran 13, The Geong, Golden Park dan Guci Forest, Wisata Guci Tegal menawarkan pengalaman yang lengkap bagi setiap pengunjung. Jadi, kapan berkunjung ke Wisata Guci? Jangan lupa mampir ke RM. APAYAA untuk menikmati kuliner khas yang lezat!
 
 <div class="whatsapp-button-container">
-    <a href="/whatsapp" class="whatsapp-button">
-        Order Sekarang !
+    <a href="/whatsapp/" class="restaurant-button restaurant-button-primary">
+        Tanya Admin RM APAYAA
     </a>
 </div>
-
-<style>
-.whatsapp-button-container {
-    text-align: center;
-}
-
-.whatsapp-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FF9F10;
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    background-color: #FFFFFF;
-}
-</style>

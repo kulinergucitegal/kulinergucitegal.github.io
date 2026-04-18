@@ -37,7 +37,7 @@
 {% endcapture %}
 
 {% capture restaurant_styles %}
-  {% if page.layout == 'landing' or page.layout == 'restaurant-page' %}
+  {% if page.layout == 'landing' or page.layout == 'restaurant-page' or page.layout == 'restaurant-tourism-post' %}
     <link rel="stylesheet" href="{{ '/assets/restaurant.css' | relative_url }}">
   {% endif %}
 {% endcapture %}

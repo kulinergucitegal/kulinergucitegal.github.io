@@ -5,8 +5,10 @@
 
 <!-- The Footer -->
 <footer aria-label="Site Info" class="restaurant-footer">
-  <span>&copy; {{ 'now' | date: '%Y' }} {{ brand.name }}</span>
-  <span>{{ brand.tagline }}</span>
+  <div class="restaurant-footer-brand">
+    <strong>{{ brand.name }}</strong>
+    <span>&copy; {{ 'now' | date: '%Y' }} {{ brand.tagline }}</span>
+  </div>
   <nav class="restaurant-footer-socials" aria-label="Link sosial RM. APAYAA">
     <a href="{{ whatsapp_link }}" target="_blank" rel="noreferrer" aria-label="WhatsApp RM. APAYAA">
       <i class="fab fa-whatsapp" aria-hidden="true"></i>

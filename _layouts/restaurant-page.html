@@ -29,25 +29,29 @@ layout: compress
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 px-md-4">
             <div class="restaurant-page-shell">
-              {% unless page.title == 'Menu Prasmanan' or page.title == 'Menu Box' or page.page_key == 'menu' %}
+              {% unless page.title == 'Menu Prasmanan' or page.title == 'Menu Box' or page.page_key == 'menu' or page.page_key == 'tourism' %}
                 <section class="page-hero">
                   <div class="page-hero-grid">
                     <div>
                       <p class="restaurant-eyebrow">{{ page.hero_eyebrow | default: brand.name }}</p>
                       <h1>{{ page.hero_title | default: page.title }}</h1>
                       <p class="restaurant-lead">{{ page.hero_description }}</p>
-                      <div class="restaurant-actions">
-                        <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">{{ page.primary_cta | default: 'Tanya via WhatsApp' }}</a>
-                        {% if page.secondary_cta_url %}
-                          <a class="restaurant-button restaurant-button-secondary" href="{{ page.secondary_cta_url | relative_url }}">{{ page.secondary_cta_label }}</a>
-                        {% endif %}
-                      </div>
+                      {% unless page.page_key == 'tourism' %}
+                        <div class="restaurant-actions">
+                          <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">{{ page.primary_cta | default: 'Tanya via WhatsApp' }}</a>
+                          {% if page.secondary_cta_url %}
+                            <a class="restaurant-button restaurant-button-secondary" href="{{ page.secondary_cta_url | relative_url }}">{{ page.secondary_cta_label }}</a>
+                          {% endif %}
+                        </div>
+                      {% endunless %}
                     </div>
-                    <article class="restaurant-panel">
-                      <p class="restaurant-eyebrow">Kenapa berbeda</p>
-                      <h2>{{ page.panel_title }}</h2>
-                      <p>{{ page.panel_text }}</p>
-                    </article>
+                    {% unless page.page_key == 'tourism' %}
+                      <article class="restaurant-panel">
+                        <p class="restaurant-eyebrow">Kenapa berbeda</p>
+                        <h2>{{ page.panel_title }}</h2>
+                        <p>{{ page.panel_text }}</p>
+                      </article>
+                    {% endunless %}
                   </div>
                 </section>
               {% endunless %}
@@ -216,15 +220,18 @@ layout: compress
                   </div>
                 </section>
               {% elsif page.page_key == 'tourism' %}
-                <section class="restaurant-section">
+                <section class="restaurant-section restaurant-section-panel tourism-card-section">
+                  <div class="tourism-section-intro">
+                    <p class="restaurant-eyebrow">{{ page.hero_eyebrow | default: brand.name }}</p>
+                    <h1>{{ page.hero_title | default: page.title }}</h1>
+                    <p class="restaurant-lead">{{ page.hero_description }}</p>
+                  </div>
                   <div class="restaurant-card-grid">
                     {% for item in restaurant.tourism_entries %}
                       <article class="restaurant-card">
                         <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
                         <div class="restaurant-card-body">
                           <h3>{{ item.title }}</h3>
-                          <p>{{ item.summary }}</p>
-                          <p class="restaurant-note">{{ item.note }}</p>
                           <a class="restaurant-link" href="{{ item.url | relative_url }}">Lihat detail</a>
                         </div>
                       </article>

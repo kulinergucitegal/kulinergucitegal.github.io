@@ -10,11 +10,19 @@ order: 8
 layout: restaurant-page
 page_key: tourism
 permalink: /info-wisata-guci/
-hero_title: "Info wisata Guci tetap ada, tetapi dipisahkan dari pengalaman utama restoran."
-hero_description: "Pendekatan ini menjaga website tetap fokus menjual pengalaman makan sambil tetap membantu pengunjung yang butuh informasi tambahan."
-panel_title: "Konten wisata sekarang menjadi halaman pendukung, bukan isi utama beranda."
-panel_text: "Dengan struktur ini, brand rumah makan tetap menjadi pusat website, sementara informasi wisata hadir sebagai nilai tambah yang relevan."
+hero_title: "Info Wisata Guci"
+hero_description: "Panduan singkat sebelum berangkat ke Guci."
+panel_title: "Sebelum naik ke Guci."
+panel_text: "Siapkan rute, cek perkiraan tiket, lalu tentukan titik makan yang nyaman untuk keluarga atau rombongan."
 primary_cta: "Tanya tempat singgah"
 secondary_cta_label: "Kembali ke Beranda"
 secondary_cta_url: "/"
 ---
+
+Wisata Guci Tegal dikenal sebagai kawasan pemandian air panas dan destinasi keluarga di kaki Gunung Slamet. Banyak pengunjung datang untuk berendam, jalan santai, menikmati udara sejuk, atau sekadar berhenti sejenak sebelum melanjutkan perjalanan.
+
+Jika berangkat bersama keluarga atau rombongan, sebaiknya rencanakan waktu makan sebelum masuk area wisata. Jalur Tuwel menjadi salah satu titik yang nyaman untuk singgah karena masih berada di rute menuju Guci, tetapi belum terlalu dekat dengan kepadatan area wisata.
+
+RM APAYAA berada di jalur tersebut dan bisa menjadi tempat berhenti untuk makan, istirahat, shalat, atau menunggu anggota rombongan berkumpul. Untuk akhir pekan dan musim liburan, reservasi lewat WhatsApp sangat disarankan agar tempat dan menu bisa disiapkan lebih dulu.
+
+Informasi wisata di halaman ini bersifat pendukung. Harga tiket, jam operasional, dan aturan destinasi dapat berubah sewaktu-waktu, jadi tetap cek informasi terbaru sebelum berangkat.

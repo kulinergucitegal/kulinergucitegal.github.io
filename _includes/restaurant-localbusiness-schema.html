@@ -33,6 +33,13 @@
     "postalCode": "52465",
     "addressCountry": "ID"
   },
+  {% if brand.geo.latitude and brand.geo.longitude %}
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ brand.geo.latitude | jsonify }},
+    "longitude": {{ brand.geo.longitude | jsonify }}
+  },
+  {% endif %}
   "areaServed": [
     "Guci",
     "Tuwel",
@@ -40,8 +47,34 @@
     "Kabupaten Tegal"
   ],
   "openingHours": "Mo-Su 09:00-20:00",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
+  ],
+  "acceptsReservations": {{ brand.accepts_reservations | jsonify }},
   "hasMap": {{ brand.maps_url | jsonify }},
   "menu": "{{ site.url }}/menu-utama/",
+  "amenityFeature": [
+    {% for facility in restaurant.facilities %}
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": {{ facility.name | jsonify }},
+        "value": true
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
   "sameAs": [
     "https://www.instagram.com/kulinergucitegal",
     "https://www.tiktok.com/@kulinergucitegal",

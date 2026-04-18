@@ -9,6 +9,10 @@ brand:
   maps_url: "https://maps.google.com/?q=RM%20APAYAA%20Tuwel%20Bojong%20Tegal"
   address: "Jl. Raya Guci, Krajan Barat, Tuwel, Kec. Bojong, Kabupaten Tegal, Jawa Tengah 52465"
   opening_hours: "Setiap hari, 09.00 - 20.00 WIB"
+  accepts_reservations: true
+  geo:
+    latitude:
+    longitude:
   hero_stats:
     - value: "5 km"
       label: "sebelum area wisata Guci"
@@ -682,3 +686,53 @@ tourism_entries:
     note: "Reservasi lewat WhatsApp sangat disarankan saat akhir pekan dan musim liburan."
     url: "/about/"
     image: "/assets/img/posts/front-rm-apayaa.jpg"
+faqs:
+  home:
+    - question: "RM APAYAA lokasinya di mana?"
+      answer: "RM APAYAA berada di Jl. Raya Guci, Krajan Barat, Tuwel, Kecamatan Bojong, Kabupaten Tegal, Jawa Tengah. Lokasinya berada di jalur menuju kawasan wisata Guci."
+    - question: "Apakah RM APAYAA cocok untuk keluarga dan rombongan?"
+      answer: "Ya, RM APAYAA memiliki area indoor, area lesehan, mushola, toilet, dan parkir luas sehingga cocok untuk keluarga, rombongan wisata, komunitas, maupun acara."
+    - question: "Bagaimana cara reservasi atau tanya menu?"
+      answer: "Pengunjung bisa langsung menghubungi admin melalui WhatsApp untuk tanya menu, reservasi tempat, paket rombongan, menu prasmanan, atau menu box."
+  menu:
+    - question: "Menu utama RM APAYAA apa saja?"
+      answer: "Menu utama RM APAYAA mencakup ayam, bebek, kambing muda, sop, gurame, seafood, nasi, paket makan, aneka minuman, jus, dan kopi."
+    - question: "Apakah harga menu bisa dikonfirmasi sebelum datang?"
+      answer: "Ya, harga dan ketersediaan menu bisa dikonfirmasi lewat WhatsApp admin sebelum datang atau sebelum memesan untuk rombongan."
+    - question: "Apakah menu utama bisa dipesan untuk makan rombongan?"
+      answer: "Bisa. Untuk rombongan, sebaiknya menghubungi admin lebih dulu agar pilihan menu, jumlah porsi, dan waktu kedatangan bisa disiapkan."
+  packages:
+    - question: "Apakah tersedia paket prasmanan?"
+      answer: "Ya, RM APAYAA menyediakan paket prasmanan untuk keluarga besar, komunitas, kantor, panitia, dan rombongan wisata di sekitar Guci Tegal."
+    - question: "Apakah tersedia menu box atau nasi box?"
+      answer: "Ya, tersedia menu box untuk acara, rapat, panitia, dan kebutuhan konsumsi praktis. Pilihan menu bisa dikonsultasikan lewat WhatsApp."
+    - question: "Berapa minimal order paket rombongan?"
+      answer: "Minimal order mengikuti jenis paket yang dipilih. Silakan cek halaman menu paket atau hubungi admin untuk memastikan jumlah, pilihan lauk, dan jadwal penyajian."
+  facilities:
+    - question: "Fasilitas apa saja yang tersedia di RM APAYAA?"
+      answer: "Fasilitas RM APAYAA meliputi area indoor, area lesehan, mushola, toilet, tempat wudhu, dan area parkir luas."
+    - question: "Apakah parkir bisa untuk bus?"
+      answer: "Ya, area parkir RM APAYAA dapat menampung kendaraan pribadi hingga rombongan bus pariwisata."
+    - question: "Apakah tersedia mushola?"
+      answer: "Ya, tersedia mushola untuk memudahkan tamu beribadah saat singgah dalam perjalanan menuju atau pulang dari Guci."
+  about:
+    - question: "Apakah RM APAYAA berada sebelum kawasan wisata Guci?"
+      answer: "RM APAYAA berada di jalur Tuwel menuju Guci, sehingga cocok menjadi tempat singgah sebelum masuk kawasan wisata atau saat perjalanan pulang."
+    - question: "Jam buka RM APAYAA?"
+      answer: "Jam buka yang tercantum adalah setiap hari pukul 09.00 sampai 20.00 WIB. Untuk kunjungan rombongan, sebaiknya tetap konfirmasi lewat WhatsApp."
+    - question: "Apakah bisa tanya rute lewat WhatsApp?"
+      answer: "Bisa. Pengunjung dapat menghubungi admin lewat WhatsApp untuk bertanya rute, reservasi, dan kesiapan tempat."
+  tourism:
+    - question: "Apakah website ini juga menyediakan info wisata Guci?"
+      answer: "Ya, halaman info wisata Guci disediakan sebagai informasi pendukung untuk pengunjung yang sedang merencanakan perjalanan ke kawasan Guci."
+    - question: "Apakah informasi tiket wisata Guci selalu tetap?"
+      answer: "Informasi tiket dapat berubah sewaktu-waktu, sehingga pengunjung tetap disarankan melakukan verifikasi terbaru sebelum berangkat."
+    - question: "Apakah bisa makan dulu sebelum naik ke wisata Guci?"
+      answer: "Bisa. RM APAYAA berada di jalur menuju Guci dan cocok menjadi titik singgah makan untuk keluarga maupun rombongan."
+  whatsapp:
+    - question: "Untuk apa menghubungi WhatsApp RM APAYAA?"
+      answer: "WhatsApp dapat digunakan untuk tanya menu, reservasi, paket prasmanan, menu box, kapasitas rombongan, dan rute menuju RM APAYAA."
+    - question: "Apakah bisa reservasi rombongan lewat WhatsApp?"
+      answer: "Ya, reservasi rombongan sangat disarankan melalui WhatsApp agar waktu kedatangan, jumlah tamu, dan pilihan menu bisa dikoordinasikan."
+    - question: "Apakah admin bisa membantu rekomendasi menu?"
+      answer: "Bisa. Admin dapat membantu menyesuaikan pilihan menu dengan kebutuhan keluarga, rombongan, acara, atau konsumsi praktis."

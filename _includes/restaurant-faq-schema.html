@@ -1,0 +1,26 @@
+{% assign faq_key = page.faq_key | default: page.page_key %}
+{% if faq_key == nil and page.layout == 'landing' %}
+  {% assign faq_key = 'home' %}
+{% endif %}
+{% assign faq_items = site.data.restaurant.faqs[faq_key] %}
+
+{% if faq_items %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faq_items %}
+      {
+        "@type": "Question",
+        "name": {{ item.question | jsonify }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ item.answer | jsonify }}
+        }
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

@@ -3052,3 +3052,41 @@ html[data-mode="dark"] .menu-catalog-section .menu-main-card .simple-pricing-lis
   height: auto;
   border-radius: 0.75rem;
 }
+
+.restaurant-faq-section {
+  margin-top: 2.25rem;
+}
+
+.restaurant-faq-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.restaurant-faq-item {
+  border: 1px solid rgba(var(--shadow-color), 0.12);
+  border-radius: 8px;
+  background: var(--card);
+  box-shadow: 0 14px 36px rgba(var(--shadow-color), 0.06);
+  overflow: hidden;
+}
+
+.restaurant-faq-item summary {
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  color: var(--foreground);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.restaurant-faq-item p {
+  margin: 0;
+  padding: 0 1.1rem 1.1rem;
+  color: var(--muted-foreground);
+  line-height: 1.75;
+}
+
+html[data-mode="dark"] .restaurant-faq-item {
+  border-color: rgba(245, 158, 11, 0.18);
+  background: rgba(38, 38, 38, 0.98);
+}

@@ -1,8 +1,10 @@
 ---
 title: Menu Prasmanan
+layout: redirect
 description: Minimal order 30 pax
 date: 2021-12-01 08:29:00 +0700
 permalink: /arsip/menu-prasmanan/
+redirect_to: /menu-prasmanan/
 sitemap: false
 # tags: [kulinergucitegal]
 # categories: [menu]

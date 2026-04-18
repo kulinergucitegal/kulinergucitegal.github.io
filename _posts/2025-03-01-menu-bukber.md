@@ -1,8 +1,10 @@
 ---
 title: Menu Bukber 2025
+layout: redirect
 description: Minimal order 10 pax
 date: 2025-03-01 10:00:00 +0700
 permalink: /arsip/menu-bukber-2025/
+redirect_to: /menu-bukber/
 sitemap: false
 # tags: [kulinergucitegal]
 # categories: [menu]

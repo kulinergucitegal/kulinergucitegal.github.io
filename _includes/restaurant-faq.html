@@ -1,0 +1,24 @@
+{% assign faq_key = include.key | default: page.faq_key | default: page.page_key %}
+{% if faq_key == nil and page.layout == 'landing' %}
+  {% assign faq_key = 'home' %}
+{% endif %}
+{% assign faq_items = site.data.restaurant.faqs[faq_key] %}
+
+{% if faq_items %}
+  <section class="restaurant-section restaurant-faq-section">
+    <div class="section-heading section-heading-center">
+      <div>
+        <p class="restaurant-eyebrow">FAQ</p>
+        <h2>Pertanyaan yang sering ditanyakan.</h2>
+      </div>
+    </div>
+    <div class="restaurant-faq-list">
+      {% for item in faq_items %}
+        <details class="restaurant-faq-item">
+          <summary>{{ item.question }}</summary>
+          <p>{{ item.answer }}</p>
+        </details>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

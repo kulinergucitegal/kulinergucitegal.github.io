@@ -3,8 +3,8 @@ title: WhatsApp
 description: Hubungi admin RM APAYAA lewat WhatsApp untuk tanya menu, reservasi rombongan, paket prasmanan, menu box, dan rute ke Tuwel Guci.
 seo_title: WhatsApp RM APAYAA
 image:
-  path: /assets/img/logos/whatsapp-rm-apayaa.png
-  alt: WhatsApp RM APAYAA
+  path: /assets/img/posts/front-rm-apayaa.jpg
+  alt: Tampak depan RM APAYAA Tuwel Guci
 icon: fab fa-whatsapp
 order: 7
 hidden: true

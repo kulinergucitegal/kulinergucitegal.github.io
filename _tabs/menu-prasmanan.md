@@ -3,8 +3,8 @@ title: Menu Prasmanan
 description: Paket prasmanan RM APAYAA untuk rombongan, keluarga, kantor, komunitas, dan acara di sekitar Guci Tegal dengan pilihan menu lengkap.
 seo_title: Menu Prasmanan Guci Tegal
 image:
-  path: /assets/img/covers/cover-menu-prasmanan-rm-apayaa.jpg
-  alt: Menu prasmanan RM APAYAA untuk rombongan
+  path: /assets/img/posts/front-rm-apayaa.jpg
+  alt: Tampak depan RM APAYAA Tuwel Guci
 icon: fas fa-cube
 order: 2
 layout: restaurant-page

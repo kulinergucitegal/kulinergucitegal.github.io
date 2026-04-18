@@ -45,17 +45,10 @@ layout: compress
                       rel="noreferrer"
                       aria-label="Tonton video RM. APAYAA di TikTok"
                     >
-                      <img
-                        src="{{ '/assets/img/posts/front-rm-apayaa.jpg' | relative_url }}"
-                        alt="Video suasana RM. APAYAA"
-                        width="1200"
-                        height="630"
-                        fetchpriority="high"
-                        decoding="async"
-                      >
+                      <img src="{{ '/assets/img/posts/front-rm-apayaa.jpg' | relative_url }}" alt="Video suasana RM. APAYAA">
                       <span class="simple-video-overlay"></span>
                       <span class="simple-video-play" aria-hidden="true">
-                        <span>Play</span>
+                        <i class="fas fa-play"></i>
                       </span>
                       <span class="simple-video-copy">
                         <strong>Suasana singgah sebelum Guci</strong>
@@ -64,9 +57,11 @@ layout: compress
                     </a>
                     <div class="simple-video-actions">
                       <a class="simple-video-action-primary" href="#menu-pilihan">
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
                         Lihat Menu
                       </a>
                       <a class="simple-video-action-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         Tanya Admin
                       </a>
                     </div>
@@ -175,7 +170,7 @@ layout: compress
                           {% for item in restaurant.gallery.items limit:4 %}
                             <article class="simple-preview-gallery-card">
                               <div class="simple-preview-gallery-image">
-                                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" width="1200" height="630" loading="lazy" decoding="async">
+                                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
                               </div>
                               <div class="simple-preview-gallery-body">
                                 <h3>{{ item.title }}</h3>
@@ -247,7 +242,7 @@ layout: compress
                     <h2>Mau makan di {{ brand.name }}?</h2>
                     <p>Chat langsung via WhatsApp untuk tanya menu, reservasi, atau paket rombongan.</p>
                   </div>
-                  <a class="restaurant-button simple-preview-cta-button" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Chat Admin</a>
+                  <a class="restaurant-button simple-preview-cta-button" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                 </section>
               </div>
             </section>
@@ -260,16 +255,22 @@ layout: compress
           </div>
         </div>
 
+        {% include_cached search-results.html lang=lang %}
       </div>
 
       <aside aria-label="Scroll to Top">
         <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
-          <span aria-hidden="true">↑</span>
+          <i class="fas fa-angle-up"></i>
         </button>
       </aside>
     </div>
 
     <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
 
+    {% if site.pwa.enabled %}
+      {% include_cached notification.html lang=lang %}
+    {% endif %}
+
+    {% include_cached search-loader.html lang=lang %}
   </body>
 </html>

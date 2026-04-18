@@ -87,7 +87,7 @@ layout: compress
                       <h2>Sudah menentukan menu yang ingin dipesan?</h2>
                       <p>{{ restaurant.menu_catalog.cta }}</p>
                     </div>
-                    <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Chat Admin</a>
+                    <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                   </div>
                 </section>
               {% elsif page.page_key == 'packages' %}
@@ -120,7 +120,7 @@ layout: compress
                         <h2>Butuh kombinasi menu untuk rombongan?</h2>
                         <p>{{ restaurant.prasmanan_items.cta }}</p>
                       </div>
-                      <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Chat Admin</a>
+                      <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                     </div>
                   </section>
                 {% elsif page.title == 'Menu Box' %}
@@ -149,7 +149,7 @@ layout: compress
                         <h2>Butuh kombinasi nasi box untuk acara Anda?</h2>
                         <p>{{ restaurant.catering_items.cta }}</p>
                       </div>
-                      <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Chat Admin</a>
+                      <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                     </div>
                   </section>
                 {% else %}
@@ -157,7 +157,7 @@ layout: compress
                     <div class="restaurant-card-grid restaurant-card-grid-wide">
                       {% for item in restaurant.packages %}
                         <article class="restaurant-card">
-                          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" decoding="async">
+                          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
                           <div class="restaurant-card-body">
                             <span class="restaurant-chip">{{ item.min_order }}</span>
                             <h3>{{ item.title }}</h3>
@@ -182,7 +182,7 @@ layout: compress
                   <div class="restaurant-card-grid">
                     {% for item in restaurant.facilities %}
                       <article class="restaurant-card">
-                        <img src="{{ item.image | relative_url }}" alt="{{ item.name }}" loading="lazy" decoding="async">
+                        <img src="{{ item.image | relative_url }}" alt="{{ item.name }}">
                         <div class="restaurant-card-body">
                           <span class="restaurant-chip">{{ item.capacity }}</span>
                           <h3>{{ item.name }}</h3>
@@ -220,7 +220,7 @@ layout: compress
                   <div class="restaurant-card-grid">
                     {% for item in restaurant.tourism_entries %}
                       <article class="restaurant-card">
-                        <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" decoding="async">
+                        <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
                         <div class="restaurant-card-body">
                           <h3>{{ item.title }}</h3>
                           <p>{{ item.summary }}</p>
@@ -234,7 +234,7 @@ layout: compress
               {% elsif page.page_key == 'whatsapp' %}
                 <section class="restaurant-section">
                   <div class="restaurant-cta-single">
-                    <img src="{{ '/assets/img/logos/whatsapp-rm-apayaa.png' | relative_url }}" alt="WhatsApp RM. APAYAA" width="300" height="300" loading="lazy" decoding="async">
+                    <img src="{{ '/assets/img/logos/whatsapp-rm-apayaa.png' | relative_url }}" alt="WhatsApp RM. APAYAA">
                     <p class="restaurant-lead">Sudah menentukan menu? Langsung chat admin untuk reservasi, paket rombongan, atau pertanyaan menu.</p>
                     <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Buka WhatsApp</a>
                   </div>
@@ -252,16 +252,22 @@ layout: compress
           </div>
         </div>
 
+        {% include_cached search-results.html lang=lang %}
       </div>
 
       <aside aria-label="Scroll to Top">
         <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
-          <span aria-hidden="true">↑</span>
+          <i class="fas fa-angle-up"></i>
         </button>
       </aside>
     </div>
 
     <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
 
+    {% if site.pwa.enabled %}
+      {% include_cached notification.html lang=lang %}
+    {% endif %}
+
+    {% include_cached search-loader.html lang=lang %}
   </body>
 </html>

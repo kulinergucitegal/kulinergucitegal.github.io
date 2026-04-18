@@ -1,41 +1,15 @@
 ---
+title: Menu Prasmanan
 icon: fas fa-cube
 order: 2
-layout: post
-date: 2021-12-01 08:29:00 +0700
+layout: restaurant-page
+page_key: packages
+permalink: /menu-prasmanan/
+hero_title: "Menu prasmanan yang mudah dipahami dan cepat ditanyakan ke admin."
+hero_description: "Halaman ini memisahkan kebutuhan grup dari menu harian agar pengunjung tidak bingung."
+panel_title: "Paket tidak lagi tersebar sebagai post terpisah, tetapi menjadi katalog layanan yang jelas."
+panel_text: "Pilihan prasmanan, menu box, dan bukber disusun agar keluarga, komunitas, maupun instansi bisa langsung menemukan format layanan yang dibutuhkan."
+primary_cta: "Diskusikan paket"
+secondary_cta_label: "Lihat Menu Utama"
+secondary_cta_url: "/menu-utama/"
 ---
-
-![image-center]({{ '/assets/img/menus/catering-prasmanan/transit.jpg' | absolute_url }}){: .align-center}
-
-![image-center]({{ '/assets/img/posts/3bigbus.jpg' | absolute_url }}){: .align-center}
-
-![image-center]({{ '/assets/img/menus/catering-prasmanan/menu-prasmanan.jpg' | absolute_url }}){: .align-center}
-
-![image-center]({{ '/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | absolute_url }}){: .align-center}
-
-<div class="whatsapp-button-container">
-    <a href="/tabs/whatsapp" class="whatsapp-button">
-        Order Sekarang !
-    </a>
-</div>
-
-<style>
-.whatsapp-button-container {
-    text-align: center;
-}
-
-.whatsapp-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FF9F10;
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    background-color: #FFFFFF;
-}
-</style>

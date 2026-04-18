@@ -1,0 +1,23 @@
+{% capture raw_head %}
+  {% include head.html %}
+{% endcapture %}
+
+{% assign seo_brand = 'RM APAYAA' %}
+{% assign seo_base_title = page.seo_title | default: page.title %}
+{% capture seo_title %}{{ seo_base_title }} - {{ seo_brand }}{% endcapture %}
+
+{% capture default_title %}<title>{{ page.title }} | {{ site.title }}</title>{% endcapture %}
+{% capture default_empty_tab_title %}<title> | {{ site.title }}</title>{% endcapture %}
+{% capture default_og_title %}<meta property="og:title" content="{{ page.title | escape }}" />{% endcapture %}
+{% capture default_twitter_title %}<meta property="twitter:title" content="{{ page.title | escape }}" />{% endcapture %}
+
+{% capture seo_title_tag %}<title>{{ seo_title }}</title>{% endcapture %}
+{% capture seo_og_title %}<meta property="og:title" content="{{ seo_title | escape }}" />{% endcapture %}
+{% capture seo_twitter_title %}<meta property="twitter:title" content="{{ seo_title | escape }}" />{% endcapture %}
+
+{% assign rendered_head = raw_head | replace: default_title, seo_title_tag %}
+{% assign rendered_head = rendered_head | replace: default_empty_tab_title, seo_title_tag %}
+{% assign rendered_head = rendered_head | replace: default_og_title, seo_og_title %}
+{% assign rendered_head = rendered_head | replace: default_twitter_title, seo_twitter_title %}
+
+{{ rendered_head }}

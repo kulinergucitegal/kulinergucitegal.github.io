@@ -1,37 +1,15 @@
 ---
+title: Menu Box
 icon: fas fa-cubes
 order: 3
-layout: post
-date: 2021-12-01 08:29:00 +0700
+layout: restaurant-page
+page_key: packages
+permalink: /menu-box/
+hero_title: "Menu box yang cocok untuk kebutuhan acara dan layanan praktis."
+hero_description: "Halaman ini tetap memakai katalog paket yang sama agar informasi menu box dan prasmanan konsisten."
+panel_title: "Satu sistem konten dipakai untuk semua paket agar update lebih rapi dan tidak ganda."
+panel_text: "Jika fokus Anda hanya menu box, gunakan halaman ini untuk langsung melihat opsi lalu konsultasi dengan admin."
+primary_cta: "Tanya menu box"
+secondary_cta_label: "Menu Prasmanan"
+secondary_cta_url: "/menu-prasmanan/"
 ---
-
-![image-center]({{ '/assets/img/menus/catering-prasmanan/menu-box.jpg' | absolute_url }}){: .align-center}
-
-![image-center]({{ '/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | absolute_url }}){: .align-center}
-
-<div class="whatsapp-button-container">
-    <a href="/tabs/whatsapp" class="whatsapp-button">
-        Order Sekarang !
-    </a>
-</div>
-
-<style>
-.whatsapp-button-container {
-    text-align: center;
-}
-
-.whatsapp-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FF9F10;
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    background-color: #FFFFFF;
-}
-</style>

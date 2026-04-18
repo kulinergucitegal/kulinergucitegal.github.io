@@ -2,6 +2,7 @@
 title: Menu Utama
 description: Tanpa minimal order
 date: 2021-12-01 08:30:00 +0700
+permalink: /arsip/menu-utama/
 # tags: [kulinergucitegal]
 # categories: [menu]
 pin: true
@@ -22,7 +23,7 @@ image:
 ![image-center]({{ '/assets/img/menus/utama/aneka-minuman.jpg' | absolute_url }}){: .align-center}
 
 <div class="whatsapp-button-container">
-    <a href="/tabs/whatsapp" class="whatsapp-button">
+    <a href="/whatsapp" class="whatsapp-button">
         Order Sekarang !
     </a>
 </div>

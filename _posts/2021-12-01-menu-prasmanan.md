@@ -2,6 +2,7 @@
 title: Menu Prasmanan
 description: Minimal order 30 pax
 date: 2021-12-01 08:29:00 +0700
+permalink: /arsip/menu-prasmanan/
 # tags: [kulinergucitegal]
 # categories: [menu]
 pin: true
@@ -21,7 +22,7 @@ image:
 ![image-center]({{ '/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | absolute_url }}){: .align-center}
 
 <div class="whatsapp-button-container">
-    <a href="/tabs/whatsapp" class="whatsapp-button">
+    <a href="/whatsapp" class="whatsapp-button">
         Order Sekarang !
     </a>
 </div>

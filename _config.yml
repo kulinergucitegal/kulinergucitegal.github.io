@@ -14,12 +14,12 @@ timezone: Asia/Jakarta
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Kuliner Favorit Guci Tegal - RM. APAYAA # the main title
+title: RM. APAYAA # the main title
 
-# tagline: Makan kenyang, kantong aman ! # it will display as the sub-title
+tagline: Kuliner favorit jalur Guci Tegal # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  Kuliner Guci Tegal, Restoran
+  Rumah makan favorit di jalur Guci Tegal dengan menu keluarga, fasilitas lengkap, dan layanan rombongan.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -39,7 +39,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://www.instagram.com/kulinergucitegal
-    - https://github.com/kulinergucitegal # change to your github homepage
+    - https://www.tiktok.com/@kulinergucitegal
     - https://www.facebook.com/kulinergucitegal
 
 # Site Verification Settings
@@ -187,7 +187,7 @@ defaults:
       type: tabs # see `site.collections`
     values:
       layout: page
-      permalink: /tabs/:title/
+      permalink: /:title/
   - scope:
       path: assets/js/dist
     values:

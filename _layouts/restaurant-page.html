@@ -1,0 +1,272 @@
+---
+layout: compress
+---
+
+<!doctype html>
+
+{% include origin-type.html %}
+{% include lang.html %}
+
+{% if site.theme_mode %}
+  {% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
+{% endif %}
+
+{% assign restaurant = site.data.restaurant %}
+{% assign brand = restaurant.brand %}
+{% assign whatsapp_text = brand.whatsapp_text | uri_escape %}
+{% assign whatsapp_link = 'https://wa.me/' | append: brand.whatsapp_number | append: '?text=' | append: whatsapp_text %}
+
+<html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
+  {% include restaurant-seo-head.html %}
+  <link rel="stylesheet" href="{{ '/assets/restaurant.css' | relative_url }}">
+
+  <body class="restaurant-body restaurant-inner-page">
+    {% include sidebar.html lang=lang %}
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        {% include topbar.html lang=lang %}
+
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 px-md-4">
+            <div class="restaurant-page-shell">
+              {% unless page.title == 'Menu Prasmanan' or page.title == 'Menu Box' or page.page_key == 'menu' %}
+                <section class="page-hero">
+                  <div class="page-hero-grid">
+                    <div>
+                      <p class="restaurant-eyebrow">{{ page.hero_eyebrow | default: brand.name }}</p>
+                      <h1>{{ page.hero_title | default: page.title }}</h1>
+                      <p class="restaurant-lead">{{ page.hero_description }}</p>
+                      <div class="restaurant-actions">
+                        <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">{{ page.primary_cta | default: 'Tanya via WhatsApp' }}</a>
+                        {% if page.secondary_cta_url %}
+                          <a class="restaurant-button restaurant-button-secondary" href="{{ page.secondary_cta_url | relative_url }}">{{ page.secondary_cta_label }}</a>
+                        {% endif %}
+                      </div>
+                    </div>
+                    <article class="restaurant-panel">
+                      <p class="restaurant-eyebrow">Kenapa berbeda</p>
+                      <h2>{{ page.panel_title }}</h2>
+                      <p>{{ page.panel_text }}</p>
+                    </article>
+                  </div>
+                </section>
+              {% endunless %}
+
+              {% if page.page_key == 'menu' %}
+                <section class="restaurant-section restaurant-section-panel menu-catalog-section">
+                  <div class="menu-main-poster-section">
+                    <div class="section-heading section-heading-center">
+                      <div>
+                        <p class="restaurant-eyebrow">Menu Utama</p>
+                        <h2>Foto menu RM. APAYAA.</h2>
+                        <p class="restaurant-lead">Lihat daftar menu lengkap sebagai referensi sebelum chat admin.</p>
+                      </div>
+                    </div>
+                    <div class="menu-main-poster-stack">
+                      <figure class="menu-main-poster-image">
+                        <img src="{{ '/assets/img/menus/utama/menu-paket.jpg' | relative_url }}" alt="Foto menu paket RM. APAYAA" loading="lazy">
+                      </figure>
+                      <figure class="menu-main-poster-image">
+                        <img src="{{ '/assets/img/menus/utama/menu-utama-1.jpg' | relative_url }}" alt="Foto menu utama RM. APAYAA halaman 1" loading="lazy">
+                      </figure>
+                      <figure class="menu-main-poster-image">
+                        <img src="{{ '/assets/img/menus/utama/menu-utama-2.jpg' | relative_url }}" alt="Foto menu utama RM. APAYAA halaman 2" loading="lazy">
+                      </figure>
+                      <figure class="menu-main-poster-image">
+                        <img src="{{ '/assets/img/menus/utama/menu-utama-3.jpg' | relative_url }}" alt="Foto menu utama RM. APAYAA halaman 3" loading="lazy">
+                      </figure>
+                      <figure class="menu-main-poster-image">
+                        <img src="{{ '/assets/img/menus/utama/aneka-minuman.jpg' | relative_url }}" alt="Foto menu aneka minuman RM. APAYAA" loading="lazy">
+                      </figure>
+                    </div>
+                  </div>
+
+                  <div class="restaurant-cta menu-catalog-cta">
+                    <div>
+                      <p class="restaurant-eyebrow">Konsultasi Menu</p>
+                      <h2>Sudah menentukan menu yang ingin dipesan?</h2>
+                      <p>{{ restaurant.menu_catalog.cta }}</p>
+                    </div>
+                    <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
+                  </div>
+                </section>
+              {% elsif page.page_key == 'packages' %}
+                {% if page.title == 'Menu Prasmanan' %}
+                  <section class="restaurant-section restaurant-section-panel">
+                    <div class="menu-main-poster-section">
+                      <div class="section-heading section-heading-center">
+                        <div>
+                          <p class="restaurant-eyebrow">Menu Prasmanan</p>
+                          <h2>Foto menu prasmanan RM. APAYAA.</h2>
+                          <p class="restaurant-lead">{{ restaurant.prasmanan_items.note }}</p>
+                        </div>
+                      </div>
+                      <div class="menu-main-poster-stack">
+                        <figure class="menu-main-poster-image">
+                          <img src="{{ '/assets/img/menus/catering-prasmanan/transit.jpg' | relative_url }}" alt="Foto informasi transit prasmanan RM. APAYAA" loading="lazy">
+                        </figure>
+                        <figure class="menu-main-poster-image">
+                          <img src="{{ '/assets/img/menus/catering-prasmanan/menu-prasmanan.jpg' | relative_url }}" alt="Foto menu prasmanan RM. APAYAA" loading="lazy">
+                        </figure>
+                        <figure class="menu-main-poster-image">
+                          <img src="{{ '/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | relative_url }}" alt="Foto syarat dan ketentuan prasmanan RM. APAYAA" loading="lazy">
+                        </figure>
+                      </div>
+                    </div>
+
+                    <div class="restaurant-cta prasmanan-cta">
+                      <div>
+                        <p class="restaurant-eyebrow">Konsultasi Menu</p>
+                        <h2>Butuh kombinasi menu untuk rombongan?</h2>
+                        <p>{{ restaurant.prasmanan_items.cta }}</p>
+                      </div>
+                      <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
+                    </div>
+                  </section>
+                {% elsif page.title == 'Menu Box' %}
+                  <section class="restaurant-section restaurant-section-panel">
+                    <div class="menu-main-poster-section">
+                      <div class="section-heading section-heading-center">
+                        <div>
+                          <p class="restaurant-eyebrow">Menu Box</p>
+                          <h2>Foto menu box RM. APAYAA.</h2>
+                          <p class="restaurant-lead">{{ restaurant.catering_items.note }}</p>
+                        </div>
+                      </div>
+                      <div class="menu-main-poster-stack">
+                        <figure class="menu-main-poster-image">
+                          <img src="{{ '/assets/img/menus/catering-prasmanan/menu-box.jpg' | relative_url }}" alt="Foto menu box RM. APAYAA" loading="lazy">
+                        </figure>
+                        <figure class="menu-main-poster-image">
+                          <img src="{{ '/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | relative_url }}" alt="Foto syarat dan ketentuan menu box RM. APAYAA" loading="lazy">
+                        </figure>
+                      </div>
+                    </div>
+
+                    <div class="restaurant-cta catering-cta">
+                      <div>
+                        <p class="restaurant-eyebrow">Konsultasi Menu</p>
+                        <h2>Butuh kombinasi nasi box untuk acara Anda?</h2>
+                        <p>{{ restaurant.catering_items.cta }}</p>
+                      </div>
+                      <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
+                    </div>
+                  </section>
+                {% else %}
+                  <section class="restaurant-section">
+                    <div class="restaurant-card-grid restaurant-card-grid-wide">
+                      {% for item in restaurant.packages %}
+                        <article class="restaurant-card">
+                          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+                          <div class="restaurant-card-body">
+                            <span class="restaurant-chip">{{ item.min_order }}</span>
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.summary }}</p>
+                            <ul class="restaurant-points">
+                              {% for point in item.highlights %}
+                                <li>{{ point }}</li>
+                              {% endfor %}
+                            </ul>
+                            <div class="restaurant-meta">
+                              <strong>{{ item.price_from }}</strong>
+                              <a class="restaurant-link" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">{{ item.cta }}</a>
+                            </div>
+                          </div>
+                        </article>
+                      {% endfor %}
+                    </div>
+                  </section>
+                {% endif %}
+              {% elsif page.page_key == 'facilities' %}
+                <section class="restaurant-section">
+                  <div class="restaurant-card-grid">
+                    {% for item in restaurant.facilities %}
+                      <article class="restaurant-card">
+                        <img src="{{ item.image | relative_url }}" alt="{{ item.name }}">
+                        <div class="restaurant-card-body">
+                          <span class="restaurant-chip">{{ item.capacity }}</span>
+                          <h3>{{ item.name }}</h3>
+                          <p>{{ item.description }}</p>
+                        </div>
+                      </article>
+                    {% endfor %}
+                  </div>
+                </section>
+              {% elsif page.page_key == 'about' %}
+                <section class="restaurant-section">
+                  <div class="restaurant-split">
+                    <article class="restaurant-panel">
+                      <p class="restaurant-eyebrow">Tentang {{ brand.name }}</p>
+                      <h2>{{ brand.short_tagline }}</h2>
+                      <p>{{ brand.description }}</p>
+                      <p>Rumah makan ini melayani tamu keluarga, perjalanan wisata, dan reservasi rombongan dengan pendekatan yang sederhana dan cepat.</p>
+                    </article>
+                    <article class="restaurant-card restaurant-card-plain">
+                      <div class="restaurant-card-body">
+                        <span class="restaurant-chip">Lokasi</span>
+                        <h3>{{ brand.address }}</h3>
+                        <p><strong>Jam buka:</strong> {{ brand.opening_hours }}</p>
+                        <p><strong>Kontak:</strong> {{ brand.phone_label }}</p>
+                        <div class="restaurant-actions">
+                          <a class="restaurant-button restaurant-button-primary" href="{{ brand.maps_url }}" target="_blank" rel="noreferrer">Buka Google Maps</a>
+                          <a class="restaurant-button restaurant-button-secondary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Tanya rute via WhatsApp</a>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+              {% elsif page.page_key == 'tourism' %}
+                <section class="restaurant-section">
+                  <div class="restaurant-card-grid">
+                    {% for item in restaurant.tourism_entries %}
+                      <article class="restaurant-card">
+                        <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+                        <div class="restaurant-card-body">
+                          <h3>{{ item.title }}</h3>
+                          <p>{{ item.summary }}</p>
+                          <p class="restaurant-note">{{ item.note }}</p>
+                          <a class="restaurant-link" href="{{ item.url | relative_url }}">Lihat detail</a>
+                        </div>
+                      </article>
+                    {% endfor %}
+                  </div>
+                </section>
+              {% elsif page.page_key == 'whatsapp' %}
+                <section class="restaurant-section">
+                  <div class="restaurant-cta-single">
+                    <img src="{{ '/assets/img/logos/whatsapp-rm-apayaa.png' | relative_url }}" alt="WhatsApp RM. APAYAA">
+                    <p class="restaurant-lead">Sudah menentukan menu? Langsung chat admin untuk reservasi, paket rombongan, atau pertanyaan menu.</p>
+                    <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Buka WhatsApp</a>
+                  </div>
+                </section>
+              {% endif %}
+            </div>
+          </main>
+        </div>
+
+        <div class="row">
+          <div id="tail-wrapper" class="col-12 px-md-4">
+            {% include_cached footer.html lang=lang %}
+          </div>
+        </div>
+
+        {% include_cached search-results.html lang=lang %}
+      </div>
+
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
+    </div>
+
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+
+    {% if site.pwa.enabled %}
+      {% include_cached notification.html lang=lang %}
+    {% endif %}
+
+    {% include_cached search-loader.html lang=lang %}
+  </body>
+</html>

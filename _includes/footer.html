@@ -1,0 +1,27 @@
+{% assign restaurant = site.data.restaurant %}
+{% assign brand = restaurant.brand %}
+{% assign whatsapp_text = brand.whatsapp_text | uri_escape %}
+{% assign whatsapp_link = 'https://wa.me/' | append: brand.whatsapp_number | append: '?text=' | append: whatsapp_text %}
+
+<!-- The Footer -->
+<footer aria-label="Site Info" class="restaurant-footer">
+  <span>&copy; {{ 'now' | date: '%Y' }} {{ brand.name }}</span>
+  <span>{{ brand.tagline }}</span>
+  <nav class="restaurant-footer-socials" aria-label="Link sosial RM. APAYAA">
+    <a href="{{ whatsapp_link }}" target="_blank" rel="noreferrer" aria-label="WhatsApp RM. APAYAA">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.instagram.com/kulinergucitegal" target="_blank" rel="noreferrer" aria-label="Instagram RM. APAYAA">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.tiktok.com/@kulinergucitegal" target="_blank" rel="noreferrer" aria-label="TikTok RM. APAYAA">
+      <i class="fab fa-tiktok" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.facebook.com/kulinergucitegal" target="_blank" rel="noreferrer" aria-label="Facebook RM. APAYAA">
+      <i class="fab fa-facebook-f" aria-hidden="true"></i>
+    </a>
+    <a href="{{ brand.maps_url }}" target="_blank" rel="noreferrer" aria-label="Google Maps RM. APAYAA">
+      <i class="fas fa-location-dot" aria-hidden="true"></i>
+    </a>
+  </nav>
+</footer>

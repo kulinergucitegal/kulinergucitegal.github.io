@@ -2,6 +2,7 @@
 title: Menu Bukber 2025
 description: Minimal order 10 pax
 date: 2025-03-01 10:00:00 +0700
+permalink: /arsip/menu-bukber-2025/
 # tags: [kulinergucitegal]
 # categories: [menu]
 pin: false
@@ -15,7 +16,7 @@ image:
 ![image-center]({{ '/assets/img/menus/catering-prasmanan/menu-bukber.jpg' | absolute_url }}){: .align-center}
 
 <div class="whatsapp-button-container">
-    <a href="/tabs/whatsapp" class="whatsapp-button">
+    <a href="/whatsapp" class="whatsapp-button">
         Order Sekarang !
     </a>
 </div>

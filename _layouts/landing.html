@@ -1,0 +1,275 @@
+---
+layout: compress
+---
+
+<!doctype html>
+
+{% include origin-type.html %}
+{% include lang.html %}
+
+{% if site.theme_mode %}
+  {% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
+{% endif %}
+
+{% assign restaurant = site.data.restaurant %}
+{% assign brand = restaurant.brand %}
+{% assign whatsapp_text = brand.whatsapp_text | uri_escape %}
+{% assign whatsapp_link = 'https://wa.me/' | append: brand.whatsapp_number | append: '?text=' | append: whatsapp_text %}
+
+<html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
+  {% include restaurant-seo-head.html %}
+  <link rel="stylesheet" href="{{ '/assets/restaurant.css' | relative_url }}">
+
+  <body class="restaurant-body restaurant-landing">
+    {% include sidebar.html lang=lang %}
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        {% include topbar.html lang=lang %}
+
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 px-md-4">
+            <section class="restaurant-section main-simple-home">
+              <div class="simple-preview-shell">
+                <section class="simple-preview-section simple-video-section">
+                  <div class="section-heading section-heading-center">
+                    <div>
+                      <p class="restaurant-eyebrow">Kuliner Guci Tegal</p>
+                      <h2>Tempat singgah favorit sebelum naik ke Guci.</h2>
+                    </div>
+                  </div>
+                  <div class="simple-video-shell">
+                    <a
+                      class="simple-video-card"
+                      href="https://www.tiktok.com/@kulinergucitegal"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Tonton video RM. APAYAA di TikTok"
+                    >
+                      <img src="{{ '/assets/img/posts/front-rm-apayaa.jpg' | relative_url }}" alt="Video suasana RM. APAYAA">
+                      <span class="simple-video-overlay"></span>
+                      <span class="simple-video-play" aria-hidden="true">
+                        <i class="fas fa-play"></i>
+                      </span>
+                      <span class="simple-video-copy">
+                        <strong>Suasana singgah sebelum Guci</strong>
+                        <span>Area makan, parkir, dan tempat singgah keluarga di jalur Tuwel Guci.</span>
+                      </span>
+                    </a>
+                    <div class="simple-video-actions">
+                      <a class="simple-video-action-primary" href="#menu-pilihan">
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
+                        Lihat Menu
+                      </a>
+                      <a class="simple-video-action-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        Tanya Admin
+                      </a>
+                    </div>
+                    <div class="simple-video-stats">
+                      {% for stat in brand.hero_stats %}
+                        <article>
+                          <strong>{{ stat.value }}</strong>
+                          <span>{{ stat.label }}</span>
+                        </article>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </section>
+
+                <section class="simple-preview-section simple-preview-pricing" id="menu-pilihan">
+                  <div class="section-heading section-heading-center">
+                    <div>
+                      <p class="restaurant-eyebrow">Menu Pilihan</p>
+                      <h2>Pilih format sajian yang paling cocok untuk kebutuhan makan Anda.</h2>
+                    </div>
+                  </div>
+                  <div class="simple-pricing-grid">
+                    <article class="simple-pricing-card simple-pricing-card-utama">
+                      <div class="simple-pricing-layer"></div>
+                      <div class="simple-pricing-content">
+                        <span class="simple-pricing-icon" aria-hidden="true">◎</span>
+                        <h3>Menu Utama</h3>
+                        <p class="simple-pricing-description">Untuk tamu keluarga dan pengunjung harian yang ingin langsung memilih lauk favorit.</p>
+                        <div class="simple-pricing-price">
+                          <strong>Tersedia</strong>
+                          <span class="simple-pricing-note-optional">tanpa minimal order</span>
+                        </div>
+                        <ul class="simple-pricing-list">
+                          <li>Sate kambing muda</li>
+                          <li>Ayam kampung</li>
+                          <li>Sop kambing dan balungan</li>
+                          <li>Gurame dan aneka minuman</li>
+                        </ul>
+                        <a class="restaurant-button restaurant-button-primary" href="{{ '/menu-utama/' | relative_url }}">
+                          <span>Lihat Menu&nbsp;</span>
+                          <span>Utama</span>
+                        </a>
+                      </div>
+                    </article>
+
+                    <article class="simple-pricing-card simple-pricing-card-popular simple-pricing-card-prasmanan">
+                      <div class="simple-pricing-layer"></div>
+                      <div class="simple-pricing-content">
+                        <span class="simple-pricing-badge">Popular</span>
+                        <span class="simple-pricing-icon" aria-hidden="true">★</span>
+                        <h3>Menu Prasmanan</h3>
+                        <p class="simple-pricing-description">Pilihan tepat untuk rombongan, gathering, komunitas, dan acara makan bersama.</p>
+                        <div class="simple-pricing-price">
+                          <strong>30 Pax</strong>
+                          <span class="simple-pricing-note-minimum">minimal order</span>
+                        </div>
+                        <ul class="simple-pricing-list">
+                          <li>Menu utama dan lauk pendamping</li>
+                          <li>Setting prasmanan rapi</li>
+                          <li>Cocok untuk rombongan besar</li>
+                          <li>Bisa diskusi kombinasi menu</li>
+                        </ul>
+                        <a class="restaurant-button restaurant-button-primary" href="{{ '/menu-prasmanan/' | relative_url }}">
+                          <span>Lihat Menu&nbsp;</span>
+                          <span>Prasmanan</span>
+                        </a>
+                      </div>
+                    </article>
+
+                    <article class="simple-pricing-card simple-pricing-card-box">
+                      <div class="simple-pricing-layer"></div>
+                      <div class="simple-pricing-content">
+                        <span class="simple-pricing-icon" aria-hidden="true">✦</span>
+                        <h3>Menu Box</h3>
+                        <p class="simple-pricing-description">Praktis untuk kebutuhan menu box acara internal, meeting, atau distribusi konsumsi.</p>
+                        <div class="simple-pricing-price">
+                          <strong>30 Pax</strong>
+                          <span class="simple-pricing-note-minimum">minimal order</span>
+                        </div>
+                        <ul class="simple-pricing-list">
+                          <li>Format box yang rapi</li>
+                          <li>Cocok untuk acara praktis</li>
+                          <li>Pilihan lauk khas RM. APAYAA</li>
+                          <li>Bisa diskusikan kebutuhan porsi</li>
+                        </ul>
+                        <a class="restaurant-button restaurant-button-primary" href="{{ '/menu-box/' | relative_url }}">
+                          <span>Lihat Menu&nbsp;</span>
+                          <span>Box</span>
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+
+                <section class="simple-preview-section">
+                  <div class="section-heading">
+                    <div>
+                      <p class="restaurant-eyebrow">{{ restaurant.gallery.eyebrow }}</p>
+                      <h2>{{ restaurant.gallery.title }}</h2>
+                    </div>
+                  </div>
+                  <div class="simple-preview-marquee-shell">
+                    <div class="simple-preview-marquee-track">
+                      {% for cycle in (1..2) %}
+                        <div class="simple-preview-marquee-group">
+                          {% for item in restaurant.gallery.items limit:4 %}
+                            <article class="simple-preview-gallery-card">
+                              <div class="simple-preview-gallery-image">
+                                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+                              </div>
+                              <div class="simple-preview-gallery-body">
+                                <h3>{{ item.title }}</h3>
+                                <p>{{ item.subtitle }}</p>
+                              </div>
+                            </article>
+                          {% endfor %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </section>
+
+                <section class="simple-preview-section simple-testimonials-section">
+                  <div class="section-heading section-heading-center">
+                    <div>
+                      <p class="restaurant-eyebrow">{{ restaurant.google_testimonials.eyebrow }}</p>
+                      <h2>{{ restaurant.google_testimonials.title }}</h2>
+                    </div>
+                  </div>
+                  <div class="simple-testimonials-shell">
+                    {% for column in restaurant.google_testimonials.columns %}
+                      <div class="simple-testimonials-column">
+                        <div class="simple-testimonials-track" style="--testimonial-duration: {{ column.duration }};">
+                          {% for cycle in (1..2) %}
+                            {% for item in column.items %}
+                              <article class="simple-testimonial-card">
+                                <div class="simple-testimonial-quote">{{ item.text }}</div>
+                                <div class="simple-testimonial-person">
+                                  <div class="simple-testimonial-avatar" aria-hidden="true">{{ item.name | slice: 0 }}</div>
+                                  <div>
+                                    <strong>{{ item.name }}</strong>
+                                    <span>{{ item.role }}</span>
+                                  </div>
+                                </div>
+                              </article>
+                            {% endfor %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </section>
+
+                <section class="simple-preview-location">
+                  <div>
+                    <p class="restaurant-eyebrow">Lokasi</p>
+                    <h2>Mudah ditemukan di jalur Guci, Tegal.</h2>
+                    <p>{{ brand.address }}. {{ brand.opening_hours }} dan siap menerima tamu keluarga maupun rombongan.</p>
+                    <div class="simple-preview-actions">
+                      <a class="restaurant-button restaurant-button-primary" href="{{ brand.maps_url }}" target="_blank" rel="noreferrer">Buka Google Maps</a>
+                    </div>
+                  </div>
+                  <div class="simple-preview-map-card">
+                    <iframe
+                      title="Peta RM. APAYAA"
+                      src="https://www.google.com/maps?q=RM%20APAYAA%20Tuwel%20Bojong%20Tegal&z=13&output=embed"
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                </section>
+
+                <section class="simple-preview-cta-band">
+                  <div>
+                    <p class="restaurant-eyebrow">Kontak Cepat</p>
+                    <h2>Mau makan di {{ brand.name }}?</h2>
+                    <p>Chat langsung via WhatsApp untuk tanya menu, reservasi, atau paket rombongan.</p>
+                  </div>
+                  <a class="restaurant-button simple-preview-cta-button" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
+                </section>
+              </div>
+            </section>
+          </main>
+        </div>
+
+        <div class="row">
+          <div id="tail-wrapper" class="col-12 px-md-4">
+            {% include_cached footer.html lang=lang %}
+          </div>
+        </div>
+
+        {% include_cached search-results.html lang=lang %}
+      </div>
+
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
+    </div>
+
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+
+    {% if site.pwa.enabled %}
+      {% include_cached notification.html lang=lang %}
+    {% endif %}
+
+    {% include_cached search-loader.html lang=lang %}
+  </body>
+</html>

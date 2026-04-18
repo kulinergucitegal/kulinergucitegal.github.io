@@ -54,7 +54,7 @@ _Harga Tiket Guci Forest_
 Dengan berbagai pilihan tempat menarik seperti Pancuran 5, Pancuran 13, The Geong, Golden Park dan Guci Forest, Wisata Guci Tegal menawarkan pengalaman yang lengkap bagi setiap pengunjung. Jadi, kapan berkunjung ke Wisata Guci? Jangan lupa mampir ke RM. APAYAA untuk menikmati kuliner khas yang lezat!
 
 <div class="whatsapp-button-container">
-    <a href="/tabs/whatsapp" class="whatsapp-button">
+    <a href="/whatsapp" class="whatsapp-button">
         Order Sekarang !
     </a>
 </div>

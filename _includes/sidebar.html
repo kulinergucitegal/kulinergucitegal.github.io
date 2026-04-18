@@ -1,0 +1,44 @@
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
+      <img
+        src="{{ site.avatar | relative_url }}"
+        width="112"
+        height="112"
+        alt="avatar"
+        onerror="this.style.display='none'"
+      >
+    </a>
+
+    <a class="site-title d-block" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
+  </header>
+  <!-- .profile-wrapper -->
+
+  <nav class="flex-column flex-grow-1 w-100">
+    <ul class="nav">
+      <li class="nav-item{% if page.url == '/' %} active{% endif %}">
+        <a href="{{ '/' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>HOME</span>
+        </a>
+      </li>
+
+      {% assign visible_tabs = site.tabs | sort: 'order' %}
+      {% for tab in visible_tabs %}
+        {% unless tab.hidden %}
+          <li class="nav-item{% if page.url == tab.url %} active{% endif %}">
+            <a href="{{ tab.url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ tab.icon }}"></i>
+              <span>{{ tab.title | upcase }}</span>
+            </a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100"></div>
+  <!-- .sidebar-bottom -->
+</aside>
+<!-- #sidebar -->

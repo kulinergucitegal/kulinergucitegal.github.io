@@ -3,6 +3,7 @@ title: Menu Utama
 description: Tanpa minimal order
 date: 2021-12-01 08:30:00 +0700
 permalink: /arsip/menu-utama/
+sitemap: false
 # tags: [kulinergucitegal]
 # categories: [menu]
 pin: true

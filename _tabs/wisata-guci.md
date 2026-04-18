@@ -1,5 +1,10 @@
 ---
 title: Info Wisata Guci
+description: Informasi wisata Guci Tegal dan rekomendasi tempat singgah makan di jalur Tuwel sebelum naik ke kawasan wisata Guci.
+seo_title: Info Wisata Guci Tegal
+image:
+  path: /assets/img/covers/cover-daftar-harga-wisata-guci.jpg
+  alt: Info wisata Guci Tegal
 icon: fas fa-mountain-sun
 order: 8
 layout: restaurant-page

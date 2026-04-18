@@ -3,6 +3,7 @@ title: Menu Box
 description: Minimal order 30 pax
 date: 2021-12-01 08:29:00 +0700
 permalink: /arsip/menu-box/
+sitemap: false
 # tags: [kulinergucitegal]
 # categories: [menu]
 pin: true

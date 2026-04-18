@@ -1,0 +1,55 @@
+{% assign restaurant = site.data.restaurant %}
+{% assign brand = restaurant.brand %}
+{% assign schema_image = page.image.path | default: site.social_preview_image | default: site.avatar %}
+{% assign schema_url = page.url | absolute_url %}
+{% assign schema_logo = site.avatar | absolute_url %}
+{% assign schema_image_url = schema_image | absolute_url %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "@id": "{{ site.url }}/#restaurant",
+  "name": {{ brand.name | jsonify }},
+  "alternateName": "Kuliner Guci Tegal",
+  "description": {{ brand.description | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "mainEntityOfPage": {{ schema_url | jsonify }},
+  "logo": {{ schema_logo | jsonify }},
+  "image": {{ schema_image_url | jsonify }},
+  "telephone": {{ brand.phone_label | jsonify }},
+  "priceRange": "$$",
+  "servesCuisine": [
+    "Masakan Indonesia",
+    "Menu keluarga",
+    "Prasmanan",
+    "Nasi box"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ brand.address | jsonify }},
+    "addressLocality": "Bojong",
+    "addressRegion": "Jawa Tengah",
+    "postalCode": "52465",
+    "addressCountry": "ID"
+  },
+  "areaServed": [
+    "Guci",
+    "Tuwel",
+    "Bojong",
+    "Kabupaten Tegal"
+  ],
+  "openingHours": "Mo-Su 09:00-20:00",
+  "hasMap": {{ brand.maps_url | jsonify }},
+  "menu": "{{ site.url }}/menu-utama/",
+  "sameAs": [
+    "https://www.instagram.com/kulinergucitegal",
+    "https://www.tiktok.com/@kulinergucitegal",
+    "https://www.facebook.com/kulinergucitegal"
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": "https://wa.me/{{ brand.whatsapp_number }}"
+  }
+}
+</script>

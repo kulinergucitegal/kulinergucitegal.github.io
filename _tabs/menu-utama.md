@@ -1,5 +1,10 @@
 ---
 title: Menu Utama
+description: Lihat menu utama RM APAYAA Tuwel Guci Tegal, mulai dari ayam, bebek, kambing muda, sop, gurame, seafood, paket makan, jus, dan minuman.
+seo_title: Menu Utama RM APAYAA Guci Tegal
+image:
+  path: /assets/img/covers/cover-menu-utama-rm-apayaa.jpg
+  alt: Menu utama RM APAYAA Guci Tegal
 icon: fas fa-utensils
 order: 1
 layout: restaurant-page

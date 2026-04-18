@@ -530,6 +530,7 @@ html[data-mode="dark"] #sidebar ul li.nav-item.active .nav-link i {
 
 .landing-hero h1,
 .page-hero h1,
+.restaurant-section h1,
 .restaurant-section h2,
 .restaurant-panel h2 {
   margin: 0;
@@ -549,6 +550,7 @@ html[data-mode="dark"] #sidebar ul li.nav-item.active .nav-link i {
   max-width: 11ch;
 }
 
+.restaurant-section h1,
 .restaurant-section h2,
 .restaurant-panel h2 {
   font-size: clamp(1.8rem, 3vw, 2.7rem);
@@ -933,6 +935,7 @@ html[data-mode="dark"] #sidebar ul li.nav-item.active .nav-link i {
   color: #9f5138;
 }
 
+.menu-catalog-section h1,
 .menu-catalog-section h2,
 .menu-catalog-section .restaurant-lead {
   color: var(--foreground);
@@ -2637,6 +2640,7 @@ html[data-mode="dark"] .simple-video-stats article {
     align-items: stretch;
   }
 
+  .simple-preview-pricing .section-heading h1,
   .simple-preview-pricing .section-heading h2 {
     font-size: clamp(1.55rem, 7vw, 2rem);
     line-height: 1.08;

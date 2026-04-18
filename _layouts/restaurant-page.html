@@ -15,6 +15,7 @@ layout: compress
 {% assign brand = restaurant.brand %}
 {% assign whatsapp_text = brand.whatsapp_text | uri_escape %}
 {% assign whatsapp_link = 'https://wa.me/' | append: brand.whatsapp_number | append: '?text=' | append: whatsapp_text %}
+{% assign primary_cta_url = page.primary_cta_url | default: whatsapp_link %}
 
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include restaurant-seo-head.html %}
@@ -38,14 +39,18 @@ layout: compress
                       <p class="restaurant-lead">{{ page.hero_description }}</p>
                       {% unless page.page_key == 'tourism' %}
                         <div class="restaurant-actions">
-                          <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">{{ page.primary_cta | default: 'Tanya via WhatsApp' }}</a>
+                          {% if page.primary_cta_url %}
+                            <a class="restaurant-button restaurant-button-primary" href="{{ primary_cta_url | relative_url }}">{{ page.primary_cta | default: 'Tanya via WhatsApp' }}</a>
+                          {% else %}
+                            <a class="restaurant-button restaurant-button-primary" href="{{ primary_cta_url }}" target="_blank" rel="noreferrer">{{ page.primary_cta | default: 'Tanya via WhatsApp' }}</a>
+                          {% endif %}
                           {% if page.secondary_cta_url %}
                             <a class="restaurant-button restaurant-button-secondary" href="{{ page.secondary_cta_url | relative_url }}">{{ page.secondary_cta_label }}</a>
                           {% endif %}
                         </div>
                       {% endunless %}
                     </div>
-                    {% unless page.page_key == 'tourism' %}
+                    {% unless page.page_key == 'tourism' or page.page_key == 'not_found' %}
                       <article class="restaurant-panel">
                         <p class="restaurant-eyebrow">Kenapa berbeda</p>
                         <h2>{{ page.panel_title }}</h2>

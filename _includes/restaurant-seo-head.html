@@ -29,6 +29,8 @@
   {% assign rendered_head = rendered_head | replace: '<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >', '' %}
   {% assign rendered_head = rendered_head | replace: '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">', '' %}
   {% assign rendered_head = rendered_head | replace: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">', '' %}
   {% assign rendered_head = rendered_head | replace: '<script src="/assets/js/dist/theme.min.js"></script>', '<script defer src="/assets/js/dist/theme.min.js"></script>' %}
   {% assign rendered_head = rendered_head | replace: '<script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>', '' %}
 {% endif %}

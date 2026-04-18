@@ -3,8 +3,8 @@ title: Paket Bukber
 description: Paket bukber RM APAYAA untuk grup kecil sampai menengah di sekitar Guci Tegal dengan pilihan menu rombongan dan reservasi WhatsApp.
 seo_title: Paket Bukber Guci Tegal
 image:
-  path: /assets/img/posts/front-rm-apayaa.jpg
-  alt: Tampak depan RM APAYAA Tuwel Guci
+  path: /assets/img/posts/indoor-rm-apayaa.jpg
+  alt: Area indoor RM APAYAA Tuwel Guci
 icon: fas fa-retweet
 order: 4
 layout: restaurant-page

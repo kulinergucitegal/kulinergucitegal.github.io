@@ -3,8 +3,8 @@ title: Info Wisata Guci
 description: Informasi wisata Guci Tegal dan rekomendasi tempat singgah makan di jalur Tuwel sebelum naik ke kawasan wisata Guci.
 seo_title: Info Wisata Guci Tegal
 image:
-  path: /assets/img/posts/front-rm-apayaa.jpg
-  alt: Tampak depan RM APAYAA Tuwel Guci
+  path: /assets/img/posts/indoor-rm-apayaa.jpg
+  alt: Area indoor RM APAYAA Tuwel Guci
 icon: fas fa-mountain-sun
 order: 8
 layout: restaurant-page

@@ -3,8 +3,8 @@ title: Fasilitas
 description: Fasilitas RM APAYAA Tuwel Guci Tegal meliputi area lesehan, indoor, mushola, toilet, tempat wudhu, dan parkir luas untuk mobil hingga bus.
 seo_title: Fasilitas RM APAYAA Guci Tegal
 image:
-  path: /assets/img/posts/front-rm-apayaa.jpg
-  alt: Tampak depan RM APAYAA Tuwel Guci
+  path: /assets/img/posts/indoor-rm-apayaa.jpg
+  alt: Area indoor RM APAYAA Tuwel Guci
 icon: fas fa-house
 order: 5
 hidden: true

@@ -24,6 +24,10 @@
   {% include restaurant-localbusiness-schema.html %}
 {% endcapture %}
 
+{% capture social_image_meta %}
+  {% include restaurant-social-image-meta.html %}
+{% endcapture %}
+
 {% capture faq_schema %}
   {% include restaurant-faq-schema.html %}
 {% endcapture %}
@@ -39,6 +43,7 @@
 {% endcapture %}
 
 {% capture head_extras %}
+{{ social_image_meta }}
 {{ restaurant_schema }}
 {{ faq_schema }}
 {{ google_analytics }}

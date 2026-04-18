@@ -19,7 +19,11 @@
     <ul class="nav">
       <li class="nav-item{% if page.url == '/' %} active{% endif %}">
         <a href="{{ '/' | relative_url }}" class="nav-link">
-          <i class="fa-fw fas fa-home"></i>
+          {% if page.layout == 'landing' or page.layout == 'restaurant-page' %}
+            <span class="restaurant-nav-mark" aria-hidden="true">•</span>
+          {% else %}
+            <i class="fa-fw fas fa-home"></i>
+          {% endif %}
           <span>HOME</span>
         </a>
       </li>
@@ -29,7 +33,11 @@
         {% unless tab.hidden %}
           <li class="nav-item{% if page.url == tab.url %} active{% endif %}">
             <a href="{{ tab.url | relative_url }}" class="nav-link">
-              <i class="fa-fw {{ tab.icon }}"></i>
+              {% if page.layout == 'landing' or page.layout == 'restaurant-page' %}
+                <span class="restaurant-nav-mark" aria-hidden="true">•</span>
+              {% else %}
+                <i class="fa-fw {{ tab.icon }}"></i>
+              {% endif %}
               <span>{{ tab.title | upcase }}</span>
             </a>
           </li>

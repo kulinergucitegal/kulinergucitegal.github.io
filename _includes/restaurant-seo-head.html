@@ -20,6 +20,19 @@
 {% assign rendered_head = rendered_head | replace: default_og_title, seo_og_title %}
 {% assign rendered_head = rendered_head | replace: default_twitter_title, seo_twitter_title %}
 
+{% if page.layout == 'landing' or page.layout == 'restaurant-page' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="preconnect" href="https://fonts.googleapis.com" >', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="dns-prefetch" href="https://fonts.googleapis.com" >', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="dns-prefetch" href="https://fonts.gstatic.com" >', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="preconnect" href="https://cdn.jsdelivr.net" >', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">', '' %}
+  {% assign rendered_head = rendered_head | replace: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">', '' %}
+  {% assign rendered_head = rendered_head | replace: '<script src="/assets/js/dist/theme.min.js"></script>', '<script defer src="/assets/js/dist/theme.min.js"></script>' %}
+  {% assign rendered_head = rendered_head | replace: '<script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>', '' %}
+{% endif %}
+
 {% capture restaurant_schema %}
   {% include restaurant-localbusiness-schema.html %}
 {% endcapture %}
@@ -28,12 +41,12 @@
   {% include restaurant-social-image-meta.html %}
 {% endcapture %}
 
-{% capture faq_schema %}
-  {% include restaurant-faq-schema.html %}
+{% capture performance_head %}
+  {% include restaurant-performance-head.html %}
 {% endcapture %}
 
-{% capture google_analytics %}
-  {% include google-analytics.html %}
+{% capture faq_schema %}
+  {% include restaurant-faq-schema.html %}
 {% endcapture %}
 
 {% capture restaurant_styles %}
@@ -44,9 +57,9 @@
 
 {% capture head_extras %}
 {{ social_image_meta }}
+{{ performance_head }}
 {{ restaurant_schema }}
 {{ faq_schema }}
-{{ google_analytics }}
 {{ restaurant_styles }}
 {% endcapture %}
 

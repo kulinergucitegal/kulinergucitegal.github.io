@@ -25,7 +25,7 @@ image:
 ![image-center]({{ '/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | absolute_url }}){: .align-center}
 
 <div class="whatsapp-button-container">
-    <a href="/whatsapp" class="whatsapp-button">
+    <a href="https://wa.me/6282288898556" target="_blank" rel="noreferrer" class="whatsapp-button">
         Order Sekarang !
     </a>
 </div>

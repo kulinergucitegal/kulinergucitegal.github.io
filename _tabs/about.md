@@ -1,7 +1,7 @@
 ---
 title: Tentang & Lokasi
-description: Alamat dan lokasi RM APAYAA di jalur Tuwel Guci Bojong Tegal, tempat singgah keluarga dan rombongan sebelum menuju wisata Guci.
-seo_title: Lokasi RM APAYAA Tuwel Guci
+description: Alamat dan lokasi RM. APAYAA di jalur Tuwel Guci Bojong Tegal, tempat singgah keluarga dan rombongan sebelum menuju wisata Guci.
+seo_title: Lokasi RM. APAYAA Tuwel Guci
 image:
   path: /assets/img/posts/indoor-rm-apayaa.jpg
   alt: Area indoor RM APAYAA Tuwel Guci

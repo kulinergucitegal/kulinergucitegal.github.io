@@ -1,7 +1,7 @@
 ---
 title: Info Wisata Guci
 description: Informasi wisata Guci Tegal dan rekomendasi tempat singgah makan di jalur Tuwel sebelum naik ke kawasan wisata Guci.
-seo_title: Info Wisata Guci Tegal
+seo_title: Artikel Wisata Guci Tegal
 image:
   path: /assets/img/posts/indoor-rm-apayaa.jpg
   alt: Area indoor RM APAYAA Tuwel Guci
@@ -24,6 +24,6 @@ Wisata Guci Tegal dikenal sebagai kawasan pemandian air panas dan destinasi kelu
 
 Jika berangkat bersama keluarga atau rombongan, sebaiknya rencanakan waktu makan sebelum masuk area wisata. Jalur Tuwel menjadi salah satu titik yang nyaman untuk singgah karena masih berada di rute menuju Guci, tetapi belum terlalu dekat dengan kepadatan area wisata.
 
-RM APAYAA berada di jalur tersebut dan bisa menjadi tempat berhenti untuk makan, istirahat, shalat, atau menunggu anggota rombongan berkumpul. Untuk akhir pekan dan musim liburan, reservasi lewat WhatsApp sangat disarankan agar tempat dan menu bisa disiapkan lebih dulu.
+RM. APAYAA berada di jalur tersebut dan bisa menjadi tempat berhenti untuk makan, istirahat, shalat, atau menunggu anggota rombongan berkumpul. Untuk akhir pekan dan musim liburan, reservasi lewat WhatsApp sangat disarankan agar tempat dan menu bisa disiapkan lebih dulu.
 
 Informasi wisata di halaman ini bersifat pendukung. Harga tiket, jam operasional, dan aturan destinasi dapat berubah sewaktu-waktu, jadi tetap cek informasi terbaru sebelum berangkat.

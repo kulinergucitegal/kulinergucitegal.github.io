@@ -3,7 +3,7 @@ title: Harga Tiket Masuk Wisata Guci 2026
 description: Panduan harga tiket masuk wisata Guci Tegal 2026, mulai dari tiket retribusi sampai beberapa spot wisata populer di kawasan Guci.
 date: 2024-06-19 08:30:00 +0700
 layout: restaurant-tourism-post
-seo_title: Harga Tiket Masuk Wisata Guci Tegal 2026
+seo_title: Harga Tiket Wisata Guci Tegal 2026
 page_key: tourism
 hero_eyebrow: Info Wisata Guci
 hero_title: Harga Tiket Masuk Wisata Guci Tegal 2026

@@ -2,9 +2,13 @@
   {% include head.html %}
 {% endcapture %}
 
-{% assign seo_brand = 'RM APAYAA' %}
+{% assign seo_brand = 'RM. APAYAA' %}
 {% assign seo_base_title = page.seo_title | default: page.title %}
-{% capture seo_title %}{{ seo_base_title }} - {{ seo_brand }}{% endcapture %}
+{% if seo_base_title contains seo_brand %}
+  {% assign seo_title = seo_base_title %}
+{% else %}
+  {% capture seo_title %}{{ seo_base_title }} - {{ seo_brand }}{% endcapture %}
+{% endif %}
 
 {% capture default_title %}<title>{{ page.title }} | {{ site.title }}</title>{% endcapture %}
 {% capture default_empty_tab_title %}<title> | {{ site.title }}</title>{% endcapture %}
@@ -22,6 +26,10 @@
 
 {% capture restaurant_schema %}
   {% include restaurant-localbusiness-schema.html %}
+{% endcapture %}
+
+{% capture navigation_schema %}
+  {% include restaurant-site-navigation-schema.html %}
 {% endcapture %}
 
 {% capture social_image_meta %}
@@ -45,6 +53,7 @@
 {% capture head_extras %}
 {{ social_image_meta }}
 {{ restaurant_schema }}
+{{ navigation_schema }}
 {{ faq_schema }}
 {{ google_analytics }}
 {{ restaurant_styles }}

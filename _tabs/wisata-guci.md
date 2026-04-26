@@ -10,7 +10,7 @@ order: 8
 layout: restaurant-page
 page_key: tourism
 hide_faq: true
-permalink: /info-wisata-guci/
+permalink: /info-wisata-guci-tegal/
 hero_title: "Artikel Wisata Guci"
 hero_description: "Kumpulan panduan singkat sebelum berangkat ke kawasan wisata Guci."
 panel_title: "Baca dulu sebelum jalan."

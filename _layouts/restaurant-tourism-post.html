@@ -40,7 +40,7 @@ layout: compress
                       <p class="restaurant-lead">{{ page.hero_description | default: page.description }}</p>
                       <div class="restaurant-actions">
                         <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Tanya tempat singgah</a>
-                        <a class="restaurant-button restaurant-button-secondary" href="{{ '/info-wisata-guci/' | relative_url }}">Kembali ke info wisata</a>
+                        <a class="restaurant-button restaurant-button-secondary" href="{{ '/info-wisata-guci-tegal/' | relative_url }}">Kembali ke info wisata</a>
                       </div>
                     {% endunless %}
                   </div>
@@ -64,24 +64,26 @@ layout: compress
                 </div>
               </article>
 
-              {% if page.ticket_faq %}
-                <section class="restaurant-section restaurant-section-panel ticket-faq-section">
-                  <div class="ticket-summary-heading">
-                    <p class="restaurant-eyebrow">FAQ</p>
-                    <h2>Pertanyaan seputar tiket Guci</h2>
-                  </div>
-                  <div class="ticket-faq-list">
-                    {% for item in page.ticket_faqs %}
-                      <details class="ticket-faq-item">
-                        <summary>{{ item.question }}</summary>
-                        <p>{{ item.answer }}</p>
-                      </details>
-                    {% endfor %}
-                  </div>
-                </section>
-              {% else %}
-                {% include restaurant-faq.html key='tourism' %}
-              {% endif %}
+              {% unless page.hide_faq %}
+                {% if page.ticket_faq %}
+                  <section class="restaurant-section restaurant-section-panel ticket-faq-section">
+                    <div class="ticket-summary-heading">
+                      <p class="restaurant-eyebrow">FAQ</p>
+                      <h2>Pertanyaan seputar tiket Guci</h2>
+                    </div>
+                    <div class="ticket-faq-list">
+                      {% for item in page.ticket_faqs %}
+                        <details class="ticket-faq-item">
+                          <summary>{{ item.question }}</summary>
+                          <p>{{ item.answer }}</p>
+                        </details>
+                      {% endfor %}
+                    </div>
+                  </section>
+                {% else %}
+                  {% include restaurant-faq.html key='tourism' %}
+                {% endif %}
+              {% endunless %}
 
               <section class="restaurant-section">
                 <div class="restaurant-cta tourism-post-cta">

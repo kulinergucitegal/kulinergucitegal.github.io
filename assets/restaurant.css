@@ -1259,6 +1259,78 @@ html[data-mode="dark"] #sidebar ul li.nav-item.active .nav-link i {
   line-height: 1.75;
 }
 
+.route-summary {
+  display: grid;
+  gap: 1.1rem;
+  margin: 1.75rem 0 2rem;
+  padding: clamp(1rem, 3vw, 1.35rem);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: calc(var(--radius) + 8px);
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.14), transparent 32%),
+    rgba(255, 255, 255, 0.9);
+}
+
+.route-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.route-summary-grid article {
+  padding: 1rem;
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.route-summary-grid span,
+.route-summary-grid strong {
+  display: block;
+}
+
+.route-summary-grid span {
+  color: var(--muted-foreground);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.route-summary-grid strong {
+  margin-top: 0.35rem;
+  color: var(--foreground);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.tourism-article-content .route-summary-grid p {
+  margin: 0.58rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.route-map-card {
+  overflow: hidden;
+  margin: 1rem 0 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 8px);
+  background: var(--card);
+  box-shadow: 0 16px 34px rgba(var(--shadow-color), 0.06);
+}
+
+.route-map-card iframe {
+  display: block;
+  width: 100%;
+  min-height: 380px;
+  border: 0;
+}
+
+.route-map-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.95rem;
+  border-top: 1px solid var(--border);
+}
+
 .whatsapp-button-container {
   margin-top: 1.75rem;
   text-align: center;
@@ -1576,6 +1648,23 @@ html[data-mode="dark"] .ticket-note {
 html[data-mode="dark"] .ticket-faq-item {
   border-color: rgba(245, 158, 11, 0.24);
   background: rgba(23, 23, 23, 0.5);
+}
+
+html[data-mode="dark"] .route-summary {
+  border-color: rgba(245, 158, 11, 0.32);
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.12), transparent 34%),
+    rgba(38, 38, 38, 0.9);
+}
+
+html[data-mode="dark"] .route-summary-grid article {
+  border-color: rgba(245, 158, 11, 0.24);
+  background: rgba(23, 23, 23, 0.5);
+}
+
+html[data-mode="dark"] .route-map-card {
+  border-color: rgba(245, 158, 11, 0.22);
+  background: rgba(38, 38, 38, 0.92);
 }
 
 .page-hero:has(.restaurant-eyebrow:first-child) {
@@ -3453,6 +3542,22 @@ html[data-mode="dark"] .simple-video-stats article {
 
   .tourism-article-list-body {
     padding: 0 1rem 1rem;
+  }
+
+  .route-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-map-card iframe {
+    min-height: 300px;
+  }
+
+  .route-map-actions {
+    justify-content: stretch;
+  }
+
+  .route-map-actions .restaurant-button {
+    width: 100%;
   }
 
   .simple-preview-marquee-shell::before,

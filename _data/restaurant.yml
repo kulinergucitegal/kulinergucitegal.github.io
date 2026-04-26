@@ -682,9 +682,9 @@ tourism_entries:
     url: "/harga-tiket-masuk-wisata-guci-tegal/"
     image: "/assets/img/covers/cover-daftar-harga-wisata-guci.jpg"
   - title: "Rute makan sebelum naik ke Guci"
-    summary: "Posisi rumah makan di jalur Tuwel membuatnya cocok dijadikan titik singgah sebelum masuk area wisata."
-    note: "Reservasi lewat WhatsApp sangat disarankan saat akhir pekan dan musim liburan."
-    url: "/about/"
+    summary: "Panduan rute singgah makan dari Exit Tol Tegal dan Exit Tol Pemalang sebelum menuju kawasan wisata Guci."
+    note: "Tersedia peta rute menuju RM. APAYAA untuk membantu perjalanan keluarga atau rombongan."
+    url: "/rute-makan-sebelum-naik-ke-guci-tegal/"
     image: "/assets/img/posts/front-rm-apayaa.jpg"
 faqs:
   home:

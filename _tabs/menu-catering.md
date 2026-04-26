@@ -1,7 +1,7 @@
 ---
 title: Menu Box
 description: Menu box RM. APAYAA untuk acara, rapat, panitia, keluarga, dan rombongan di sekitar Guci Tegal dengan pilihan nasi box praktis.
-seo_title: Menu Box RM. APAYAA
+seo_title: Menu Box RM. APAYAA Guci Tegal
 image:
   path: /assets/img/posts/indoor-rm-apayaa.jpg
   alt: Area indoor RM APAYAA Tuwel Guci

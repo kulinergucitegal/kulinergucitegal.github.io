@@ -1380,6 +1380,89 @@ html[data-mode="dark"] #sidebar ul li.nav-item.active .nav-link i {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.tourism-article-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.tourism-article-list-item {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.38fr) minmax(0, 1fr);
+  gap: 1.1rem;
+  overflow: hidden;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: calc(var(--radius) + 8px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 34px rgba(var(--shadow-color), 0.06);
+}
+
+.tourism-article-list-image {
+  display: block;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--muted);
+}
+
+.tourism-article-list-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.tourism-article-list-item:hover .tourism-article-list-image img {
+  transform: scale(1.03);
+}
+
+.tourism-article-list-body {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.15rem 1.15rem 1.15rem 0;
+}
+
+.tourism-article-list-body .restaurant-eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.tourism-article-list-body h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+  line-height: 1.12;
+}
+
+.tourism-article-list-body h2 a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.tourism-article-list-body h2 a:hover {
+  color: var(--primary);
+}
+
+.tourism-article-list-body p {
+  margin: 0.65rem 0 0;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.tourism-article-list-note {
+  padding: 0.72rem 0.82rem;
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius);
+  background: rgba(245, 158, 11, 0.1);
+  font-size: 0.92rem;
+}
+
+.tourism-article-list-body .tourism-article-list-link {
+  margin-top: 0.2rem;
+}
+
 .tourism-card-section .restaurant-card {
   position: relative;
   background: rgba(255, 255, 255, 0.9);
@@ -1433,6 +1516,19 @@ html[data-mode="dark"] .tourism-card-section {
   background:
     radial-gradient(circle at 8% 0%, rgba(245, 158, 11, 0.16), transparent 32%),
     linear-gradient(180deg, rgba(38, 38, 38, 0.94), rgba(23, 23, 23, 0.92));
+}
+
+html[data-mode="dark"] .tourism-article-list-item {
+  border-color: rgba(245, 158, 11, 0.22);
+  background: rgba(38, 38, 38, 0.92);
+}
+
+html[data-mode="dark"] .tourism-article-list-body h2 a {
+  color: var(--foreground);
+}
+
+html[data-mode="dark"] .tourism-article-list-note {
+  background: rgba(245, 158, 11, 0.12);
 }
 
 html[data-mode="dark"] .tourism-post-hero-minimal {
@@ -3344,6 +3440,19 @@ html[data-mode="dark"] .simple-video-stats article {
   .simple-preview-cta-band {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .tourism-article-list-item {
+    grid-template-columns: 1fr;
+  }
+
+  .tourism-article-list-image img {
+    min-height: 190px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .tourism-article-list-body {
+    padding: 0 1rem 1rem;
   }
 
   .simple-preview-marquee-shell::before,

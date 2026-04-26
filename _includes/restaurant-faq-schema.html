@@ -2,7 +2,9 @@
 {% if faq_key == nil and page.layout == 'landing' %}
   {% assign faq_key = 'home' %}
 {% endif %}
-{% assign faq_items = page.ticket_faqs | default: site.data.restaurant.faqs[faq_key] %}
+{% unless page.hide_faq %}
+  {% assign faq_items = page.ticket_faqs | default: site.data.restaurant.faqs[faq_key] %}
+{% endunless %}
 
 {% if faq_items %}
 <script type="application/ld+json">

@@ -231,13 +231,22 @@ layout: compress
                     <h1>{{ page.hero_title | default: page.title }}</h1>
                     <p class="restaurant-lead">{{ page.hero_description }}</p>
                   </div>
-                  <div class="restaurant-card-grid">
+                  <div class="tourism-article-list">
                     {% for item in restaurant.tourism_entries %}
-                      <article class="restaurant-card">
-                        <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
-                        <div class="restaurant-card-body">
-                          <h3>{{ item.title }}</h3>
-                          <a class="restaurant-link" href="{{ item.url | relative_url }}">Lihat detail</a>
+                      <article class="tourism-article-list-item">
+                        <a class="tourism-article-list-image" href="{{ item.url | relative_url }}" aria-label="Baca {{ item.title }}">
+                          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+                        </a>
+                        <div class="tourism-article-list-body">
+                          <div>
+                            <p class="restaurant-eyebrow">Artikel Wisata</p>
+                            <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+                            <p>{{ item.summary }}</p>
+                          </div>
+                          {% if item.note %}
+                            <p class="tourism-article-list-note">{{ item.note }}</p>
+                          {% endif %}
+                          <a class="restaurant-link tourism-article-list-link" href="{{ item.url | relative_url }}">Baca artikel</a>
                         </div>
                       </article>
                     {% endfor %}
@@ -253,7 +262,9 @@ layout: compress
                 </section>
               {% endif %}
 
-              {% include restaurant-faq.html %}
+              {% unless page.hide_faq %}
+                {% include restaurant-faq.html %}
+              {% endunless %}
             </div>
           </main>
         </div>

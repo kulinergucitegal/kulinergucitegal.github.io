@@ -9,11 +9,12 @@ icon: fas fa-mountain-sun
 order: 8
 layout: restaurant-page
 page_key: tourism
+hide_faq: true
 permalink: /info-wisata-guci/
-hero_title: "Info Wisata Guci"
-hero_description: "Panduan singkat sebelum berangkat ke Guci."
-panel_title: "Sebelum naik ke Guci."
-panel_text: "Siapkan rute, cek perkiraan tiket, lalu tentukan titik makan yang nyaman untuk keluarga atau rombongan."
+hero_title: "Artikel Wisata Guci"
+hero_description: "Kumpulan panduan singkat sebelum berangkat ke kawasan wisata Guci."
+panel_title: "Baca dulu sebelum jalan."
+panel_text: "Mulai dari harga tiket, rute singgah, sampai catatan untuk keluarga dan rombongan."
 primary_cta: "Tanya tempat singgah"
 secondary_cta_label: "Kembali ke Beranda"
 secondary_cta_url: "/"

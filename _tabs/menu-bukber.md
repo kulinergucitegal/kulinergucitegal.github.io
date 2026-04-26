@@ -10,6 +10,7 @@ order: 4
 layout: restaurant-page
 page_key: packages
 hidden: true
+sitemap: false
 hero_title: "Paket bukber yang lebih jelas untuk grup kecil sampai menengah."
 hero_description: "Kini informasi bukber tampil sebagai bagian dari katalog paket rombongan, bukan sekadar satu post gambar."
 panel_title: "Pengunjung bisa langsung memahami bahwa bukber adalah layanan siap pesan, bukan artikel musiman."

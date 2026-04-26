@@ -8,6 +8,7 @@ image:
 icon: fas fa-house
 order: 5
 hidden: true
+sitemap: false
 layout: restaurant-page
 page_key: facilities
 hero_title: "Fasilitas yang membantu tamu merasa yakin sebelum datang."

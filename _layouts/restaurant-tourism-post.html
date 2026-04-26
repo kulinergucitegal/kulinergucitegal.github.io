@@ -29,16 +29,20 @@ layout: compress
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 px-md-4">
             <div class="restaurant-page-shell">
-              <section class="page-hero tourism-post-hero">
-                <div class="page-hero-grid">
+              <section class="page-hero tourism-post-hero{% if page.hero_minimal %} tourism-post-hero-minimal{% endif %}">
+                <div class="page-hero-grid{% if page.hero_minimal %} page-hero-grid-minimal{% endif %}">
                   <div>
-                    <p class="restaurant-eyebrow">{{ page.hero_eyebrow | default: 'Info Wisata Guci' }}</p>
+                    {% unless page.hero_minimal %}
+                      <p class="restaurant-eyebrow">{{ page.hero_eyebrow | default: 'Info Wisata Guci' }}</p>
+                    {% endunless %}
                     <h1>{{ page.hero_title | default: page.title }}</h1>
-                    <p class="restaurant-lead">{{ page.hero_description | default: page.description }}</p>
-                    <div class="restaurant-actions">
-                      <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Tanya tempat singgah</a>
-                      <a class="restaurant-button restaurant-button-secondary" href="{{ '/info-wisata-guci/' | relative_url }}">Kembali ke info wisata</a>
-                    </div>
+                    {% unless page.hero_minimal %}
+                      <p class="restaurant-lead">{{ page.hero_description | default: page.description }}</p>
+                      <div class="restaurant-actions">
+                        <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Tanya tempat singgah</a>
+                        <a class="restaurant-button restaurant-button-secondary" href="{{ '/info-wisata-guci/' | relative_url }}">Kembali ke info wisata</a>
+                      </div>
+                    {% endunless %}
                   </div>
                   <article class="restaurant-panel">
                     <p class="restaurant-eyebrow">Catatan</p>
@@ -48,7 +52,7 @@ layout: compress
                 </div>
               </section>
 
-              <article class="restaurant-section restaurant-section-panel tourism-article">
+              <article class="restaurant-section restaurant-section-panel tourism-article{% if page.hero_minimal %} tourism-article-connected{% endif %}">
                 {% if page.image.path %}
                   <figure class="tourism-article-cover">
                     <img src="{{ page.image.path | relative_url }}" alt="{{ page.image.alt | default: page.title }}" width="1200" height="630" loading="eager" decoding="async">
@@ -60,18 +64,35 @@ layout: compress
                 </div>
               </article>
 
+              {% if page.ticket_faq %}
+                <section class="restaurant-section restaurant-section-panel ticket-faq-section">
+                  <div class="ticket-summary-heading">
+                    <p class="restaurant-eyebrow">FAQ</p>
+                    <h2>Pertanyaan seputar tiket Guci</h2>
+                  </div>
+                  <div class="ticket-faq-list">
+                    {% for item in page.ticket_faqs %}
+                      <details class="ticket-faq-item">
+                        <summary>{{ item.question }}</summary>
+                        <p>{{ item.answer }}</p>
+                      </details>
+                    {% endfor %}
+                  </div>
+                </section>
+              {% else %}
+                {% include restaurant-faq.html key='tourism' %}
+              {% endif %}
+
               <section class="restaurant-section">
                 <div class="restaurant-cta tourism-post-cta">
                   <div>
                     <p class="restaurant-eyebrow">Singgah makan</p>
-                    <h2>Mau mampir ke {{ brand.name }} sebelum atau setelah dari Guci?</h2>
-                    <p>{{ brand.description }}</p>
+                    <h2>{% if page.cta_title %}{{ page.cta_title }}{% else %}Mau mampir ke {{ brand.name }} sebelum atau setelah dari Guci?{% endif %}</h2>
+                    <p>{{ page.cta_text | default: brand.description }}</p>
                   </div>
-                  <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">Chat Admin</a>
+                  <a class="restaurant-button simple-preview-cta-button" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                 </div>
               </section>
-
-              {% include restaurant-faq.html key='tourism' %}
             </div>
           </main>
         </div>

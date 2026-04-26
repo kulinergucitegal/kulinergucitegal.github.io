@@ -1002,10 +1002,63 @@ html[data-mode="dark"] #sidebar ul li.nav-item.active .nav-link i {
   align-items: stretch;
 }
 
+.tourism-post-hero-minimal {
+  max-width: 980px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  border-radius: calc(var(--radius) + 14px) calc(var(--radius) + 14px) 0 0;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(245, 158, 11, 0.13), transparent 30%),
+    rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 42px rgba(var(--shadow-color), 0.08);
+}
+
+.tourism-post-hero .page-hero-grid-minimal {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.tourism-post-hero .page-hero-grid-minimal h1 {
+  max-width: none;
+}
+
+.tourism-post-hero .page-hero-grid-minimal .restaurant-panel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.tourism-post-hero .page-hero-grid-minimal .restaurant-panel .restaurant-eyebrow,
+.tourism-post-hero .page-hero-grid-minimal .restaurant-panel h2,
+.tourism-post-hero .page-hero-grid-minimal .restaurant-panel p {
+  margin: 0;
+}
+
+.tourism-post-hero .page-hero-grid-minimal .restaurant-panel h2 {
+  font-size: clamp(1rem, 2vw, 1.28rem);
+  line-height: 1.25;
+}
+
+.tourism-post-hero .page-hero-grid-minimal .restaurant-panel p {
+  line-height: 1.55;
+}
+
 .tourism-article {
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.tourism-article-connected {
+  margin-top: 0;
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .tourism-article-cover {
@@ -1081,13 +1134,167 @@ html[data-mode="dark"] #sidebar ul li.nav-item.active .nav-link i {
   font-weight: 800;
 }
 
+.ticket-summary {
+  display: grid;
+  gap: 1.1rem;
+  margin: 1.75rem 0 2rem;
+  padding: clamp(1rem, 3vw, 1.35rem);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: calc(var(--radius) + 8px);
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(255, 251, 235, 0.96), rgba(255, 255, 255, 0.92));
+}
+
+.ticket-summary-heading {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.ticket-summary-heading .restaurant-eyebrow {
+  margin-bottom: 0;
+}
+
+.tourism-article-content .ticket-summary h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.12;
+}
+
+.ticket-price-list {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid rgba(245, 158, 11, 0.24);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.ticket-price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.82rem 0.95rem;
+}
+
+.ticket-price-row + .ticket-price-row {
+  border-top: 1px solid rgba(245, 158, 11, 0.18);
+}
+
+.ticket-price-row span {
+  color: var(--foreground);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ticket-price-row strong {
+  color: #7c3f00;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.25;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tourism-article-content .ticket-summary-note {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.ticket-note {
+  margin: 1rem 0 1.6rem;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--foreground);
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.ticket-note strong {
+  color: var(--foreground);
+  font-weight: 800;
+}
+
+.ticket-faq-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ticket-faq-section {
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.ticket-faq-section h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+  line-height: 1.12;
+}
+
+.ticket-faq-item {
+  overflow: hidden;
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.ticket-faq-item summary {
+  cursor: pointer;
+  padding: 0.95rem 1rem;
+  color: var(--foreground);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.ticket-faq-item p {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  color: var(--muted-foreground);
+  line-height: 1.75;
+}
+
 .whatsapp-button-container {
   margin-top: 1.75rem;
   text-align: center;
 }
 
 .tourism-post-cta {
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
   align-items: center;
+  border-color: var(--border);
+  background: linear-gradient(135deg, #f59e0b, #92400e);
+  color: white;
+}
+
+.tourism-post-cta .restaurant-eyebrow {
+  margin-bottom: 0.55rem;
+  color: white;
+}
+
+.tourism-post-cta h2 {
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: white;
+}
+
+.tourism-post-cta p {
+  max-width: 64ch;
+  margin: 0.65rem 0 0;
+  color: white;
+  line-height: 1.7;
+}
+
+.tourism-post-cta .simple-preview-cta-button {
+  gap: 0.5rem;
 }
 
 .tourism-overview {
@@ -1226,6 +1433,53 @@ html[data-mode="dark"] .tourism-card-section {
   background:
     radial-gradient(circle at 8% 0%, rgba(245, 158, 11, 0.16), transparent 32%),
     linear-gradient(180deg, rgba(38, 38, 38, 0.94), rgba(23, 23, 23, 0.92));
+}
+
+html[data-mode="dark"] .tourism-post-hero-minimal {
+  border-color: var(--border);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(245, 158, 11, 0.1), transparent 30%),
+    rgba(38, 38, 38, 0.9);
+}
+
+html[data-mode="dark"] .tourism-post-cta {
+  border-color: rgba(245, 158, 11, 0.24);
+  background: linear-gradient(135deg, #f59e0b, #92400e);
+  color: white;
+}
+
+html[data-mode="dark"] .tourism-post-cta p {
+  color: white;
+}
+
+html[data-mode="dark"] .ticket-summary {
+  border-color: rgba(245, 158, 11, 0.32);
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(44, 36, 20, 0.92), rgba(38, 38, 38, 0.92));
+}
+
+html[data-mode="dark"] .ticket-price-list {
+  border-color: rgba(245, 158, 11, 0.24);
+  background: rgba(23, 23, 23, 0.5);
+}
+
+html[data-mode="dark"] .ticket-price-row + .ticket-price-row {
+  border-top-color: rgba(245, 158, 11, 0.18);
+}
+
+html[data-mode="dark"] .ticket-price-row strong {
+  color: var(--primary);
+}
+
+html[data-mode="dark"] .ticket-note {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--foreground);
+}
+
+html[data-mode="dark"] .ticket-faq-item {
+  border-color: rgba(245, 158, 11, 0.24);
+  background: rgba(23, 23, 23, 0.5);
 }
 
 .page-hero:has(.restaurant-eyebrow:first-child) {
@@ -3127,6 +3381,22 @@ html[data-mode="dark"] .simple-video-stats article {
 
   .landing-hero {
     padding: 1.25rem;
+  }
+
+  .ticket-price-row {
+    grid-template-columns: 1fr;
+    gap: 0.28rem;
+    padding: 0.78rem 0.82rem;
+  }
+
+  .ticket-price-row strong {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .tourism-post-hero .page-hero-grid-minimal .restaurant-panel {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 
   .hero-copy-panel {

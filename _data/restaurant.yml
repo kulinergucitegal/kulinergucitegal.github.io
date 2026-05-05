@@ -736,3 +736,10 @@ faqs:
       answer: "Ya, reservasi rombongan sangat disarankan melalui WhatsApp agar waktu kedatangan, jumlah tamu, dan pilihan menu bisa dikoordinasikan."
     - question: "Apakah admin bisa membantu rekomendasi menu?"
       answer: "Bisa. Admin dapat membantu menyesuaikan pilihan menu dengan kebutuhan keluarga, rombongan, acara, atau konsumsi praktis."
+  maps_order:
+    - question: "Apakah bisa pesan langsung dari Google Maps?"
+      answer: "Pengunjung dari Google Maps bisa memakai halaman order ini untuk membuka WhatsApp admin, melihat menu, dan membuka rute menuju RM APAYAA."
+    - question: "Apakah pesanan dikonfirmasi lewat Google Maps?"
+      answer: "Konfirmasi pesanan, reservasi, jumlah porsi, dan jam kedatangan dilakukan lewat WhatsApp admin agar informasinya lebih cepat dan jelas."
+    - question: "Apakah halaman ini bisa dipakai untuk link Order online di Google Business Profile?"
+      answer: "Ya, halaman ini dirancang sebagai halaman khusus untuk pengunjung dari Google Maps atau Google Business Profile."

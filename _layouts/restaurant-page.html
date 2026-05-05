@@ -13,7 +13,7 @@ layout: compress
 
 {% assign restaurant = site.data.restaurant %}
 {% assign brand = restaurant.brand %}
-{% assign whatsapp_text = brand.whatsapp_text | uri_escape %}
+{% assign whatsapp_text = page.whatsapp_text | default: brand.whatsapp_text | uri_escape %}
 {% assign whatsapp_link = 'https://wa.me/' | append: brand.whatsapp_number | append: '?text=' | append: whatsapp_text %}
 {% assign primary_cta_url = page.primary_cta_url | default: whatsapp_link %}
 
@@ -30,7 +30,7 @@ layout: compress
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 px-md-4">
             <div class="restaurant-page-shell">
-              {% unless page.title == 'Menu Prasmanan' or page.title == 'Menu Box' or page.page_key == 'menu' or page.page_key == 'tourism' %}
+              {% unless page.title == 'Menu Prasmanan' or page.title == 'Menu Box' or page.page_key == 'menu' or page.page_key == 'tourism' or page.page_key == 'maps_order' %}
                 <section class="page-hero">
                   <div class="page-hero-grid">
                     <div>
@@ -45,7 +45,11 @@ layout: compress
                             <a class="restaurant-button restaurant-button-primary" href="{{ primary_cta_url }}" target="_blank" rel="noreferrer">{{ page.primary_cta | default: 'Tanya via WhatsApp' }}</a>
                           {% endif %}
                           {% if page.secondary_cta_url %}
-                            <a class="restaurant-button restaurant-button-secondary" href="{{ page.secondary_cta_url | relative_url }}">{{ page.secondary_cta_label }}</a>
+                            {% if page.secondary_cta_url contains '://' %}
+                              <a class="restaurant-button restaurant-button-secondary" href="{{ page.secondary_cta_url }}" target="_blank" rel="noreferrer">{{ page.secondary_cta_label }}</a>
+                            {% else %}
+                              <a class="restaurant-button restaurant-button-secondary" href="{{ page.secondary_cta_url | relative_url }}">{{ page.secondary_cta_label }}</a>
+                            {% endif %}
                           {% endif %}
                         </div>
                       {% endunless %}
@@ -252,6 +256,83 @@ layout: compress
                     {% endfor %}
                   </div>
                 </section>
+              {% elsif page.page_key == 'maps_order' %}
+                {% assign maps_order_text = page.whatsapp_text | default: brand.whatsapp_text | uri_escape %}
+                {% assign maps_order_link = 'https://wa.me/' | append: brand.whatsapp_number | append: '?text=' | append: maps_order_text %}
+                <section class="maps-order-hero">
+                  <div class="maps-order-hero-copy">
+                    <p class="restaurant-eyebrow">{{ page.hero_eyebrow }}</p>
+                    <h1>{{ page.hero_title }}</h1>
+                    <p class="restaurant-lead">{{ page.hero_description }}</p>
+                    <div class="maps-order-actions">
+                      <a class="restaurant-button maps-order-menu-button" href="{{ '/#menu-pilihan' | relative_url }}">
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
+                        <span>Lihat Menu</span>
+                      </a>
+                      <a class="restaurant-button maps-order-primary" href="{{ maps_order_link }}" target="_blank" rel="noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span>Pesan via WhatsApp</span>
+                      </a>
+                      <a class="restaurant-button maps-order-secondary" href="{{ brand.maps_url }}" target="_blank" rel="noreferrer">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <span>Buka Google Maps</span>
+                      </a>
+                    </div>
+                    <div class="maps-order-trust-row" aria-label="Info singkat RM. APAYAA">
+                      <span><i class="fas fa-clock" aria-hidden="true"></i> 09.00 - 20.00 WIB</span>
+                      <span><i class="fas fa-utensils" aria-hidden="true"></i> Menu harian & rombongan</span>
+                      <span><i class="fas fa-bus" aria-hidden="true"></i> Parkir bus</span>
+                    </div>
+                  </div>
+                  <div class="maps-order-hero-media">
+                    <iframe
+                      title="Google Maps RM. APAYAA Tuwel Guci"
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      src="https://www.google.com/maps?q=RM%20APAYAA%20Tuwel%20Bojong%20Tegal&z=15&output=embed">
+                    </iframe>
+                  </div>
+                </section>
+
+                <section class="maps-order-flow" aria-labelledby="maps-order-flow-title">
+                  <div class="maps-order-flow-heading">
+                    <p class="restaurant-eyebrow">Alur order</p>
+                    <h2 id="maps-order-flow-title">Pesan dulu, datang lebih tenang.</h2>
+                  </div>
+                  <div class="maps-order-flow-grid">
+                    <article>
+                      <span>1</span>
+                      <i class="fas fa-utensils" aria-hidden="true"></i>
+                      <h3>Pilih menu</h3>
+                      <p>Buka daftar menu, lalu tentukan menu makan, prasmanan, atau menu box.</p>
+                    </article>
+                    <article>
+                      <span>2</span>
+                      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                      <h3>Kirim detail</h3>
+                      <p>Chat jumlah orang, jam datang, tanggal, dan pilihan menu ke admin.</p>
+                    </article>
+                    <article>
+                      <span>3</span>
+                      <i class="fas fa-circle-check" aria-hidden="true"></i>
+                      <h3>Konfirmasi admin</h3>
+                      <p>Admin bantu cek ketersediaan menu, tempat, dan estimasi persiapan.</p>
+                    </article>
+                    <article>
+                      <span>4</span>
+                      <i class="fas fa-location-dot" aria-hidden="true"></i>
+                      <h3>Datang sesuai rute</h3>
+                      <p>Setelah aman, buka Google Maps dan menuju RM. APAYAA Tuwel Guci.</p>
+                    </article>
+                  </div>
+                </section>
+
+                <div class="maps-order-sticky-cta">
+                  <a href="{{ maps_order_link }}" target="_blank" rel="noreferrer">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    Pesan via WhatsApp
+                  </a>
+                </div>
               {% elsif page.page_key == 'whatsapp' %}
                 <section class="restaurant-section">
                   <div class="restaurant-cta-single">

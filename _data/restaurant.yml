@@ -16,8 +16,8 @@ brand:
   hero_stats:
     - value: "5 km"
       label: "sebelum area wisata Guci"
-    - value: "100+"
-      label: "kapasitas lesehan"
+    - value: "200+"
+      label: "kapasitas total tamu"
     - value: "3 bus"
       label: "muat parkir besar"
 home:
@@ -602,7 +602,7 @@ facilities:
     description: "Sekitar 10 meja untuk tamu yang ingin suasana duduk nyaman di dalam ruangan."
     image: "/assets/img/posts/indoor-rm-apayaa.jpg"
   - name: "Area Lesehan"
-    capacity: "Maksimal 100 orang"
+    capacity: "Bagian dari kapasitas total 200+ tamu"
     description: "Sekitar 20 meja lesehan yang cocok untuk keluarga besar, rombongan, dan tamu wisata."
     image: "/assets/img/posts/lesehan-rm-apayaa.jpg"
   - name: "Mushola"
@@ -689,9 +689,11 @@ tourism_entries:
 faqs:
   home:
     - question: "RM APAYAA lokasinya di mana?"
-      answer: "RM APAYAA berada di Jl. Raya Guci, Krajan Barat, Tuwel, Kecamatan Bojong, Kabupaten Tegal, Jawa Tengah. Lokasinya berada di jalur menuju kawasan wisata Guci."
+      answer: "RM APAYAA berada di jalur menuju kawasan wisata Guci, sekitar 7 menit sebelum wisata Guci."
     - question: "Apakah RM APAYAA cocok untuk keluarga dan rombongan?"
       answer: "Ya, RM APAYAA memiliki area indoor, area lesehan, mushola, toilet, dan parkir luas sehingga cocok untuk keluarga, rombongan wisata, komunitas, maupun acara."
+    - question: "Berapa kapasitas RM APAYAA?"
+      answer: "Kapasitas total RM APAYAA sekitar 200+ tamu, mencakup area indoor dan area lesehan."
     - question: "Bagaimana cara reservasi atau tanya menu?"
       answer: "Pengunjung bisa langsung menghubungi admin melalui WhatsApp untuk tanya menu, reservasi tempat, paket rombongan, menu prasmanan, atau menu box."
   menu:

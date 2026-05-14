@@ -9,6 +9,7 @@ icon: fas fa-cubes
 order: 3
 layout: restaurant-page
 page_key: packages
+faq_key: menu_box
 permalink: /menu-box/
 hero_title: "Menu box yang cocok untuk kebutuhan acara dan layanan praktis."
 hero_description: "Halaman ini tetap memakai katalog paket yang sama agar informasi menu box dan prasmanan konsisten."

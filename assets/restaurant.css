@@ -3262,6 +3262,17 @@ html[data-mode="dark"] .catering-card-frame {
   box-shadow: 6px 6px 0 rgba(245, 158, 11, 0.25);
 }
 
+html[data-mode="dark"] .prasmanan-transit-highlight {
+  border-color: rgba(245, 158, 11, 0.38);
+  background:
+    radial-gradient(circle at 8% 20%, rgba(251, 191, 36, 0.2), transparent 28%),
+    linear-gradient(135deg, #1f2933 0%, #27272a 56%, #101827 100%);
+}
+
+html[data-mode="dark"] .prasmanan-transit-points li {
+  color: #fff7ed;
+}
+
 html[data-mode="dark"] .simple-pricing-card-popular .simple-pricing-layer,
 html[data-mode="dark"] .simple-pricing-card-utama .simple-pricing-layer,
 html[data-mode="dark"] .simple-pricing-card-prasmanan .simple-pricing-layer,
@@ -3370,6 +3381,7 @@ html[data-mode="dark"] .simple-video-stats article {
   .restaurant-quote-grid,
   .menu-board-grid,
   .prasmanan-card-grid,
+  .prasmanan-transit-highlight,
   .catering-card-grid {
     grid-template-columns: 1fr;
   }
@@ -3842,6 +3854,125 @@ html[data-mode="dark"] .menu-catalog-section .menu-main-card .simple-pricing-lis
   margin-top: 1.35rem;
 }
 
+.prasmanan-transit-highlight {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: center;
+  width: min(100%, 780px);
+  margin: 1.45rem auto 0;
+  padding: clamp(1rem, 2.4vw, 1.35rem);
+  border: 1px solid rgba(251, 191, 36, 0.38);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 8% 20%, rgba(251, 191, 36, 0.24), transparent 28%),
+    linear-gradient(135deg, #1f2933 0%, #27272a 56%, #101827 100%);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.16);
+  overflow: hidden;
+}
+
+.prasmanan-transit-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-top: 5px solid #f59e0b;
+  pointer-events: none;
+}
+
+.prasmanan-transit-time {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-width: 9rem;
+  min-height: 9rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: #f59e0b;
+  color: #1f2933;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.prasmanan-transit-time span,
+.prasmanan-transit-time small {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.prasmanan-transit-time strong {
+  margin: 0.2rem 0;
+  font-family: var(--font-mono);
+  font-size: clamp(2.2rem, 6vw, 3.25rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.prasmanan-transit-copy {
+  min-width: 0;
+}
+
+.prasmanan-transit-copy .restaurant-eyebrow {
+  color: #fbbf24;
+}
+
+.prasmanan-transit-copy h2 {
+  margin: 0;
+  max-width: 20ch;
+  color: #ffffff;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.prasmanan-transit-copy p:last-child {
+  margin: 0.55rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+}
+
+.prasmanan-transit-points {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  gap: 0.55rem 0.65rem;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prasmanan-transit-points li {
+  display: flex;
+  align-items: center;
+  gap: 0.48rem;
+  min-width: 0;
+  padding: 0.52rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff7ed;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.prasmanan-transit-points i {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: rgba(22, 163, 74, 0.14);
+  color: #15803d;
+  font-size: 0.68rem;
+}
+
 .menu-main-poster-image {
   width: min(100%, 780px);
   margin: 0;
@@ -4249,6 +4380,51 @@ html[data-mode="dark"] .maps-order-flow-grid i {
 }
 
 @media (max-width: 575px) {
+  .prasmanan-transit-highlight {
+    gap: 0.85rem;
+    margin-top: 1.05rem;
+    padding: 0.85rem;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.18);
+  }
+
+  .prasmanan-transit-time {
+    width: 100%;
+    min-width: 0;
+    min-height: 6.25rem;
+    padding: 0.75rem;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .prasmanan-transit-time strong {
+    font-size: 2.65rem;
+  }
+
+  .prasmanan-transit-time span,
+  .prasmanan-transit-time small {
+    font-size: 0.66rem;
+  }
+
+  .prasmanan-transit-copy h2 {
+    font-size: 1.35rem;
+    max-width: 17ch;
+  }
+
+  .prasmanan-transit-copy p:last-child {
+    font-size: 0.92rem;
+    line-height: 1.58;
+  }
+
+  .prasmanan-transit-points {
+    gap: 0.45rem;
+  }
+
+  .prasmanan-transit-points li {
+    width: 100%;
+    padding: 0.52rem 0.62rem;
+    border-radius: 8px;
+    font-size: 0.86rem;
+  }
+
   .maps-order-hero {
     margin-inline: -0.25rem;
     padding: 0.65rem;

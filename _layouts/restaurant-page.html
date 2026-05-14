@@ -114,6 +114,28 @@ layout: compress
                           <p class="restaurant-lead">{{ restaurant.prasmanan_items.note }}</p>
                         </div>
                       </div>
+                      {% if restaurant.prasmanan_items.transit_highlight %}
+                        {% assign transit = restaurant.prasmanan_items.transit_highlight %}
+                        <div class="prasmanan-transit-highlight">
+                          <div class="prasmanan-transit-time">
+                            <span>Mulai</span>
+                            <strong>04.00</strong>
+                            <small>WIB</small>
+                          </div>
+                          <div class="prasmanan-transit-copy">
+                            <p class="restaurant-eyebrow">{{ transit.eyebrow }}</p>
+                            <h2>{{ transit.title }}</h2>
+                            <p>{{ transit.text }}</p>
+                          </div>
+                          {% if transit.points %}
+                            <ul class="prasmanan-transit-points">
+                              {% for point in transit.points %}
+                                <li><i class="fas fa-check" aria-hidden="true"></i>{{ point }}</li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                        </div>
+                      {% endif %}
                       <div class="menu-main-poster-stack">
                         <figure class="menu-main-poster-image">
                           <img src="{{ '/assets/img/menus/catering-prasmanan/transit.jpg' | relative_url }}" alt="Foto informasi transit prasmanan RM. APAYAA" loading="lazy">

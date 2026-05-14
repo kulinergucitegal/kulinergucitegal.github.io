@@ -366,6 +366,14 @@ packages:
 prasmanan_items:
   note: "Minimal order 30 pax per item"
   cta: "Tanyakan kombinasi menu ke admin"
+  transit_highlight:
+    eyebrow: "Transit Pagi"
+    title: "Transit pagi buka pukul 04.00 WIB"
+    text: "Khusus transit pagi, rombongan perlu booking terlebih dahulu. Cocok untuk tamu yang tiba subuh sebelum naik ke wisata Guci, bisa sholat subuh, istirahat, lalu sarapan pagi mulai pukul 06.30 WIB."
+    points:
+      - "Sholat Subuh"
+      - "Istirahat"
+      - "Sarapan Ready 06:30 WIB"
   items:
     - name: "Nasi Liwet"
       price: "20k"
@@ -704,12 +712,21 @@ faqs:
     - question: "Apakah menu utama bisa dipesan untuk makan rombongan?"
       answer: "Bisa. Untuk rombongan, sebaiknya menghubungi admin lebih dulu agar pilihan menu, jumlah porsi, dan waktu kedatangan bisa disiapkan."
   packages:
-    - question: "Apakah tersedia paket prasmanan?"
-      answer: "Ya, RM APAYAA menyediakan paket prasmanan untuk keluarga besar, komunitas, kantor, panitia, dan rombongan wisata di sekitar Guci Tegal."
-    - question: "Apakah tersedia menu box atau nasi box?"
-      answer: "Ya, tersedia menu box untuk acara, rapat, panitia, dan kebutuhan konsumsi praktis. Pilihan menu bisa dikonsultasikan lewat WhatsApp."
+    - question: "Menu prasmanan RM APAYAA apa saja?"
+      answer: "Menu prasmanan RM APAYAA mencakup nasi liwet, pecel sayur, ikan lele, ikan nila, ayam broiler, garang asem, rendang sapi, ayam kampung, dan sate kambing. Pilihan menu bisa dikonsultasikan sesuai kebutuhan rombongan."
+    - question: "Apakah bisa transit pagi sebelum ke wisata Guci?"
+      answer: "Bisa, dengan booking terlebih dahulu. Transit pagi buka pukul 04.00 WIB untuk rombongan yang tiba subuh sebelum menuju wisata Guci. Tamu bisa sholat subuh, istirahat, lalu sarapan ready pukul 06:30 WIB."
     - question: "Berapa minimal order paket rombongan?"
-      answer: "Minimal order mengikuti jenis paket yang dipilih. Silakan cek halaman menu paket atau hubungi admin untuk memastikan jumlah, pilihan lauk, dan jadwal penyajian."
+      answer: "Minimal order paket prasmanan adalah 30 pax. Untuk jumlah tamu, jadwal kedatangan, atau kebutuhan khusus, silakan konfirmasi terlebih dahulu ke admin."
+    - question: "Apakah bisa request menu?"
+      answer: "Bisa. Pilihan menu dapat disesuaikan dengan kebutuhan rombongan, acara, dan jadwal kedatangan. Silakan hubungi admin untuk konsultasi menu."
+  menu_box:
+    - question: "Menu box RM APAYAA apa saja?"
+      answer: "Menu box RM APAYAA mencakup nasi liwet, ayam broiler, ikan nila, rendang sapi, ayam kampung, sate ayam, dan sate kambing. Pilihan menu bisa dikonsultasikan sesuai kebutuhan acara atau rombongan."
+    - question: "Apakah bisa diantar sampai lokasi?"
+      answer: "Bisa diantar sampai lokasi. Khusus wilayah wisata Guci free ongkir, sedangkan wilayah lain menyesuaikan jarak pengantaran."
+    - question: "Apakah bisa request menu?"
+      answer: "Bisa. Pilihan menu dapat disesuaikan dengan kebutuhan rombongan, acara, dan jadwal kedatangan. Silakan hubungi admin untuk konsultasi menu."
   facilities:
     - question: "Fasilitas apa saja yang tersedia di RM APAYAA?"
       answer: "Fasilitas RM APAYAA meliputi area indoor, area lesehan, mushola, toilet, tempat wudhu, dan area parkir luas."

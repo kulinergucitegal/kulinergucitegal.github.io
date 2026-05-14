@@ -17,8 +17,6 @@ ticket_faqs:
     answer: Belum tentu. Tiket retribusi adalah biaya masuk kawasan, sedangkan beberapa spot seperti Pancuran 13, The Geong, Golden Park, dan Guci Forest dapat memiliki tiket masuk sendiri.
   - question: Apakah Pancuran 5 gratis?
     answer: Pancuran 5 dapat dinikmati gratis setelah membayar retribusi kawasan, mengikuti catatan harga pada halaman ini.
-  - question: Berapa estimasi biaya kalau ingin ke Pancuran 13?
-    answer: Jika dihitung dengan retribusi kawasan, estimasinya sekitar Rp38.000 sampai Rp47.500 per orang, belum termasuk parkir dan kebutuhan lain.
   - question: Kapan waktu terbaik datang ke Guci?
     answer: Datang pagi hari biasanya lebih nyaman, terutama saat akhir pekan atau musim liburan. Selain udara masih segar, antrean tiket dan kepadatan area wisata biasanya lebih mudah diatur.
 cta_title: Sebelum naik ke Guci, makan dulu di jalur Tuwel.
@@ -34,74 +32,6 @@ image:
 Wisata Guci Tegal dikenal sebagai kawasan pemandian air panas di Kabupaten Tegal, Jawa Tengah. Dalam satu kawasan, pengunjung bisa memilih aktivitas yang santai untuk keluarga, mulai dari berendam, jalan-jalan di area pegunungan, sampai mampir ke spot foto dan wahana rekreasi.
 
 Sebelum berangkat, gunakan daftar harga 2026 ini sebagai gambaran biaya awal. Beberapa spot memiliki tiket terpisah dari retribusi kawasan, jadi sebaiknya siapkan biaya lebih untuk parkir, wahana tambahan, dan kebutuhan pribadi.
-
-<section class="ticket-summary" aria-labelledby="ringkasan-harga">
-  <div class="ticket-summary-heading">
-    <p class="restaurant-eyebrow">Ringkasan</p>
-    <h2 id="ringkasan-harga">Daftar harga tiket wisata Guci 2026</h2>
-  </div>
-  <div class="ticket-price-list">
-    <div class="ticket-price-row">
-      <span>Tiket retribusi Guci</span>
-      <strong>Rp13.000 - Rp20.000</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Pancuran 5</span>
-      <strong>Gratis</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Pancuran 13</span>
-      <strong>Rp25.000 - Rp27.500</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>The Geong</span>
-      <strong>Rp25.000</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Golden Park</span>
-      <strong>Rp30.000</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Guci Forest</span>
-      <strong>Rp28.000</strong>
-    </div>
-  </div>
-  <p class="ticket-summary-note">Nominal di atas adalah referensi dari materi foto dan catatan halaman ini. Harga spot wisata berbayar umumnya belum termasuk tiket retribusi kawasan Guci.</p>
-</section>
-
-<section class="ticket-summary ticket-estimate" aria-labelledby="estimasi-biaya">
-  <div class="ticket-summary-heading">
-    <p class="restaurant-eyebrow">Estimasi</p>
-    <h2 id="estimasi-biaya">Perkiraan biaya kunjungan per orang</h2>
-  </div>
-  <div class="ticket-price-list">
-    <div class="ticket-price-row">
-      <span>Masuk kawasan Guci saja</span>
-      <strong>Rp13.000 - Rp20.000</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Kawasan Guci + Pancuran 5</span>
-      <strong>Rp13.000 - Rp20.000</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Kawasan Guci + Pancuran 13</span>
-      <strong>Rp38.000 - Rp47.500</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Kawasan Guci + The Geong</span>
-      <strong>Rp38.000 - Rp45.000</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Kawasan Guci + Golden Park</span>
-      <strong>Rp43.000 - Rp50.000</strong>
-    </div>
-    <div class="ticket-price-row">
-      <span>Kawasan Guci + Guci Forest</span>
-      <strong>Rp41.000 - Rp48.000</strong>
-    </div>
-  </div>
-  <p class="ticket-summary-note">Estimasi belum termasuk parkir, makan, toilet, sewa perlengkapan, atau tiket wahana lain di dalam destinasi.</p>
-</section>
 
 ## Tiket retribusi kawasan Guci
 
@@ -171,6 +101,40 @@ _Harga tiket Guci Forest_
   <strong>Parkir:</strong> motor Rp5.000, mobil Rp10.000, bus Rp50.000.
 </div>
 
+<section class="ticket-summary" aria-labelledby="ringkasan-harga">
+  <div class="ticket-summary-heading">
+    <p class="restaurant-eyebrow">Ringkasan</p>
+    <h2 id="ringkasan-harga">Daftar harga tiket wisata Guci 2026</h2>
+  </div>
+  <div class="ticket-price-list">
+    <div class="ticket-price-row">
+      <span>Tiket retribusi Guci</span>
+      <strong>Rp13.000 - Rp20.000</strong>
+    </div>
+    <div class="ticket-price-row">
+      <span>Pancuran 5</span>
+      <strong>Gratis</strong>
+    </div>
+    <div class="ticket-price-row">
+      <span>Pancuran 13</span>
+      <strong>Rp25.000 - Rp27.500</strong>
+    </div>
+    <div class="ticket-price-row">
+      <span>The Geong</span>
+      <strong>Rp25.000</strong>
+    </div>
+    <div class="ticket-price-row">
+      <span>Golden Park</span>
+      <strong>Rp30.000</strong>
+    </div>
+    <div class="ticket-price-row">
+      <span>Guci Forest</span>
+      <strong>Rp28.000</strong>
+    </div>
+  </div>
+  <p class="ticket-summary-note">Nominal di atas adalah referensi dari materi foto dan catatan halaman ini. Harga spot wisata berbayar umumnya belum termasuk tiket retribusi kawasan Guci.</p>
+</section>
+
 ## Tips sebelum berangkat
 
 - Cek kembali harga terbaru sebelum hari kunjungan, terutama saat akhir pekan dan musim liburan.
@@ -178,4 +142,4 @@ _Harga tiket Guci Forest_
 - Datang lebih pagi jika ingin suasana lebih lengang.
 - Untuk rombongan, tentukan titik kumpul dan rencana makan sebelum naik ke kawasan wisata.
 
-Dengan berbagai pilihan seperti Pancuran 5, Pancuran 13, The Geong, Golden Park, dan Guci Forest, Wisata Guci Tegal bisa disesuaikan dengan gaya perjalanan keluarga maupun rombongan. Kalau ingin makan dulu sebelum naik atau setelah pulang dari Guci, RM. APAYAA bisa menjadi titik singgah di jalur Tuwel.
+Dengan pilihan seperti Pancuran 5, Pancuran 13, The Geong, Golden Park, dan Guci Forest, perjalanan ke Wisata Guci Tegal bisa dibuat santai sesuai kebutuhan keluarga maupun rombongan. Jika ingin makan dulu sebelum naik ke kawasan wisata, atau mencari tempat singgah setelah pulang dari Guci, RM. APAYAA bisa menjadi pilihan di jalur Tuwel.

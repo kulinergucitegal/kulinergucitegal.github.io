@@ -4342,7 +4342,32 @@ html[data-mode="dark"] .restaurant-faq-item {
 }
 
 .maps-order-sticky-cta {
-  display: none;
+  position: sticky;
+  right: 0;
+  bottom: 1.25rem;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1.25rem 0;
+  pointer-events: none;
+}
+
+.maps-order-sticky-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: fit-content;
+  min-width: 13.5rem;
+  padding: 0.95rem 1.15rem;
+  border-radius: 999px;
+  background: #22c55e;
+  color: #052e16;
+  box-shadow: 0 16px 34px rgba(34, 197, 94, 0.24);
+  font-weight: 800;
+  text-decoration: none;
+  pointer-events: auto;
 }
 
 html[data-mode="dark"] .maps-order-flow-grid article,
@@ -4470,27 +4495,14 @@ html[data-mode="dark"] .maps-order-flow-grid i {
   }
 
   .maps-order-sticky-cta {
-    display: block;
-    position: sticky;
-    right: 0;
+    display: flex;
     bottom: 0.75rem;
-    left: 0;
-    z-index: 20;
+    justify-content: stretch;
     margin: 1rem 0;
   }
 
   .maps-order-sticky-cta a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.55rem;
     width: 100%;
-    padding: 0.95rem 1rem;
-    border-radius: 999px;
-    background: #22c55e;
-    color: #052e16;
-    box-shadow: 0 16px 34px rgba(34, 197, 94, 0.24);
-    font-weight: 800;
-    text-decoration: none;
+    min-width: 0;
   }
 }

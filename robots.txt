@@ -1,0 +1,9 @@
+---
+---
+User-agent: *
+Allow: /
+
+Disallow: /norobots/
+Disallow: /tabs/
+
+Sitemap: https://kulinergucitegal.com/sitemap.xml

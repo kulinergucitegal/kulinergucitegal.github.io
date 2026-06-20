@@ -11,8 +11,8 @@ brand:
   opening_hours: "Setiap hari, 09.00 - 20.00 WIB"
   accepts_reservations: true
   geo:
-    latitude:
-    longitude:
+    latitude: -7.1611379
+    longitude: 109.1481706
   hero_stats:
     - value: "5 km"
       label: "sebelum area wisata Guci"

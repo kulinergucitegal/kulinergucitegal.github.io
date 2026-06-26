@@ -4382,16 +4382,22 @@ html[data-mode="dark"] .restaurant-faq-item {
 .maps-order-sticky-cta a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 50%;
+  gap: 0.45rem;
+  height: 3rem;
+  padding: 0 1.1rem 0 0.9rem;
+  border-radius: 999px;
   background: #22c55e;
   color: #ffffff;
-  font-size: 1.45rem;
+  font-size: 0.88rem;
+  font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
   animation: maps-cta-glow 2.8s ease-in-out infinite;
   transition: transform 140ms ease;
+}
+
+.maps-order-sticky-cta a i {
+  font-size: 1.2rem;
 }
 
 html[data-mode="dark"] .maps-order-flow-grid article,

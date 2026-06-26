@@ -281,14 +281,16 @@ layout: compress
 
     <script>
       (function () {
-        var cta = document.querySelector('.maps-order-sticky-cta');
-        if (!cta) return;
-        var targets = document.querySelectorAll('.simple-preview-cta-button, .simple-video-action-primary');
+        var fab = document.querySelector('.maps-order-sticky-cta');
+        if (!fab) return;
+        var targets = Array.from(document.querySelectorAll('a[href*="wa.me"]')).filter(function (el) {
+          return !el.closest('.maps-order-sticky-cta');
+        });
         if (!targets.length) return;
         var io = new IntersectionObserver(function (entries) {
           var visible = entries.some(function (e) { return e.isIntersecting; });
-          cta.classList.toggle('is-hidden', visible);
-        }, { threshold: 0.2 });
+          fab.classList.toggle('is-hidden', visible);
+        }, { threshold: 0 });
         targets.forEach(function (t) { io.observe(t); });
       }());
     </script>

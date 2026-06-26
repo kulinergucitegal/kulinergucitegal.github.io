@@ -4033,9 +4033,10 @@ html[data-mode="dark"] .restaurant-faq-item {
   border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: calc(var(--radius) + 12px);
   background:
-    linear-gradient(135deg, rgba(17, 17, 17, 0.94), rgba(41, 37, 36, 0.9)),
+    radial-gradient(ellipse at 72% 28%, rgba(251, 191, 36, 0.09) 0%, transparent 52%),
+    linear-gradient(135deg, rgba(17, 17, 17, 0.96), rgba(41, 37, 36, 0.92)),
     var(--card);
-  box-shadow: 0 28px 70px rgba(var(--shadow-color), 0.16);
+  box-shadow: 0 28px 70px rgba(var(--shadow-color), 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   overflow: hidden;
 }
 
@@ -4063,6 +4064,10 @@ html[data-mode="dark"] .restaurant-faq-item {
   font-size: clamp(1.65rem, 2.65vw, 2.55rem);
   font-weight: 800;
   line-height: 1.12;
+  background: linear-gradient(145deg, #ffffff 55%, rgba(251, 191, 36, 0.88));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .maps-order-hero .restaurant-lead {
@@ -4146,9 +4151,9 @@ html[data-mode="dark"] .restaurant-faq-item {
 
 .maps-order-flow-heading {
   display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
   margin-bottom: 0.85rem;
 }
 
@@ -4176,6 +4181,23 @@ html[data-mode="dark"] .restaurant-faq-item {
   border-radius: var(--radius);
   background: var(--card);
   box-shadow: 0 14px 34px rgba(var(--shadow-color), 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.maps-order-flow-grid article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.55), transparent);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.maps-order-flow-grid article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 48px rgba(var(--shadow-color), 0.11);
 }
 
 .maps-order-flow-grid span {
@@ -4188,11 +4210,12 @@ html[data-mode="dark"] .restaurant-faq-item {
   width: 2rem;
   height: 2rem;
   border-radius: 999px;
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: #fbbf24;
+  color: #1c1917;
   font-family: var(--font-mono);
   font-weight: 800;
   font-size: 0.84rem;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.32);
 }
 
 .maps-order-flow-grid i {
@@ -4203,9 +4226,10 @@ html[data-mode="dark"] .restaurant-faq-item {
   height: 2.55rem;
   margin-bottom: 0.85rem;
   border-radius: 999px;
-  background: rgba(34, 197, 94, 0.12);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(34, 197, 94, 0.07));
   color: #15803d;
   font-size: 1.05rem;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.14);
 }
 
 .maps-order-flow-grid h3,
@@ -4351,6 +4375,13 @@ html[data-mode="dark"] .restaurant-faq-item {
   justify-content: flex-end;
   margin: 1.25rem 0;
   pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.maps-order-sticky-cta.is-hidden {
+  opacity: 0;
+  pointer-events: none !important;
+  transform: translateY(8px);
 }
 
 .maps-order-sticky-cta a {
@@ -4368,6 +4399,8 @@ html[data-mode="dark"] .restaurant-faq-item {
   font-weight: 800;
   text-decoration: none;
   pointer-events: auto;
+  animation: maps-cta-glow 2.8s ease-in-out infinite;
+  transition: transform 140ms ease;
 }
 
 html[data-mode="dark"] .maps-order-flow-grid article,
@@ -4378,7 +4411,7 @@ html[data-mode="dark"] .maps-order-location {
 }
 
 html[data-mode="dark"] .maps-order-flow-grid i {
-  background: rgba(34, 197, 94, 0.18);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.24), rgba(34, 197, 94, 0.1));
   color: #86efac;
 }
 
@@ -4505,4 +4538,65 @@ html[data-mode="dark"] .maps-order-flow-grid i {
     width: 100%;
     min-width: 0;
   }
+}
+
+.maps-order-phone-link {
+  margin: 0.55rem 0 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.8rem;
+}
+
+.maps-order-phone-link a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+.maps-order-phone-link a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.maps-order-rating-badge i {
+  color: #fbbf24;
+}
+
+.maps-order-map-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.52rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(12, 17, 24, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.78rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.maps-order-map-badge i {
+  color: #22c55e;
+  font-size: 0.55rem;
+  animation: maps-badge-blink 2s ease-in-out infinite;
+}
+
+.maps-order-sticky-cta a:hover {
+  transform: scale(1.03);
+}
+
+@keyframes maps-badge-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes maps-cta-glow {
+  0%, 100% { box-shadow: 0 16px 34px rgba(34, 197, 94, 0.24); }
+  50% { box-shadow: 0 22px 52px rgba(34, 197, 94, 0.42), 0 0 0 6px rgba(34, 197, 94, 0.1); }
 }

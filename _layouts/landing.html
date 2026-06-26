@@ -246,6 +246,12 @@ layout: compress
                 </section>
               </div>
             </section>
+            <div class="maps-order-sticky-cta">
+              <a href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                Pesan via WhatsApp
+              </a>
+            </div>
           </main>
         </div>
 
@@ -272,5 +278,19 @@ layout: compress
     {% endif %}
 
     {% include_cached search-loader.html lang=lang %}
+
+    <script>
+      (function () {
+        var cta = document.querySelector('.maps-order-sticky-cta');
+        if (!cta) return;
+        var targets = document.querySelectorAll('.simple-preview-cta-button, .simple-video-action-primary');
+        if (!targets.length) return;
+        var io = new IntersectionObserver(function (entries) {
+          var visible = entries.some(function (e) { return e.isIntersecting; });
+          cta.classList.toggle('is-hidden', visible);
+        }, { threshold: 0.2 });
+        targets.forEach(function (t) { io.observe(t); });
+      }());
+    </script>
   </body>
 </html>

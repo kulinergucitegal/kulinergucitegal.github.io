@@ -287,19 +287,21 @@ layout: compress
                     <h1>{{ page.hero_title }}</h1>
                     <p class="restaurant-lead">{{ page.hero_description }}</p>
                     <div class="maps-order-actions">
+                      <a class="restaurant-button maps-order-primary" href="{{ maps_order_link }}" target="_blank" rel="noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span>{{ page.primary_cta }}</span>
+                      </a>
                       <a class="restaurant-button maps-order-menu-button" href="{{ '/#menu-pilihan' | relative_url }}">
                         <i class="fas fa-utensils" aria-hidden="true"></i>
                         <span>Lihat Menu</span>
                       </a>
-                      <a class="restaurant-button maps-order-secondary" href="{{ brand.maps_url }}" target="_blank" rel="noreferrer">
-                        <i class="fas fa-location-dot" aria-hidden="true"></i>
-                        <span>Buka Google Maps</span>
-                      </a>
                     </div>
+                    <p class="maps-order-phone-link">atau telepon: <a href="tel:+{{ brand.whatsapp_number }}">{{ brand.phone_label }}</a></p>
                     <div class="maps-order-trust-row" aria-label="Info singkat RM. APAYAA">
+                      {% if brand.google_rating %}
+                        <span class="maps-order-rating-badge"><i class="fas fa-star" aria-hidden="true"></i> {{ brand.google_rating }} · {{ brand.google_review_count }} ulasan</span>
+                      {% endif %}
                       <span><i class="fas fa-clock" aria-hidden="true"></i> 09.00 - 20.00 WIB</span>
-                      <span><i class="fas fa-utensils" aria-hidden="true"></i> Menu harian & rombongan</span>
-                      <span><i class="fas fa-bus" aria-hidden="true"></i> Parkir bus</span>
                     </div>
                   </div>
                   <div class="maps-order-hero-media">
@@ -322,7 +324,7 @@ layout: compress
                       <span>1</span>
                       <i class="fas fa-utensils" aria-hidden="true"></i>
                       <h3>Pilih menu</h3>
-                      <p>Buka daftar menu, lalu tentukan menu makan, prasmanan, atau menu box.</p>
+                      <p>Pilih dari daftar menu, tentukan jenis makan biasa, prasmanan, atau menu box.</p>
                     </article>
                     <article>
                       <span>2</span>
@@ -334,23 +336,17 @@ layout: compress
                       <span>3</span>
                       <i class="fas fa-circle-check" aria-hidden="true"></i>
                       <h3>Konfirmasi admin</h3>
-                      <p>Admin bantu cek ketersediaan menu, tempat, dan estimasi persiapan.</p>
+                      <p>Admin konfirmasi ketersediaan menu, tempat, dan waktu persiapan.</p>
                     </article>
                     <article>
                       <span>4</span>
                       <i class="fas fa-location-dot" aria-hidden="true"></i>
-                      <h3>Datang sesuai rute</h3>
-                      <p>Setelah aman, buka Google Maps dan menuju RM. APAYAA Tuwel Guci.</p>
+                      <h3>Berangkat ke lokasi</h3>
+                      <p>Setelah dikonfirmasi, buka Google Maps dan berangkat ke RM. APAYAA.</p>
                     </article>
                   </div>
                 </section>
 
-                <div class="maps-order-sticky-cta">
-                  <a href="{{ maps_order_link }}" target="_blank" rel="noreferrer">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    Pesan via WhatsApp
-                  </a>
-                </div>
               {% elsif page.page_key == 'whatsapp' %}
                 <section class="restaurant-section">
                   <div class="restaurant-cta-single">
@@ -364,6 +360,15 @@ layout: compress
               {% unless page.hide_faq %}
                 {% include restaurant-faq.html %}
               {% endunless %}
+
+              {% if page.page_key == 'menu' or page.page_key == 'packages' or page.page_key == 'maps_order' %}
+                <div class="maps-order-sticky-cta">
+                  <a href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    Pesan via WhatsApp
+                  </a>
+                </div>
+              {% endif %}
             </div>
           </main>
         </div>
@@ -391,5 +396,21 @@ layout: compress
     {% endif %}
 
     {% include_cached search-loader.html lang=lang %}
+
+    <script>
+      (function () {
+        var cta = document.querySelector('.maps-order-sticky-cta');
+        if (!cta) return;
+        var targets = document.querySelectorAll(
+          '.restaurant-cta a, .restaurant-cta-single a, .menu-catalog-cta a, .prasmanan-cta a, .catering-cta a, .restaurant-split .restaurant-actions a'
+        );
+        if (!targets.length) return;
+        var io = new IntersectionObserver(function (entries) {
+          var visible = entries.some(function (e) { return e.isIntersecting; });
+          cta.classList.toggle('is-hidden', visible);
+        }, { threshold: 0.2 });
+        targets.forEach(function (t) { io.observe(t); });
+      }());
+    </script>
   </body>
 </html>

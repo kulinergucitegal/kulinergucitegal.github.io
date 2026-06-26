@@ -10,6 +10,8 @@ brand:
   address: "Jl. Raya Guci, Krajan Barat, Tuwel, Kec. Bojong, Kabupaten Tegal, Jawa Tengah 52465"
   opening_hours: "Setiap hari, 09.00 - 20.00 WIB"
   accepts_reservations: true
+  google_rating: "4.7"
+  google_review_count: "567"
   geo:
     latitude: -7.1611379
     longitude: 109.1481706

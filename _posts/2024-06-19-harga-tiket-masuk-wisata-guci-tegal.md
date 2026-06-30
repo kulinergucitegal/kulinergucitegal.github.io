@@ -143,3 +143,5 @@ _Harga tiket Guci Forest_
 - Untuk rombongan, tentukan titik kumpul dan rencana makan sebelum naik ke kawasan wisata.
 
 Dengan pilihan seperti Pancuran 5, Pancuran 13, The Geong, Golden Park, dan Guci Forest, perjalanan ke Wisata Guci Tegal bisa dibuat santai sesuai kebutuhan keluarga maupun rombongan. Jika ingin makan dulu sebelum naik ke kawasan wisata, atau mencari tempat singgah setelah pulang dari Guci, RM. APAYAA bisa menjadi pilihan di jalur Tuwel.
+
+Panduan lengkap rute menuju RM. APAYAA dari Exit Tol Tegal maupun Exit Tol Pemalang tersedia di [halaman rute singgah makan sebelum ke Guci](/rute-makan-sebelum-naik-ke-guci-tegal/).

@@ -80,3 +80,5 @@ Dari Exit Tol Pemalang, arahkan perjalanan melewati RSU Siaga Medika Pemalang, l
 - Untuk bus atau rombongan besar, pastikan estimasi waktu kedatangan disampaikan sebelum sampai.
 
 Dengan memilih titik makan sebelum naik ke kawasan wisata, perjalanan ke Guci biasanya terasa lebih tertata. Pengunjung bisa makan dulu, beristirahat sebentar, lalu melanjutkan perjalanan ke Pancuran 5, Pancuran 13, Guci Forest, atau spot wisata lain di kawasan Guci.
+
+Lihat [pilihan menu utama RM. APAYAA](/menu-utama/) atau [paket prasmanan untuk rombongan](/menu-prasmanan/) untuk mempersiapkan makan sebelum berangkat ke Guci.

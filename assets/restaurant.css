@@ -2737,6 +2737,47 @@ html[data-mode="dark"] .route-map-card {
   text-align: center;
 }
 
+.simple-preview-pricing .restaurant-button-primary {
+  position: relative;
+  overflow: hidden;
+  animation: pricing-cta-glow 2.4s ease-in-out infinite;
+}
+
+.simple-preview-pricing .restaurant-button-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  animation: pricing-cta-shine 2.8s ease-in-out infinite;
+}
+
+.simple-preview-pricing .restaurant-button-primary:hover {
+  animation-play-state: paused;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 26px rgba(245, 158, 11, 0.45);
+}
+
+@keyframes pricing-cta-glow {
+  0%, 100% { box-shadow: 0 14px 32px rgba(var(--shadow-color), 0.16); }
+  50% { box-shadow: 0 14px 32px rgba(var(--shadow-color), 0.16), 0 0 0 6px rgba(245, 158, 11, 0.16); }
+}
+
+@keyframes pricing-cta-shine {
+  0% { left: -60%; }
+  40%, 100% { left: 130%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .simple-preview-pricing .restaurant-button-primary,
+  .simple-preview-pricing .restaurant-button-primary::after {
+    animation: none;
+  }
+}
+
 .simple-preview-hero-copy {
   display: grid;
   gap: 1rem;

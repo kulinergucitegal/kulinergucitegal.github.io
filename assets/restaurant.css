@@ -5261,3 +5261,101 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
     transform: rotate(0deg);
   }
 }
+
+/* ==================================================================
+   Menu Pilihan di mobile: carousel geser ber-snap.
+   Sebelumnya tiga kartu dipaksa tetap berdampingan di ponsel sehingga
+   lebarnya tinggal 139px, dan deskripsi, checklist, serta badge terpaksa
+   disembunyikan lewat aturan di sekitar baris 3499. Padahal bagian ini
+   adalah jalur konversi utama beranda - tiga pintu menuju tiga halaman
+   menu - jadi justru di ponsel isinya paling dibutuhkan.
+   Sekarang satu kartu memenuhi 82% lebar dengan sedikit intipan kartu
+   berikutnya sebagai penanda bahwa daftarnya bisa digeser.
+   Untuk mengembalikan: git revert pada commit ini.
+   ================================================================== */
+@media (max-width: 991.98px) {
+  .simple-preview-pricing .simple-pricing-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 0.9rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    /* ruang atas-bawah untuk kemiringan kartu dan hard shadow-nya, yang
+       kalau tidak akan terpotong karena overflow-x membuat sumbu y ikut
+       menggulung */
+    padding: 0.7rem 0.2rem 1.2rem;
+    scrollbar-width: none;
+  }
+
+  .simple-preview-pricing .simple-pricing-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .simple-preview-pricing .simple-pricing-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+
+  /* Kembalikan isi yang tadinya disembunyikan demi tiga kolom */
+  .simple-preview-pricing .simple-pricing-badge {
+    display: block;
+  }
+
+  .simple-preview-pricing .simple-pricing-description {
+    display: block;
+    margin-bottom: 0.7rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .simple-preview-pricing .simple-pricing-list {
+    display: grid;
+    margin-bottom: 0.85rem;
+  }
+
+  .simple-preview-pricing .simple-pricing-list li {
+    font-size: 0.84rem;
+    line-height: 1.4;
+  }
+
+  /* Kembalikan ukuran yang tadinya dikecilkan demi tiga kolom */
+  .simple-preview-pricing .simple-pricing-content {
+    padding: 1rem;
+  }
+
+  .simple-preview-pricing .simple-pricing-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-bottom: 0.7rem;
+    border-width: 2px;
+    font-size: 0.95rem;
+  }
+
+  .simple-preview-pricing .simple-pricing-content h3 {
+    min-height: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.3rem;
+    line-height: 1.1;
+  }
+
+  .simple-preview-pricing .simple-pricing-price strong {
+    font-size: 1.45rem;
+  }
+
+  .simple-preview-pricing .simple-pricing-price .simple-pricing-note-optional,
+  .simple-preview-pricing .simple-pricing-price .simple-pricing-note-minimum {
+    margin-top: 0.2rem;
+    font-size: 0.78rem;
+  }
+
+  .simple-preview-pricing .restaurant-button {
+    flex-direction: row;
+    gap: 0;
+    min-height: 2.7rem;
+    padding: 0.62rem 0.9rem;
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+}

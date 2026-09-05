@@ -5263,15 +5263,19 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
 }
 
 /* ==================================================================
-   Menu Pilihan di mobile: carousel geser ber-snap.
+   Menu Pilihan di mobile: tiga kartu bertumpuk satu kolom.
    Sebelumnya tiga kartu dipaksa tetap berdampingan di ponsel sehingga
    lebarnya tinggal 139px, dan deskripsi, checklist, serta badge terpaksa
    disembunyikan lewat aturan di sekitar baris 3499. Padahal bagian ini
    adalah jalur konversi utama beranda - tiga pintu menuju tiga halaman
    menu - jadi justru di ponsel isinya paling dibutuhkan.
-   Sekarang satu kartu memenuhi 82% lebar dengan sedikit intipan kartu
-   berikutnya sebagai penanda bahwa daftarnya bisa digeser.
-   Untuk mengembalikan: git revert pada commit ini.
+
+   Sempat dicoba sebagai carousel geser ber-snap, tapi diganti bertumpuk:
+   menggeser ke samping adalah gerakan yang harus disadari lebih dulu,
+   sementara menggulir ke bawah sudah jadi refleks. Kalau pengunjung tidak
+   sadar bisa digeser, Menu Prasmanan dan Menu Box - dua layanan bernilai
+   paling tinggi - tidak pernah terlihat. Ongkosnya halaman bertambah 772px
+   atau 18%, dan itu jauh lebih murah daripada dua layanan yang tersembunyi.
    ================================================================== */
 @media (max-width: 991.98px) {
   /* Section ini adalah grid item di dalam .simple-preview-shell, dan grid item
@@ -5283,35 +5287,14 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
   }
 
   .simple-preview-pricing .simple-pricing-grid {
-    display: flex;
-    grid-template-columns: none;
-    gap: 0.9rem;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 0;
-    /* ruang atas-bawah untuk kemiringan kartu dan hard shadow-nya, yang
-       kalau tidak akan terpotong karena overflow-x membuat sumbu y ikut
-       menggulung */
-    padding: 0.7rem 0.2rem 1.2rem;
-    scrollbar-width: none;
-    /* Lebar harus pasti. Tanpa ini, scroller ikut dihitung dari lebar
-       kontennya dan mendorong elemen pembungkus melebihi lebar layar. */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    /* ruang untuk kemiringan kartu dan hard shadow-nya */
+    padding: 0.5rem 0.2rem 0.6rem;
     width: 100%;
     min-width: 0;
     max-width: 100%;
-  }
-
-  .simple-preview-pricing .simple-pricing-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .simple-preview-pricing .simple-pricing-card {
-    /* Satuan viewport, bukan persen: persen perlu lebar induk yang pasti,
-       dan di sini induknya menghitung lebar dari isinya sehingga persentase
-       gagal terselesaikan lalu kartu melebar ke ukuran kontennya. */
-    flex: 0 0 min(82vw, 340px);
-    scroll-snap-align: start;
   }
 
   /* Kembalikan isi yang tadinya disembunyikan demi tiga kolom */

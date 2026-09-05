@@ -1,0 +1,18 @@
+{% assign terms = site.data.restaurant.order_terms %}
+{% if terms %}
+  <section class="order-terms-section" aria-labelledby="syarat-ketentuan">
+    <div class="order-terms-head">
+      <p class="restaurant-eyebrow">{{ terms.eyebrow }}</p>
+      <h2 id="syarat-ketentuan">{{ terms.title }}</h2>
+      <p class="restaurant-lead">{{ terms.note }}</p>
+    </div>
+    <ol class="order-terms-list">
+      {% for point in terms.points %}
+        <li>{{ point }}</li>
+      {% endfor %}
+    </ol>
+    {% if terms.warning %}
+      <p class="order-terms-warning"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i><span>{{ terms.warning }}</span></p>
+    {% endif %}
+  </section>
+{% endif %}

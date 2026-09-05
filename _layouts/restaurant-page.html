@@ -67,32 +67,44 @@ layout: compress
 
               {% if page.page_key == 'menu' %}
                 <section class="restaurant-section restaurant-section-panel menu-catalog-section">
-                  <div class="menu-main-poster-section">
-                    <div class="section-heading section-heading-center">
-                      <div>
-                        <p class="restaurant-eyebrow">Menu Utama</p>
-                        <h1>Menu utama RM APAYAA Guci Tegal.</h1>
-                        <p class="restaurant-lead">Lihat daftar menu lengkap sebagai referensi sebelum chat admin.</p>
-                      </div>
-                    </div>
-                    <div class="menu-main-poster-stack">
-                      <figure class="menu-main-poster-image">
-                        <img src="{{ '/assets/img/menus/utama/menu-paket.jpg' | relative_url }}" alt="Foto menu paket RM. APAYAA" loading="lazy">
-                      </figure>
-                      <figure class="menu-main-poster-image">
-                        <img src="{{ '/assets/img/menus/utama/menu-utama-1.jpg' | relative_url }}" alt="Foto menu utama RM. APAYAA halaman 1" loading="lazy">
-                      </figure>
-                      <figure class="menu-main-poster-image">
-                        <img src="{{ '/assets/img/menus/utama/menu-utama-2.jpg' | relative_url }}" alt="Foto menu utama RM. APAYAA halaman 2" loading="lazy">
-                      </figure>
-                      <figure class="menu-main-poster-image">
-                        <img src="{{ '/assets/img/menus/utama/menu-utama-3.jpg' | relative_url }}" alt="Foto menu utama RM. APAYAA halaman 3" loading="lazy">
-                      </figure>
-                      <figure class="menu-main-poster-image">
-                        <img src="{{ '/assets/img/menus/utama/aneka-minuman.jpg' | relative_url }}" alt="Foto menu aneka minuman RM. APAYAA" loading="lazy">
-                      </figure>
+                  <div class="section-heading section-heading-center">
+                    <div>
+                      <p class="restaurant-eyebrow">Menu Utama</p>
+                      <h1>Menu utama RM APAYAA Guci Tegal.</h1>
+                      <p class="restaurant-lead">Daftar menu dan harga lengkap yang bisa langsung dibaca tanpa memperbesar gambar. {{ restaurant.menu_catalog.note }}</p>
                     </div>
                   </div>
+
+                  {% if restaurant.menu_catalog.sections %}
+                    <div class="menu-category-nav-shell">
+                      <nav class="menu-category-nav" aria-label="Kategori menu utama">
+                        {% for section in restaurant.menu_catalog.sections %}
+                          <a href="#{{ section.anchor }}"><i class="{{ section.icon }}" aria-hidden="true"></i>{{ section.title }}</a>
+                        {% endfor %}
+                      </nav>
+                    </div>
+
+                    <div class="simple-pricing-grid menu-main-grid">
+                      {% for section in restaurant.menu_catalog.sections %}
+                        <article class="simple-pricing-card menu-main-card" id="{{ section.anchor }}">
+                          <div class="simple-pricing-layer" aria-hidden="true"></div>
+                          <div class="simple-pricing-content">
+                            <span class="simple-pricing-icon" aria-hidden="true"><i class="{{ section.icon }}"></i></span>
+                            <h2>{{ section.title }}</h2>
+                            <ul class="simple-pricing-list">
+                              {% for item in section.items %}
+                                <li class="menu-main-item">
+                                  <span class="menu-main-item-name">{{ item.name }}{% if item.badge %} <em>{{ item.badge }}</em>{% endif %}</span>
+                                  <span class="menu-main-item-dots" aria-hidden="true"></span>
+                                  <span class="menu-main-item-price">{{ item.price }}</span>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          </div>
+                        </article>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
 
                   <div class="restaurant-cta menu-catalog-cta">
                     <div>
@@ -102,52 +114,82 @@ layout: compress
                     </div>
                     <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                   </div>
+
+                  {% include menu-posters.html group='menu' %}
                 </section>
+
+                <script defer src="{{ '/assets/menu-category-nav.js' | relative_url }}"></script>
               {% elsif page.page_key == 'packages' %}
                 {% if page.title == 'Menu Prasmanan' %}
                   <section class="restaurant-section restaurant-section-panel">
-                    <div class="menu-main-poster-section">
-                      <div class="section-heading section-heading-center">
-                        <div>
-                          <p class="restaurant-eyebrow">Menu Prasmanan</p>
-                          <h1>Menu prasmanan RM APAYAA untuk rombongan.</h1>
-                          <p class="restaurant-lead">{{ restaurant.prasmanan_items.note }}</p>
-                        </div>
-                      </div>
-                      {% if restaurant.prasmanan_items.transit_highlight %}
-                        {% assign transit = restaurant.prasmanan_items.transit_highlight %}
-                        <div class="prasmanan-transit-highlight">
-                          <div class="prasmanan-transit-time">
-                            <span>Mulai</span>
-                            <strong>04.00</strong>
-                            <small>WIB</small>
-                          </div>
-                          <div class="prasmanan-transit-copy">
-                            <p class="restaurant-eyebrow">{{ transit.eyebrow }}</p>
-                            <h2>{{ transit.title }}</h2>
-                            <p>{{ transit.text }}</p>
-                          </div>
-                          {% if transit.points %}
-                            <ul class="prasmanan-transit-points">
-                              {% for point in transit.points %}
-                                <li><i class="fas fa-check" aria-hidden="true"></i>{{ point }}</li>
-                              {% endfor %}
-                            </ul>
-                          {% endif %}
-                        </div>
-                      {% endif %}
-                      <div class="menu-main-poster-stack">
-                        <figure class="menu-main-poster-image">
-                          <img src="{{ '/assets/img/menus/catering-prasmanan/transit.jpg' | relative_url }}" alt="Foto informasi transit prasmanan RM. APAYAA" loading="lazy">
-                        </figure>
-                        <figure class="menu-main-poster-image">
-                          <img src="{{ '/assets/img/menus/catering-prasmanan/menu-prasmanan.jpg' | relative_url }}" alt="Foto menu prasmanan RM. APAYAA" loading="lazy">
-                        </figure>
-                        <figure class="menu-main-poster-image">
-                          <img src="{{ '/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | relative_url }}" alt="Foto syarat dan ketentuan prasmanan RM. APAYAA" loading="lazy">
-                        </figure>
+                    <div class="section-heading section-heading-center">
+                      <div>
+                        <p class="restaurant-eyebrow">Menu Prasmanan</p>
+                        <h1>Menu prasmanan RM APAYAA untuk rombongan.</h1>
+                        <p class="restaurant-lead">Pilihan paket prasmanan lengkap dengan harga per pax dan rincian isi menunya. {{ restaurant.prasmanan_items.note }}.</p>
                       </div>
                     </div>
+
+                    {% if restaurant.prasmanan_items.transit_highlight %}
+                      {% assign transit = restaurant.prasmanan_items.transit_highlight %}
+                      <div class="prasmanan-transit-highlight">
+                        <div class="prasmanan-transit-time">
+                          <span>Mulai</span>
+                          <strong>04.00</strong>
+                          <small>WIB</small>
+                        </div>
+                        <div class="prasmanan-transit-copy">
+                          <p class="restaurant-eyebrow">{{ transit.eyebrow }}</p>
+                          <h2>{{ transit.title }}</h2>
+                          <p>{{ transit.text }}</p>
+                        </div>
+                        {% if transit.points %}
+                          <ul class="prasmanan-transit-points">
+                            {% for point in transit.points %}
+                              <li><i class="fas fa-check" aria-hidden="true"></i>{{ point }}</li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+
+                    {% if restaurant.prasmanan_items.items %}
+                      <div class="prasmanan-card-grid">
+                        {% for item in restaurant.prasmanan_items.items %}
+                          {% capture item_message %}Halo RM. APAYAA, saya ingin tanya paket prasmanan {{ item.name }} ({{ item.price }} per pax).{% endcapture %}
+                          <article class="prasmanan-card{% if item.badge_tone %} prasmanan-card-tone-{{ item.badge_tone }}{% endif %}">
+                            <div class="prasmanan-card-frame">
+                              <div class="prasmanan-card-inner">
+                                <div class="prasmanan-card-body">
+                                  <div class="prasmanan-card-top">
+                                    <div class="prasmanan-plan">
+                                      <h2 class="prasmanan-plan-name">{{ item.name }}</h2>
+                                      {% if item.badge %}
+                                        <span class="prasmanan-badge{% if item.badge_tone %} prasmanan-badge-{{ item.badge_tone }}{% endif %}">{{ item.badge }}</span>
+                                      {% endif %}
+                                    </div>
+                                    <div class="prasmanan-price-row">
+                                      <strong>{{ item.price }}</strong>
+                                      <span class="paket-price-unit">/pax</span>
+                                      <span class="paket-price-note">min. 30 pax</span>
+                                    </div>
+                                  </div>
+                                  <p class="prasmanan-description">{{ item.description }}</p>
+                                  <ul class="prasmanan-list">
+                                    {% for menu_line in item.menu %}
+                                      <li>{{ menu_line }}</li>
+                                    {% endfor %}
+                                  </ul>
+                                  <a class="restaurant-button prasmanan-order-button" href="https://wa.me/{{ brand.whatsapp_number }}?text={{ item_message | uri_escape | replace: '&', '%26' }}" target="_blank" rel="noreferrer">Pesan {{ item.name }}</a>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+
+                    {% include order-terms.html %}
 
                     <div class="restaurant-cta prasmanan-cta">
                       <div>
@@ -157,26 +199,56 @@ layout: compress
                       </div>
                       <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                     </div>
+
+                    {% include menu-posters.html group='prasmanan' %}
                   </section>
                 {% elsif page.title == 'Menu Box' %}
                   <section class="restaurant-section restaurant-section-panel">
-                    <div class="menu-main-poster-section">
-                      <div class="section-heading section-heading-center">
-                        <div>
-                          <p class="restaurant-eyebrow">Menu Box</p>
-                          <h1>Menu box RM APAYAA untuk acara dan konsumsi praktis.</h1>
-                          <p class="restaurant-lead">{{ restaurant.catering_items.note }}</p>
-                        </div>
-                      </div>
-                      <div class="menu-main-poster-stack">
-                        <figure class="menu-main-poster-image">
-                          <img src="{{ '/assets/img/menus/catering-prasmanan/menu-box.jpg' | relative_url }}" alt="Foto menu box RM. APAYAA" loading="lazy">
-                        </figure>
-                        <figure class="menu-main-poster-image">
-                          <img src="{{ '/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | relative_url }}" alt="Foto syarat dan ketentuan menu box RM. APAYAA" loading="lazy">
-                        </figure>
+                    <div class="section-heading section-heading-center">
+                      <div>
+                        <p class="restaurant-eyebrow">Menu Box</p>
+                        <h1>Menu box RM APAYAA untuk acara dan konsumsi praktis.</h1>
+                        <p class="restaurant-lead">Pilihan nasi box lengkap dengan harga per box dan rincian isinya. {{ restaurant.catering_items.note }}.</p>
                       </div>
                     </div>
+
+                    {% if restaurant.catering_items.items %}
+                      <div class="catering-card-grid">
+                        {% for item in restaurant.catering_items.items %}
+                          {% capture item_message %}Halo RM. APAYAA, saya ingin tanya menu box {{ item.name }} ({{ item.price }} per box).{% endcapture %}
+                          <article class="catering-card{% if item.badge_tone %} catering-card-tone-{{ item.badge_tone }}{% endif %}">
+                            <div class="catering-card-frame">
+                              <div class="catering-card-inner">
+                                <div class="catering-card-body">
+                                  <div class="catering-card-top">
+                                    <div class="catering-plan">
+                                      <h2 class="catering-plan-name">{{ item.name }}</h2>
+                                      {% if item.badge %}
+                                        <span class="catering-badge{% if item.badge_tone %} catering-badge-{{ item.badge_tone }}{% endif %}">{{ item.badge }}</span>
+                                      {% endif %}
+                                    </div>
+                                    <div class="catering-price-row">
+                                      <strong>{{ item.price }}</strong>
+                                      <span class="paket-price-unit">/box</span>
+                                      <span class="paket-price-note">min. 30 box</span>
+                                    </div>
+                                  </div>
+                                  <p class="catering-description">{{ item.description }}</p>
+                                  <ul class="catering-list">
+                                    {% for menu_line in item.menu %}
+                                      <li>{{ menu_line }}</li>
+                                    {% endfor %}
+                                  </ul>
+                                  <a class="restaurant-button prasmanan-order-button" href="https://wa.me/{{ brand.whatsapp_number }}?text={{ item_message | uri_escape | replace: '&', '%26' }}" target="_blank" rel="noreferrer">Pesan {{ item.name }}</a>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+
+                    {% include order-terms.html %}
 
                     <div class="restaurant-cta catering-cta">
                       <div>
@@ -186,6 +258,8 @@ layout: compress
                       </div>
                       <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                     </div>
+
+                    {% include menu-posters.html group='box' %}
                   </section>
                 {% else %}
                   <section class="restaurant-section">

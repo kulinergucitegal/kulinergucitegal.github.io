@@ -1678,7 +1678,10 @@ html[data-mode="dark"] .route-map-card {
 }
 
 .menu-catalog-section {
-  overflow: hidden;
+  /* `clip`, bukan `hidden`: keduanya memotong sama persis, tapi `hidden`
+     membentuk scroll container sehingga nav kategori yang sticky di dalamnya
+     ikut tergulung hilang. `clip` tidak membentuk scroll container. */
+  overflow: clip;
   border-color: var(--border);
   background:
     radial-gradient(circle at 8% 10%, rgba(195, 97, 67, 0.12), transparent 28%),
@@ -4630,4 +4633,580 @@ html[data-mode="dark"] .maps-order-flow-grid i {
 @keyframes maps-cta-glow {
   0%, 100% { box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35); }
   50% { box-shadow: 0 6px 24px rgba(34, 197, 94, 0.55), 0 0 0 5px rgba(34, 197, 94, 0.12); }
+}
+
+/* ============================================================
+   Menu web view - kartu menu, paket, syarat & ketentuan, poster
+   ============================================================ */
+
+.menu-main-card .simple-pricing-content h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.45rem;
+  line-height: 1.05;
+}
+
+.menu-catalog-section .menu-main-item-name em {
+  display: inline-flex;
+  margin-left: 0.32rem;
+  padding: 0.12rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(195, 97, 67, 0.14);
+  color: #9f5138;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: 0.1rem;
+}
+
+html[data-mode="dark"] .menu-catalog-section .menu-main-item-name em {
+  background: rgba(245, 158, 11, 0.18);
+  color: #fbbf24;
+}
+
+/* Frame kartu paket versi light mode (dark mode sudah didefinisikan di atas) */
+.prasmanan-card-frame,
+.catering-card-frame {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-radius: calc(var(--radius) + 8px);
+  border: 2px solid rgba(17, 17, 17, 0.92);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.86);
+}
+
+/* Samakan bahasa visual dengan kartu menu utama: kemiringan ringan yang
+   menegak saat hover. */
+.prasmanan-card,
+.catering-card {
+  transform: rotate(var(--paket-tilt, -1deg));
+  transition: transform 220ms ease;
+}
+
+.prasmanan-card:nth-child(3n+1),
+.catering-card:nth-child(3n+1) {
+  --paket-tilt: -1deg;
+}
+
+.prasmanan-card:nth-child(3n+2),
+.catering-card:nth-child(3n+2) {
+  --paket-tilt: 1deg;
+}
+
+.prasmanan-card:nth-child(3n),
+.catering-card:nth-child(3n) {
+  --paket-tilt: -1.5deg;
+}
+
+.prasmanan-card:hover,
+.catering-card:hover {
+  transform: translateY(-4px) rotate(0deg);
+}
+
+/* Centang disamakan dengan menu utama: tanda amber polos, bukan lingkaran
+   berbingkai. */
+.prasmanan-list li::before,
+.catering-list li::before,
+html[data-mode="dark"] .prasmanan-list li::before,
+html[data-mode="dark"] .catering-list li::before {
+  top: 0.16rem;
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent;
+  color: rgba(245, 158, 11, 0.92);
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.prasmanan-plan-name,
+.catering-plan-name {
+  margin: 0;
+}
+
+/* Syarat & ketentuan pemesanan */
+.order-terms-section {
+  margin-top: 2.25rem;
+  padding: clamp(1.1rem, 2.6vw, 1.6rem);
+  border: 2px solid rgba(17, 17, 17, 0.92);
+  border-radius: calc(var(--radius) + 8px);
+  background: rgba(255, 252, 244, 0.96);
+  box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.86);
+}
+
+.order-terms-head h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  line-height: 1.12;
+}
+
+.order-terms-head .restaurant-lead {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.order-terms-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1.15rem 0 0;
+  padding-left: 1.35rem;
+  color: var(--muted-foreground);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.order-terms-list li::marker {
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.order-terms-warning {
+  display: flex;
+  align-items: start;
+  gap: 0.6rem;
+  margin: 1.15rem 0 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 8px;
+  background: rgba(254, 226, 226, 0.6);
+  color: #991b1b;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.order-terms-warning i {
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+}
+
+html[data-mode="dark"] .order-terms-section {
+  border-color: rgba(245, 158, 11, 0.34);
+  background:
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 30%),
+    rgba(38, 38, 38, 0.9);
+  box-shadow: 6px 6px 0 rgba(245, 158, 11, 0.25);
+}
+
+html[data-mode="dark"] .order-terms-head h2 {
+  color: var(--foreground);
+}
+
+html[data-mode="dark"] .order-terms-warning {
+  border-color: rgba(248, 113, 113, 0.34);
+  background: rgba(127, 29, 29, 0.24);
+  color: #fca5a5;
+}
+
+/* Poster menu sebagai lampiran opsional */
+.menu-poster-details {
+  margin-top: 2.25rem;
+  border: 1px solid rgba(var(--shadow-color), 0.12);
+  border-radius: 8px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.menu-poster-details > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  color: var(--foreground);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.menu-poster-details > summary i {
+  color: var(--primary);
+}
+
+.menu-poster-details[open] > summary {
+  border-bottom: 1px solid rgba(var(--shadow-color), 0.12);
+}
+
+.menu-poster-details-body {
+  padding: 1.1rem;
+}
+
+.menu-poster-details-note {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.menu-poster-details .menu-main-poster-stack {
+  margin-top: 1.1rem;
+}
+
+html[data-mode="dark"] .menu-poster-details {
+  border-color: var(--border);
+  background: rgba(38, 38, 38, 0.9);
+}
+
+/* Kartu menu utama dialirkan sebagai kolom, bukan grid: tiap kartu setinggi
+   isinya dan celah di bawahnya langsung diisi kartu berikutnya, sehingga tidak
+   ada kartu bolong maupun baris bergerigi. Konsekuensinya urutan baca turun
+   per kolom, bukan menyamping - urutan kategori di _data/restaurant.yml
+   disusun mengikuti pembagian kolom itu. */
+.menu-catalog-section .simple-pricing-grid.menu-main-grid {
+  display: block;
+  columns: 3;
+  column-gap: 1.5rem;
+}
+
+.menu-catalog-section .menu-main-card {
+  width: 100%;
+  margin: 0 0 1.5rem;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+@media (max-width: 991px) {
+  .menu-catalog-section .simple-pricing-grid.menu-main-grid {
+    columns: 2;
+    column-gap: 1rem;
+  }
+
+  .menu-catalog-section .menu-main-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .menu-catalog-section .simple-pricing-grid.menu-main-grid {
+    columns: 1;
+  }
+
+  .menu-category-nav {
+    margin-inline: -0.5rem;
+    padding-inline: 0.5rem;
+  }
+}
+
+/* Nav kategori: bungkus di layar lebar, tetap geser horizontal di ponsel */
+@media (min-width: 992px) {
+  .menu-category-nav {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
+/* Kartu paket tanpa media: beri ruang atas agar badge miring tidak menempel tepi */
+.prasmanan-card-body,
+.catering-card-body {
+  padding-top: 1rem;
+}
+
+/* Nama paket kini <h2>, jadi `.restaurant-section h2` ikut menimpanya.
+   Kunci ukurannya agar nama panjang tidak pecah jadi tiga baris. */
+.restaurant-section .prasmanan-plan-name,
+.restaurant-section .catering-plan-name {
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+/* Harga paket jadi elemen paling menonjol di kartu, dengan satuannya menempel
+   langsung di sampingnya. Minimal order dipisah ke ujung kanan sebagai catatan
+   kecil agar tidak ikut memecah angka harganya. */
+.prasmanan-price-row,
+.catering-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  margin-top: 0.1rem;
+  flex-wrap: wrap;
+}
+
+.prasmanan-price-row strong,
+.catering-price-row strong {
+  display: inline-block;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.paket-price-unit {
+  color: var(--muted-foreground);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.paket-price-note {
+  margin-left: auto;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  background: rgba(17, 17, 17, 0.05);
+  color: var(--muted-foreground);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+html[data-mode="dark"] .paket-price-note {
+  border-color: rgba(245, 158, 11, 0.28);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+/* ------------------------------------------------------------------
+   Kartu menu utama: kembalikan hierarki.
+   Sebelumnya tiap baris memakai pil kuning penuh, jadi 71 harga di halaman
+   ini sama menonjolnya dan tidak ada yang memimpin. Harga dikembalikan
+   menjadi teks amber dengan garis titik-titik penghubung - pola daftar menu
+   yang sudah dirancang di CSS ini tapi sempat dimatikan.
+   ------------------------------------------------------------------ */
+.menu-catalog-section .menu-main-card .simple-pricing-list .menu-main-item {
+  grid-template-columns: auto minmax(1.25rem, 1fr) auto;
+  align-items: baseline;
+  column-gap: 0.5rem;
+}
+
+.menu-catalog-section .menu-main-item-name {
+  width: auto;
+  padding-right: 0;
+  background: transparent;
+}
+
+.menu-catalog-section .menu-main-item-dots {
+  display: block;
+  min-width: 1.25rem;
+  border-bottom: 1px dotted rgba(245, 158, 11, 0.42);
+  transform: translateY(-0.24rem);
+}
+
+.menu-catalog-section .menu-main-item-price {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  /* amber gelap: var(--primary) hanya ~2:1 di atas kartu krem light mode */
+  color: #92400e;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Badge item mengalir di samping namanya, bukan turun ke baris sendiri */
+.menu-catalog-section .menu-main-item-name em {
+  margin-left: 0.3rem;
+  padding: 0.1rem 0.34rem;
+  font-size: 0.52rem;
+  vertical-align: 0.14rem;
+}
+
+/* Aturan dark-mode lama masih memasang pil kuning dan specificity-nya lebih
+   tinggi, jadi harus dinetralkan juga di sini. */
+html[data-mode="dark"] .menu-catalog-section .menu-main-item-price {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--primary);
+}
+
+/* ------------------------------------------------------------------
+   Selaraskan tipografi dua keluarga kartu.
+   Baris daftar paket sebelumnya 12,64px/400 sementara baris menu utama
+   13,12px/500, sehingga halaman paket terbaca lebih tipis. Ukuran dan
+   ketebalan disamakan; warnanya sengaja tetap muted karena baris paket
+   adalah rincian isi, bukan produk berharga sendiri seperti di menu utama.
+   ------------------------------------------------------------------ */
+.prasmanan-list li,
+.catering-list li {
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.restaurant-section .prasmanan-plan-name,
+.restaurant-section .catering-plan-name {
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+}
+
+/* ------------------------------------------------------------------
+   Blok transit pagi.
+   Sebelumnya lebarnya dipatok 780px (lebih sempit dari grid kartu) dan tanpa
+   margin bawah, sehingga sudut kartu yang miring -1 derajat - yang secara
+   visual menonjol ~2px di atas kotak layout-nya - bertabrakan dengan tepi
+   bawah blok ini. Lebarnya disamakan dengan grid, diberi jarak bawah, dan
+   border/shadow-nya mengikuti bahasa kartu. Permukaannya sengaja tetap gelap
+   di kedua mode karena perannya sebagai panel pengumuman.
+   ------------------------------------------------------------------ */
+.prasmanan-transit-highlight {
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+  border: 2px solid rgba(17, 17, 17, 0.92);
+  border-radius: calc(var(--radius) + 8px);
+  box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.86);
+}
+
+html[data-mode="dark"] .prasmanan-transit-highlight {
+  border-color: rgba(245, 158, 11, 0.34);
+  box-shadow: 6px 6px 0 rgba(245, 158, 11, 0.25);
+}
+
+.prasmanan-transit-time {
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.28);
+}
+
+/* Grid kartu diberi ruang atas agar sudut kartu yang miring punya tempat */
+.prasmanan-card-grid,
+.catering-card-grid {
+  padding-top: 0.35rem;
+}
+
+/* Aturan mobile untuk blok ini ada di media query baris ~3415, sebelum aturan
+   dasarnya, sehingga tidak pernah berlaku (media query tidak menambah
+   specificity, yang menang adalah yang terakhir). Ditegakkan ulang di sini. */
+@media (max-width: 640px) {
+  .prasmanan-transit-highlight {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .prasmanan-transit-time {
+    min-width: 0;
+    min-height: 0;
+    padding: 0.85rem;
+  }
+
+  .prasmanan-transit-time strong {
+    font-size: clamp(2.4rem, 12vw, 3.4rem);
+  }
+
+  .prasmanan-transit-points {
+    gap: 0.45rem;
+  }
+
+  .prasmanan-transit-points li {
+    font-size: 0.82rem;
+  }
+}
+
+/* Anchor dari nav kategori: tanpa ini kartu tujuan berhenti tepat di bawah
+   topbar sticky sehingga judulnya tertutup. `scroll-margin-top` sudah ada di
+   .menu-board-card, tapi id-nya menempel di .menu-main-card. */
+.menu-catalog-section .menu-main-card {
+  scroll-margin-top: 6rem;
+}
+
+/* Chip kategori yang sedang dilihat */
+.menu-category-nav a.is-active {
+  border-color: rgba(245, 158, 11, 0.62);
+  background: rgba(245, 158, 11, 0.16);
+  color: #7a3d10;
+}
+
+.menu-category-nav a.is-active i {
+  color: var(--primary);
+}
+
+html[data-mode="dark"] .menu-category-nav a.is-active {
+  border-color: rgba(245, 158, 11, 0.62);
+  background: rgba(245, 158, 11, 0.18);
+  color: #fbbf24;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-category-nav {
+    scroll-behavior: auto;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Nav kategori di mobile: menempel di bawah topbar.
+   Masalah aslinya bukan chip yang terpotong, tapi nav yang hilang begitu
+   pengunjung scroll - untuk pindah kategori harus kembali ke atas melewati
+   84 item. Dengan sticky, nav selalu terjangkau, dan scroll-spy menggeser
+   chip aktif ke tengah sehingga posisi selalu terlihat.
+   ------------------------------------------------------------------ */
+.menu-category-nav-shell {
+  position: relative;
+  margin: 0 0 1.25rem;
+}
+
+.menu-category-nav-shell .menu-category-nav {
+  margin: 0;
+}
+
+/* Gradasi tepi sebagai tanda masih ada chip lain. Dipasang di shell, bukan di
+   nav, supaya tidak ikut bergeser saat chip di-scroll. */
+.menu-category-nav-shell::before,
+.menu-category-nav-shell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2.25rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  z-index: 2;
+}
+
+.menu-category-nav-shell::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(255, 250, 239, 0.98), rgba(255, 250, 239, 0));
+}
+
+.menu-category-nav-shell::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(255, 250, 239, 0.98), rgba(255, 250, 239, 0));
+}
+
+.menu-category-nav-shell.can-scroll-left::before,
+.menu-category-nav-shell.can-scroll-right::after {
+  opacity: 1;
+}
+
+html[data-mode="dark"] .menu-category-nav-shell::before {
+  background: linear-gradient(90deg, rgba(28, 26, 24, 0.98), rgba(28, 26, 24, 0));
+}
+
+html[data-mode="dark"] .menu-category-nav-shell::after {
+  background: linear-gradient(270deg, rgba(28, 26, 24, 0.98), rgba(28, 26, 24, 0));
+}
+
+@media (max-width: 991.98px) {
+  .menu-category-nav-shell {
+    position: sticky;
+    top: 3rem; /* tinggi topbar sticky */
+    z-index: 20;
+    margin-inline: calc(-1 * var(--menu-nav-bleed, 1rem));
+    padding: 0.5rem var(--menu-nav-bleed, 1rem);
+    background: rgba(255, 250, 239, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(62, 55, 43, 0.1);
+  }
+
+  html[data-mode="dark"] .menu-category-nav-shell {
+    background: rgba(28, 26, 24, 0.92);
+    border-bottom-color: rgba(245, 158, 11, 0.18);
+  }
+
+  .menu-category-nav-shell::before,
+  .menu-category-nav-shell::after {
+    width: 1.75rem;
+  }
+
+  /* Sasaran anchor harus lolos dari topbar DAN nav yang menempel */
+  .menu-catalog-section .menu-main-card {
+    scroll-margin-top: 8.5rem;
+  }
 }

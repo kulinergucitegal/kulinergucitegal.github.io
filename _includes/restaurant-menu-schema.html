@@ -1,0 +1,89 @@
+{% assign menu_restaurant = site.data.restaurant %}
+{% assign menu_sections = nil %}
+{% assign menu_schema_name = nil %}
+
+{% if page.page_key == 'menu' and menu_restaurant.menu_catalog.sections %}
+  {% assign menu_sections = menu_restaurant.menu_catalog.sections %}
+  {% assign menu_schema_name = 'Menu Utama' %}
+{% elsif page.title == 'Menu Prasmanan' and menu_restaurant.prasmanan_items.items %}
+  {% assign menu_flat_items = menu_restaurant.prasmanan_items.items %}
+  {% assign menu_schema_name = 'Menu Prasmanan' %}
+{% elsif page.title == 'Menu Box' and menu_restaurant.catering_items.items %}
+  {% assign menu_flat_items = menu_restaurant.catering_items.items %}
+  {% assign menu_schema_name = 'Menu Box' %}
+{% endif %}
+
+{% if menu_schema_name %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "name": {{ menu_schema_name | append: ' ' | append: menu_restaurant.brand.name | jsonify }},
+    "url": "{{ page.url | absolute_url }}",
+    "inLanguage": "id-ID",
+    "provider": {
+      "@type": "Restaurant",
+      "name": {{ menu_restaurant.brand.name | jsonify }},
+      "url": "{{ '/' | absolute_url }}"
+    },
+    "hasMenuSection": [
+    {% if menu_sections %}
+      {% for section in menu_sections %}
+      {
+        "@type": "MenuSection",
+        "name": {{ section.title | jsonify }},
+        "hasMenuItem": [
+        {% for item in section.items %}
+          {% assign price_parts = item.price | split: ' / ' %}
+          {% assign price_low = price_parts | first | remove: 'k' | plus: 0 | times: 1000 %}
+          {% assign price_high = price_parts | last | remove: 'k' | plus: 0 | times: 1000 %}
+          {
+            "@type": "MenuItem",
+            "name": {{ item.name | jsonify }},
+            "offers": {
+          {% if price_parts.size > 1 %}
+              "@type": "AggregateOffer",
+              "lowPrice": "{{ price_low }}",
+              "highPrice": "{{ price_high }}",
+              "offerCount": {{ price_parts.size }},
+          {% else %}
+              "@type": "Offer",
+              "price": "{{ price_low }}",
+          {% endif %}
+              "priceCurrency": "IDR"
+            }
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+        ]
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% else %}
+      {
+        "@type": "MenuSection",
+        "name": {{ menu_schema_name | jsonify }},
+        "hasMenuItem": [
+        {% for item in menu_flat_items %}
+          {% assign price_value = item.price | remove: 'k' | plus: 0 | times: 1000 %}
+          {
+            "@type": "MenuItem",
+            "name": {{ item.name | jsonify }},
+            "description": {{ item.menu | join: ', ' | jsonify }},
+            "offers": {
+              "@type": "Offer",
+              "price": "{{ price_value }}",
+              "priceCurrency": "IDR",
+              "eligibleQuantity": {
+                "@type": "QuantitativeValue",
+                "minValue": 30,
+                "unitText": "pax"
+              }
+            }
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+        ]
+      }
+    {% endif %}
+    ]
+  }
+  </script>
+{% endif %}

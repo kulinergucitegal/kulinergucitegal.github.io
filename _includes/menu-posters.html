@@ -1,0 +1,30 @@
+{% case include.group %}
+  {% when 'menu' %}
+    {% assign poster_paths = '/assets/img/menus/utama/menu-paket.jpg,/assets/img/menus/utama/menu-utama-1.jpg,/assets/img/menus/utama/menu-utama-2.jpg,/assets/img/menus/utama/menu-utama-3.jpg,/assets/img/menus/utama/aneka-minuman.jpg' | split: ',' %}
+    {% assign poster_alts = 'Foto menu paket RM. APAYAA,Foto menu utama RM. APAYAA halaman 1,Foto menu utama RM. APAYAA halaman 2,Foto menu utama RM. APAYAA halaman 3,Foto menu aneka minuman RM. APAYAA' | split: ',' %}
+  {% when 'prasmanan' %}
+    {% assign poster_paths = '/assets/img/menus/catering-prasmanan/transit.jpg,/assets/img/menus/catering-prasmanan/menu-prasmanan.jpg,/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | split: ',' %}
+    {% assign poster_alts = 'Foto informasi transit prasmanan RM. APAYAA,Foto menu prasmanan RM. APAYAA,Foto syarat dan ketentuan pemesanan RM. APAYAA' | split: ',' %}
+  {% when 'box' %}
+    {% assign poster_paths = '/assets/img/menus/catering-prasmanan/menu-box.jpg,/assets/img/menus/catering-prasmanan/syarat-dan-ketentuan.jpg' | split: ',' %}
+    {% assign poster_alts = 'Foto menu box RM. APAYAA,Foto syarat dan ketentuan pemesanan RM. APAYAA' | split: ',' %}
+{% endcase %}
+
+{% if poster_paths %}
+  <details class="menu-poster-details">
+    <summary>
+      <i class="fas fa-image" aria-hidden="true"></i>
+      <span>Lihat versi gambar menu ({{ poster_paths | size }} poster)</span>
+    </summary>
+    <div class="menu-poster-details-body">
+      <p class="menu-poster-details-note">Versi poster ini sama isinya dengan daftar di atas dan bisa disimpan atau dibagikan lewat WhatsApp.</p>
+      <div class="menu-main-poster-stack">
+        {% for path in poster_paths %}
+          <figure class="menu-main-poster-image">
+            <img src="{{ path | relative_url }}" alt="{{ poster_alts[forloop.index0] }}" loading="lazy" decoding="async">
+          </figure>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+{% endif %}

@@ -40,6 +40,10 @@
   {% include restaurant-faq-schema.html %}
 {% endcapture %}
 
+{% capture menu_schema %}
+  {% include restaurant-menu-schema.html %}
+{% endcapture %}
+
 {% capture google_analytics %}
   {% include google-analytics.html %}
 {% endcapture %}
@@ -55,6 +59,7 @@
 {{ restaurant_schema }}
 {{ navigation_schema }}
 {{ faq_schema }}
+{{ menu_schema }}
 {{ google_analytics }}
 {{ restaurant_styles }}
 {% endcapture %}

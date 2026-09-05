@@ -170,7 +170,7 @@ layout: compress
                           {% for item in restaurant.gallery.items limit:4 %}
                             <article class="simple-preview-gallery-card">
                               <div class="simple-preview-gallery-image">
-                                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+                                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" decoding="async">
                               </div>
                               <div class="simple-preview-gallery-body">
                                 <h3>{{ item.title }}</h3>

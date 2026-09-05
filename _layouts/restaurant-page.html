@@ -270,7 +270,7 @@ layout: compress
                     <div class="restaurant-card-grid restaurant-card-grid-wide">
                       {% for item in restaurant.packages %}
                         <article class="restaurant-card">
-                          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+                          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" decoding="async">
                           <div class="restaurant-card-body">
                             <span class="restaurant-chip">{{ item.min_order }}</span>
                             <h3>{{ item.title }}</h3>
@@ -295,7 +295,7 @@ layout: compress
                   <div class="restaurant-card-grid">
                     {% for item in restaurant.facilities %}
                       <article class="restaurant-card">
-                        <img src="{{ item.image | relative_url }}" alt="{{ item.name }}">
+                        <img src="{{ item.image | relative_url }}" alt="{{ item.name }}" loading="lazy" decoding="async">
                         <div class="restaurant-card-body">
                           <span class="restaurant-chip">{{ item.capacity }}</span>
                           <h3>{{ item.name }}</h3>
@@ -339,7 +339,7 @@ layout: compress
                     {% for item in restaurant.tourism_entries %}
                       <article class="tourism-article-list-item">
                         <a class="tourism-article-list-image" href="{{ item.url | relative_url }}" aria-label="Baca {{ item.title }}">
-                          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+                          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" decoding="async">
                         </a>
                         <div class="tourism-article-list-body">
                           <div>

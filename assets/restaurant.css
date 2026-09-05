@@ -5251,3 +5251,13 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
   padding: 0.08rem 0.28rem;
   font-size: 0.5rem;
 }
+
+/* Kartu paket yang sedang dibaca menegak di mobile. Specificity dinaikkan agar
+   mengungguli aturan tilt dasar maupun :hover yang sama-sama menyetel
+   transform. */
+@media (max-width: 991.98px) {
+  .restaurant-section .prasmanan-card.is-current,
+  .restaurant-section .catering-card.is-current {
+    transform: rotate(0deg);
+  }
+}

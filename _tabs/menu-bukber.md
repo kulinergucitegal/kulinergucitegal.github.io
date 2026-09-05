@@ -18,4 +18,6 @@ panel_text: "Untuk reservasi saat Ramadan atau grup khusus, arahkan pengunjung k
 primary_cta: "Booking bukber"
 secondary_cta_label: "Menu Prasmanan"
 secondary_cta_url: "/menu-prasmanan/"
+seo:
+  type: WebPage
 ---

@@ -20,4 +20,6 @@ primary_cta: "Pesan via WhatsApp"
 secondary_cta_label: "Buka Google Maps"
 secondary_cta_url: "https://maps.google.com/?q=RM%20APAYAA%20Tuwel%20Bojong%20Tegal"
 whatsapp_text: "Halo RM. APAYAA, saya datang dari Google Maps dan ingin pesan atau reservasi."
+seo:
+  type: WebPage
 ---

@@ -17,4 +17,6 @@ panel_text: "Pilihan prasmanan, menu box, dan bukber disusun agar keluarga, komu
 primary_cta: "Diskusikan paket"
 secondary_cta_label: "Lihat Menu Utama"
 secondary_cta_url: "/menu-utama/"
+seo:
+  type: WebPage
 ---

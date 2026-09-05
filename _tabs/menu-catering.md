@@ -18,4 +18,6 @@ panel_text: "Jika fokus Anda hanya menu box, gunakan halaman ini untuk langsung 
 primary_cta: "Tanya menu box"
 secondary_cta_label: "Menu Prasmanan"
 secondary_cta_url: "/menu-prasmanan/"
+seo:
+  type: WebPage
 ---

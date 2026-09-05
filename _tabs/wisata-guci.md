@@ -18,6 +18,8 @@ panel_text: "Mulai dari harga tiket, rute singgah, sampai catatan untuk keluarga
 primary_cta: "Tanya tempat singgah"
 secondary_cta_label: "Kembali ke Beranda"
 secondary_cta_url: "/"
+seo:
+  type: WebPage
 ---
 
 Wisata Guci Tegal dikenal sebagai kawasan pemandian air panas dan destinasi keluarga di kaki Gunung Slamet. Banyak pengunjung datang untuk berendam, jalan santai, menikmati udara sejuk, atau sekadar berhenti sejenak sebelum melanjutkan perjalanan.

@@ -17,4 +17,6 @@ panel_text: "Halaman ini fokus membantu calon tamu melihat pilihan makanan secar
 primary_cta: "Tanya menu via WhatsApp"
 secondary_cta_label: "Kembali ke Beranda"
 secondary_cta_url: "/"
+seo:
+  type: WebPage
 ---

@@ -66,6 +66,11 @@
   "acceptsReservations": {{ brand.accepts_reservations | jsonify }},
   "hasMap": {{ brand.maps_url | jsonify }},
   "menu": "{{ site.url }}/menu-utama/",
+  "hasMenu": [
+    { "@id": "{{ site.url }}/menu-utama/#menu" },
+    { "@id": "{{ site.url }}/menu-prasmanan/#menu" },
+    { "@id": "{{ site.url }}/menu-box/#menu" }
+  ],
   "amenityFeature": [
     {% for facility in restaurant.facilities %}
       {

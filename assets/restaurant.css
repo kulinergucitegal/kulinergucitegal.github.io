@@ -5190,14 +5190,30 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
     z-index: 20;
     margin-inline: calc(-1 * var(--menu-nav-bleed, 1rem));
     padding: 0.5rem var(--menu-nav-bleed, 1rem);
-    background: rgba(255, 250, 239, 0.92);
-    backdrop-filter: blur(12px);
+    /* Tanpa backdrop-filter: di iOS Safari elemen ber-backdrop-filter bisa
+       terkomposit di atas laci sidebar yang position:fixed meski z-index-nya
+       jauh lebih tinggi, sehingga item nav paling bawah tertutup. */
+    background: rgb(252, 247, 236);
     border-bottom: 1px solid rgba(62, 55, 43, 0.1);
   }
 
   html[data-mode="dark"] .menu-category-nav-shell {
-    background: rgba(28, 26, 24, 0.92);
+    background: rgb(28, 26, 24);
     border-bottom-color: rgba(245, 158, 11, 0.18);
+  }
+
+  /* Pengaman ganda: selagi laci sidebar terbuka, baris chip tidak boleh
+     bersaing lapisan dengan laci. */
+  body[sidebar-display] .menu-category-nav-shell {
+    z-index: 0;
+  }
+
+  /* Di desktop kartu menegak saat hover. Sentuhan tidak punya hover, jadi di
+     mobile yang menegak adalah kartu kategori yang sedang dibaca. */
+  /* Specificity harus mengalahkan .simple-pricing-card:nth-child(3n) yang juga
+     menyetel transform (:nth-child dihitung setara kelas, jadi seri). */
+  .menu-catalog-section .simple-pricing-card.menu-main-card.is-current {
+    transform: rotate(0deg);
   }
 
   .menu-category-nav-shell::before,
@@ -5209,4 +5225,29 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
   .menu-catalog-section .menu-main-card {
     scroll-margin-top: 8.5rem;
   }
+}
+
+
+/* ------------------------------------------------------------------
+   Rebut kembali ruang di baris item menu.
+   Terukur pada lebar 430px: baris punya 307px ruang isi, sementara nama
+   terpanjang beserta badge butuh 272px. Sisa anggaran habis oleh titik-titik,
+   jarak antar kolom, dan indentasi. Angka minimumnya dirapatkan supaya nama
+   punya ruang lebih dulu - hasilnya di 360px item yang membungkus turun dari
+   9 jadi 4.
+   ------------------------------------------------------------------ */
+.menu-catalog-section .menu-main-card .simple-pricing-list .menu-main-item {
+  grid-template-columns: auto minmax(0.5rem, 1fr) auto;
+  column-gap: 0.3rem;
+  padding-left: 1.1rem;
+}
+
+.menu-catalog-section .menu-main-item-dots {
+  min-width: 0.5rem;
+}
+
+.menu-catalog-section .menu-main-item-name em {
+  margin-left: 0.2rem;
+  padding: 0.08rem 0.28rem;
+  font-size: 0.5rem;
 }

@@ -34,11 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let ditahanSampai = 0;
   const terlihat = new Set();
 
+  const byLink = new Map();
+  byId.forEach((link, section) => byLink.set(link, section));
+
+  let kartuKini = null;
+
   const setActive = (link) => {
     if (link === current) return;
     if (current) current.classList.remove('is-active');
     link.classList.add('is-active');
     current = link;
+
+    // Desktop menegakkan kartu lewat :hover; sentuhan tidak punya hover, jadi
+    // kartu kategori yang sedang dibaca ditegakkan lewat kelas.
+    if (kartuKini) kartuKini.classList.remove('is-current');
+    kartuKini = byLink.get(link) || null;
+    if (kartuKini) kartuKini.classList.add('is-current');
 
     // Geser nav agar chip aktif tetap terlihat, hanya bila nav memang bisa
     // digeser (di desktop chip membungkus, tidak menggeser).
@@ -128,6 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (current) {
       current.classList.remove('is-active');
       current = null;
+    }
+    if (kartuKini) {
+      kartuKini.classList.remove('is-current');
+      kartuKini = null;
     }
   };
 

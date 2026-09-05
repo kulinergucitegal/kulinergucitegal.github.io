@@ -1,0 +1,51 @@
+{% comment %}
+  BreadcrumbList: memberi tahu Google posisi halaman dalam struktur situs,
+  sehingga hasil pencarian menampilkan jalur navigasi, bukan URL mentah.
+  Artikel wisata bersarang di bawah /info-wisata-guci-tegal/; halaman lain
+  langsung di bawah beranda. Beranda sendiri tidak perlu breadcrumb.
+{% endcomment %}
+
+{% assign bc_title = page.breadcrumb_title | default: page.title %}
+
+{% if page.url != '/' and bc_title and page.layout != 'redirect' %}
+  {% assign bc_induk = false %}
+  {% if page.layout == 'restaurant-tourism-post' %}
+    {% assign bc_induk = true %}
+  {% endif %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "{{ '/' | absolute_url }}"
+      },
+    {% if bc_induk %}
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Info Wisata Guci",
+        "item": "{{ '/info-wisata-guci-tegal/' | absolute_url }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ bc_title | jsonify }},
+        "item": "{{ page.url | absolute_url }}"
+      }
+    {% else %}
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": {{ bc_title | jsonify }},
+        "item": "{{ page.url | absolute_url }}"
+      }
+    {% endif %}
+    ]
+  }
+  </script>
+{% endif %}

@@ -5274,6 +5274,14 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
    Untuk mengembalikan: git revert pada commit ini.
    ================================================================== */
 @media (max-width: 991.98px) {
+  /* Section ini adalah grid item di dalam .simple-preview-shell, dan grid item
+     punya min-width: auto sehingga tidak boleh menyusut di bawah lebar
+     kontennya. Tanpa ini, section ikut melar mengikuti lebar isi scroller
+     (terukur 1081px pada layar 485px) dan menyeret hero ikut terpotong. */
+  .simple-preview-pricing {
+    min-width: 0;
+  }
+
   .simple-preview-pricing .simple-pricing-grid {
     display: flex;
     grid-template-columns: none;
@@ -5287,6 +5295,11 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
        menggulung */
     padding: 0.7rem 0.2rem 1.2rem;
     scrollbar-width: none;
+    /* Lebar harus pasti. Tanpa ini, scroller ikut dihitung dari lebar
+       kontennya dan mendorong elemen pembungkus melebihi lebar layar. */
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .simple-preview-pricing .simple-pricing-grid::-webkit-scrollbar {
@@ -5294,7 +5307,10 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
   }
 
   .simple-preview-pricing .simple-pricing-card {
-    flex: 0 0 82%;
+    /* Satuan viewport, bukan persen: persen perlu lebar induk yang pasti,
+       dan di sini induknya menghitung lebar dari isinya sehingga persentase
+       gagal terselesaikan lalu kartu melebar ke ukuran kontennya. */
+    flex: 0 0 min(82vw, 340px);
     scroll-snap-align: start;
   }
 

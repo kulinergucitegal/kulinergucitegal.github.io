@@ -11,7 +11,7 @@ brand:
   opening_hours: "Setiap hari, 09.00 - 20.00 WIB"
   accepts_reservations: true
   google_rating: "4.7"
-  google_review_count: "567"
+  google_review_count: "591"
   geo:
     latitude: -7.1611379
     longitude: 109.1481706
@@ -732,34 +732,32 @@ testimonials:
 google_testimonials:
   eyebrow: "Testimoni"
   title: "Kesan pengunjung RM. APAYAA."
-  # Teks di bawah ini ringkasan tema yang berulang di ulasan Google, BUKAN
-  # kutipan. Karena itu tidak disematkan ke nama orang tertentu - menaruh
-  # kalimat parafrase di bawah nama asli membuatnya terbaca sebagai kutipan
-  # padahal bukan. Kalau nanti ada kutipan asli, baru boleh pakai nama.
-  subtitle: "Dirangkum dari 567 ulasan Google dengan rata-rata 4,7 bintang."
+  # Kutipan asli dari ulasan Google, disalin apa adanya termasuk singkatan dan
+  # ejaannya - itu yang membuatnya terbaca sebagai suara orang, bukan salinan
+  # brosur. Potongan ditandai elipsis dan tidak mengubah kesimpulan penulisnya.
+  # Jangan menulis ulang kalimatnya: begitu diparafrase, nama di bawahnya jadi
+  # menyesatkan karena bukan lagi kata-kata mereka.
+  subtitle: "Kutipan dari ulasan Google. Rata-rata 4,7 bintang dari 591 ulasan."
   columns:
-    - duration: "20s"
+    - duration: "22s"
       items:
-        - text: "Rasa masakan paling sering disebut positif."
-          name: "Rasa masakan"
-          role: "Tema yang berulang di ulasan"
-        - text: "Tempatnya dinilai nyaman dan cozy."
-          name: "Suasana tempat"
-          role: "Tema yang berulang di ulasan"
-        - text: "Pilihan lauknya dinilai enak dan cocok untuk singgah."
-          name: "Pilihan lauk"
-          role: "Tema yang berulang di ulasan"
-    - duration: "24s"
+        - text: "Ikan nilanya tdk berbau, sambal tdk terlalu pedas dan bisa dinikmati. Gorengan disajikan panas. Tempat nyaman, teduh, bersih, dan parkiran tersedia."
+          name: "Fera Yusniawati"
+          role: "Ulasan Google Maps"
+        - text: "Sy memesan nasi box utk makan siang, hanya by phone, krn kami dr Solo, trus transfer dp. Makanan diantar ke parkiran bus pancuran13. Rombongan kami naik medium bus isi 34org."
+          name: "sugeng samodra"
+          role: "Ulasan Google Maps"
+        - text: "Untuk rumah makan yg dari guci utk makan siang bisa mampir sini. Makanan bervariasi dan pas di lidah, harga aman dikantong."
+          name: "Monika Hartanti"
+          role: "Ulasan Google Maps"
+    - duration: "26s"
       items:
-        - text: "Keramahan staf ikut sering disebut."
-          name: "Pelayanan"
-          role: "Tema yang berulang di ulasan"
-        - text: "Kebersihan tempat jadi catatan positif pengunjung."
-          name: "Kebersihan"
-          role: "Tema yang berulang di ulasan"
-        - text: "Rasa makanan dinilai kuat dan konsisten."
-          name: "Konsistensi rasa"
-          role: "Tema yang berulang di ulasan"
+        - text: "Yang akan saya rekomendasi pas awal datang yang pasti adalah Tempe Mendoan, itu best banget. Asem ayam nya oke, ayamnya cukup besar."
+          name: "Nita"
+          role: "Ulasan Google Maps"
+        - text: "Ayam goreng kampungnya enak dan empuk. Udang goreng tepungnya fresh dan crispy. Harga tergolong murah. Ibu penjualnya sangatlah ramah."
+          name: "poerwaNing"
+          role: "Ulasan Google Maps"
 gallery:
   eyebrow: "Galeri suasana"
   title: "Suasana restoran dan area singgah."

@@ -258,6 +258,34 @@ layout: compress
                       </div>
                     </div>
 
+                    {% if restaurant.catering_items.delivery_highlight %}
+                      {%- comment -%}
+                        Memakai ulang kelas .prasmanan-transit-* agar tidak menggandakan
+                        ~80 baris CSS untuk tampilan yang sama persis. Namanya memang
+                        menyebut prasmanan, tapi blok ini khusus halaman menu box.
+                      {%- endcomment -%}
+                      {% assign antar = restaurant.catering_items.delivery_highlight %}
+                      <div class="prasmanan-transit-highlight">
+                        <div class="prasmanan-transit-time">
+                          <span>Area</span>
+                          <strong>Guci</strong>
+                          <small>Free ongkir</small>
+                        </div>
+                        <div class="prasmanan-transit-copy">
+                          <p class="restaurant-eyebrow">{{ antar.eyebrow }}</p>
+                          <h2>{{ antar.title }}</h2>
+                          <p>{{ antar.text }}</p>
+                        </div>
+                        {% if antar.points %}
+                          <ul class="prasmanan-transit-points">
+                            {% for point in antar.points %}
+                              <li><i class="fas fa-check" aria-hidden="true"></i>{{ point }}</li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+
                     {% if restaurant.catering_items.items %}
                       <div class="catering-card-grid">
                         {% for item in restaurant.catering_items.items %}

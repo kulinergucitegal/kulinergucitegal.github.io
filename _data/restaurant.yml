@@ -598,6 +598,17 @@ prasmanan_items:
 catering_items:
   note: "Minimal order 30 pax per item"
   cta: "Tanyakan kombinasi nasi box ke admin"
+  # Hanya nasi box yang bisa diantar. Prasmanan perlu ditata di tempat, jadi
+  # blok ini SENGAJA tidak dipasang di halaman prasmanan - jangan disalin ke
+  # sana tanpa konfirmasi pemilik.
+  delivery_highlight:
+    eyebrow: "Layanan Antar"
+    title: "Nasi box bisa diantar sampai lokasi"
+    text: "Rombongan tidak perlu turun dari kendaraan. Pesanan diantar ke titik yang disepakati, termasuk area parkir di kawasan wisata Guci."
+    points:
+      - "Free ongkir khusus wilayah wisata Guci"
+      - "Luar area menyesuaikan jarak pengantaran"
+      - "Khusus nasi box, prasmanan disajikan di tempat"
   items:
     - name: "Nasi Liwet"
       price: "18k"

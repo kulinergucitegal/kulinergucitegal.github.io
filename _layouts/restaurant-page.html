@@ -125,11 +125,14 @@ layout: compress
                                         <span class="menu-main-item-price">{{ item.price }}</span>
                                         <i class="fas fa-chevron-down menu-main-item-caret" aria-hidden="true"></i>
                                       </summary>
-                                      <ul class="menu-main-isi">
-                                        {% for bahan in item.isi %}
-                                          <li>{{ bahan }}</li>
-                                        {% endfor %}
-                                      </ul>
+                                      <div class="menu-main-isi">
+                                        <p class="menu-main-isi-label">Sudah termasuk</p>
+                                        <ul>
+                                          {% for bahan in item.isi %}
+                                            <li>{{ bahan }}</li>
+                                          {% endfor %}
+                                        </ul>
+                                      </div>
                                     </details>
                                   </li>
                                 {% else %}

@@ -5498,29 +5498,57 @@ html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover {
    atribut [open] hadir. */
 .menu-main-isi {
   display: none;
-  gap: 0.18rem;
-  margin: 0.35rem 0 0.5rem;
-  padding: 0.5rem 0.6rem 0.55rem 1.1rem;
-  border-left: 2px solid rgba(245, 158, 11, 0.35);
-  border-radius: 0 6px 6px 0;
-  background: rgba(245, 158, 11, 0.06);
+  margin: 0.4rem 0 0.6rem;
+  padding: 0.6rem 0.7rem 0.65rem;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-left: 3px solid rgba(245, 158, 11, 0.65);
+  border-radius: 0 8px 8px 0;
+  background: rgba(245, 158, 11, 0.07);
+}
+
+/* Label mengikuti gaya eyebrow yang dipakai di seluruh situs */
+.menu-main-isi-label {
+  margin: 0 0 0.4rem;
+  color: rgba(245, 158, 11, 0.95);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.menu-main-isi ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.22rem 0.8rem;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
+/* Centang, bukan bulatan: situs ini konsisten memakai centang untuk menandai
+   apa yang didapat pelanggan, seperti di kartu prasmanan dan menu box. */
 .menu-main-isi li {
-  color: var(--muted-foreground);
-  font-size: 0.76rem;
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--foreground);
+  font-size: 0.78rem;
   line-height: 1.45;
 }
 
 .menu-main-isi li::before {
-  content: "\2022";
-  margin-right: 0.4rem;
-  color: rgba(245, 158, 11, 0.75);
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0.06rem;
+  color: rgba(245, 158, 11, 0.95);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.45;
 }
 
 html[data-mode="dark"] .menu-main-isi {
-  background: rgba(245, 158, 11, 0.08);
+  background: rgba(245, 158, 11, 0.09);
 }
 
 /* Petunjuk bahwa baris bisa diketuk. Caret di ujung baris terlalu kecil untuk

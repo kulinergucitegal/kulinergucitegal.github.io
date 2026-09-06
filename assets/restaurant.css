@@ -5335,12 +5335,6 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
   .simple-preview-pricing .simple-pricing-content h3 {
     min-height: 0;
     margin-bottom: 0.4rem;
-    font-size: 1.3rem;
-    line-height: 1.1;
-  }
-
-  .simple-preview-pricing .simple-pricing-price strong {
-    font-size: 1.45rem;
   }
 
   .simple-preview-pricing .simple-pricing-price .simple-pricing-note-optional,
@@ -5379,5 +5373,37 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
 @media (max-width: 991.98px) {
   #topbar-wrapper {
     height: 3.5rem;
+  }
+}
+
+/* ==================================================================
+   Hierarki kartu Menu Pilihan.
+   Sebelumnya angka kapasitas mengalahkan judulnya di dua sumbu sekaligus:
+   di desktop judul 23,2px weight 400 sementara "Tersedia"/"30 Pax" 24,8px
+   weight 700, dengan warna yang sama persis. Akibatnya yang pertama terbaca
+   justru "30 Pax", bukan "Menu Prasmanan" - padahal judul itulah yang
+   membedakan ketiga kartu.
+   Judul kini memimpin; angka kapasitas tetap tebal tapi turun ukurannya
+   sehingga terbaca sebagai keterangan pendukung.
+   ================================================================== */
+.simple-preview-pricing .simple-pricing-content h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.simple-preview-pricing .simple-pricing-price strong {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+  .simple-preview-pricing .simple-pricing-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .simple-preview-pricing .simple-pricing-price strong {
+    font-size: 1.1rem;
   }
 }

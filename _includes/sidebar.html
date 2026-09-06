@@ -38,7 +38,24 @@
     </ul>
   </nav>
 
-  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100"></div>
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+    {%- comment -%}
+      JS tema mencari `#mode-toggle + .dropdown-menu` dan langsung memanggil
+      querySelectorAll padanya tanpa memeriksa null. Sidebar ini adalah
+      override lokal yang tidak merender tombol mode karena situs dikunci
+      gelap lewat `theme_mode` di _config.yml, sehingga elemennya tidak ada
+      dan JS melempar TypeError. Error itu memutus rangkaian di IIFE yang
+      sama, sehingga inisialisasi tombol back-to-top dan tooltip Bootstrap
+      ikut tidak pernah berjalan.
+
+      Elemen di bawah ini sengaja kosong dan tersembunyi: cukup untuk
+      memuaskan selektor tema tanpa memunculkan tombol pengalih mode.
+    {%- endcomment -%}
+    <div class="d-none" aria-hidden="true">
+      <button type="button" id="mode-toggle" tabindex="-1"></button>
+      <ul class="dropdown-menu"></ul>
+    </div>
+  </div>
   <!-- .sidebar-bottom -->
 </aside>
 <!-- #sidebar -->

@@ -613,7 +613,6 @@ catering_items:
     points:
       - "Free ongkir khusus wilayah wisata Guci"
       - "Luar area menyesuaikan jarak pengantaran"
-      - "Prasmanan bisa disajikan di luar dengan biaya tambahan"
   items:
     - name: "Nasi Liwet"
       price: "18k"
@@ -853,9 +852,9 @@ faqs:
     - question: "Apakah bisa diantar sampai lokasi?"
       answer: "Bisa diantar sampai lokasi. Khusus wilayah wisata Guci free ongkir, sedangkan wilayah lain menyesuaikan jarak pengantaran."
     - question: "Berapa hari sebelumnya harus memesan?"
-      answer: "Minimal satu hari sebelum acara. Untuk menu khusus di luar daftar, minimal tiga hari sebelumnya. Pemesanan dikunci setelah DP 30 persen dibayarkan."
+      answer: "Minimal satu hari sebelum acara. Untuk menu khusus di luar daftar, minimal tiga hari sebelumnya. Pesanan dianggap pasti setelah DP 30 persen dibayarkan, dan setelah itu jumlahnya masih bisa ditambah tetapi tidak bisa dikurangi."
     - question: "Apakah bisa memesan beberapa jenis box sekaligus?"
-      answer: "Bisa, tetapi setiap jenis menu tetap minimal 30 box. Jadi kalau ingin dua jenis, berarti 30 box ayam broiler dan 30 box rendang, bukan dibagi dari 30. Satu jenis untuk seluruh pesanan membuat proses masak lebih cepat dan makanan sampai dalam kondisi lebih baik."
+      answer: "Bisa, tetapi setiap jenis menu tetap minimal 30 box. Jadi kalau ingin dua jenis, berarti 30 box ayam broiler dan 30 box rendang, bukan dibagi dari 30."
   facilities:
     - question: "Fasilitas apa saja yang tersedia di RM APAYAA?"
       answer: "Fasilitas RM APAYAA meliputi area indoor, area lesehan, mushola, toilet, tempat wudhu, dan area parkir luas."

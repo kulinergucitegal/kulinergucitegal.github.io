@@ -5407,3 +5407,26 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
     font-size: 1.1rem;
   }
 }
+
+/* ==================================================================
+   Tombol WhatsApp di hero beranda.
+   Sebelumnya berwarna amber sama persis dengan tombol "Lihat Menu" di
+   sebelahnya, sehingga keduanya terbaca setara padahal tujuannya berbeda -
+   satu menjelajah menu, satu langsung menghubungi admin. Hijau WhatsApp
+   dipakai agar konsisten dengan FAB "Chat Admin" yang melayang, sekaligus
+   memakai warna yang sudah dikenali orang sebagai WhatsApp.
+   Specificity dinaikkan agar mengungguli aturan dark mode tema yang memaksa
+   semua tombol di baris ini jadi amber.
+   ================================================================== */
+.simple-video-actions .simple-video-action-wa,
+html[data-mode="dark"] .simple-video-actions .simple-video-action-wa {
+  border-color: rgba(22, 163, 74, 0.55);
+  background: #22c55e;
+  color: #ffffff;
+}
+
+.simple-video-actions .simple-video-action-wa:hover,
+html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover {
+  background: #16a34a;
+  color: #ffffff;
+}

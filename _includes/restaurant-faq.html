@@ -16,7 +16,7 @@
       {% for item in faq_items %}
         <details class="restaurant-faq-item">
           <summary>{{ item.question }}</summary>
-          <p>{{ item.answer }}</p>
+          <p>{% include faq-jawaban.html answer=item.answer %}</p>
         </details>
       {% endfor %}
     </div>

@@ -18,7 +18,8 @@
         "name": {{ item.question | jsonify }},
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": {{ item.answer | jsonify }}
+          {%- capture jawaban -%}{% include faq-jawaban.html answer=item.answer %}{%- endcapture -%}
+          "text": {{ jawaban | jsonify }}
         }
       }{% unless forloop.last %},{% endunless %}
     {% endfor %}

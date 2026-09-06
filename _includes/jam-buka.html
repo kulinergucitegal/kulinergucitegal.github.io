@@ -1,0 +1,6 @@
+{%- comment -%}
+  Teks jam buka untuk ditampilkan di halaman. Dibangun dari brand.open_time dan
+  brand.close_time agar tidak ada angka jam yang ditulis dua kali di repo ini.
+{%- endcomment -%}
+{%- assign b = site.data.restaurant.brand -%}
+Setiap hari, {{ b.open_time }} - {{ b.close_time }} WIB

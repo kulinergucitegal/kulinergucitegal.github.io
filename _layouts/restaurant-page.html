@@ -390,7 +390,7 @@ layout: compress
                       <div class="restaurant-card-body">
                         <span class="restaurant-chip">Lokasi</span>
                         <h3>{{ brand.address }}</h3>
-                        <p><strong>Jam buka:</strong> {{ brand.opening_hours }}</p>
+                        <p><strong>Jam buka:</strong> {% include jam-buka.html %}</p>
                         <p><strong>Kontak:</strong> {{ brand.phone_label }}</p>
                         <div class="restaurant-actions">
                           <a class="restaurant-button restaurant-button-primary" href="{{ brand.maps_url }}" target="_blank" rel="noreferrer">Buka Google Maps</a>

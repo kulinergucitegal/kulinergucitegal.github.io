@@ -1,0 +1,7 @@
+{%- comment -%}
+  Menyulih penanda jam pada jawaban FAQ dengan nilai dari brand.open_time dan
+  brand.close_time, supaya jam buka hanya ditulis di satu tempat. Dipakai baik
+  oleh tampilan halaman maupun structured data agar keduanya tidak berbeda.
+{%- endcomment -%}
+{%- assign b = site.data.restaurant.brand -%}
+{{- include.answer | replace: '[JAM_BUKA]', b.open_time | replace: '[JAM_TUTUP]', b.close_time -}}

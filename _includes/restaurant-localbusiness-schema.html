@@ -46,7 +46,7 @@
     "Bojong",
     "Kabupaten Tegal"
   ],
-  "openingHours": "Mo-Su 08:30-20:00",
+  "openingHours": "Mo-Su {{ brand.open_time | replace: '.', ':' }}-{{ brand.close_time | replace: '.', ':' }}",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -59,8 +59,8 @@
         "Saturday",
         "Sunday"
       ],
-      "opens": "08:30",
-      "closes": "20:00"
+      "opens": "{{ brand.open_time | replace: '.', ':' }}",
+      "closes": "{{ brand.close_time | replace: '.', ':' }}"
     }
   ],
   "acceptsReservations": {{ brand.accepts_reservations | jsonify }},

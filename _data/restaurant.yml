@@ -8,7 +8,12 @@ brand:
   phone_label: "+62 822-8889-8556"
   maps_url: "https://maps.google.com/?q=RM%20APAYAA%20Tuwel%20Bojong%20Tegal"
   address: "Jl. Raya Guci, Krajan Barat, Tuwel, Kec. Bojong, Kabupaten Tegal, Jawa Tengah 52465"
-  opening_hours: "Setiap hari, 08.30 - 20.00 WIB"
+  # SUMBER TUNGGAL JAM BUKA. Nilainya harus sama persis dengan yang tertulis
+  # di Google Business Profile - saat ini Google menampilkan 08.30-20.00.
+  # Tiga tempat dibangun otomatis dari dua nilai ini: teks jam buka di halaman,
+  # structured data untuk Google, dan jawaban FAQ. Cukup ubah di sini.
+  open_time: "08.30"
+  close_time: "20.00"
   accepts_reservations: true
   google_rating: "4.7"
   google_review_count: "591"
@@ -824,7 +829,7 @@ faqs:
     - question: "Menu utama RM APAYAA apa saja?"
       answer: "Ayam kampung, bebek, kambing muda, aneka sop, gurame, nila, bawal, cumi dan udang, nasi goreng, paket makan, aneka jus, dan kopi. Harga mulai 15 ribu untuk paket ikan asin sampai 120 ribu untuk sate satu kodi."
     - question: "Jam berapa RM APAYAA buka?"
-      answer: "Buka setiap hari pukul 08.30 sampai 20.00 WIB. Khusus transit pagi rombongan Bus, bisa dibuka mulai pukul 04.00 Subuh dengan booking terlebih dahulu."
+      answer: "Buka setiap hari pukul [JAM_BUKA] sampai [JAM_TUTUP] WIB. Khusus transit pagi rombongan Bus, bisa dibuka mulai pukul 04.00 Subuh dengan booking terlebih dahulu."
     - question: "Jam berapa RM APAYAA paling ramai?"
       answer: "Paling ramai saat akhir pekan, hari libur, dan musim liburan sekolah, terutama sekitar pukul 11.00 sampai 14.00. Pada jam tersebut waktu tunggu bisa 30 sampai 60 menit."
     - question: "Apakah bisa pesan terlebih dahulu sebelum sampai?"

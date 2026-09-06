@@ -222,7 +222,7 @@ layout: compress
                   <div>
                     <p class="restaurant-eyebrow">Lokasi</p>
                     <h2>Mudah ditemukan di jalur Guci, Tegal.</h2>
-                    <p>{{ brand.address }}. {{ brand.opening_hours }} dan siap menerima tamu keluarga maupun rombongan.</p>
+                    <p>{{ brand.address }}. {% include jam-buka.html %} dan siap menerima tamu keluarga maupun rombongan.</p>
                     <div class="simple-preview-actions">
                       <a class="restaurant-button restaurant-button-primary" href="{{ brand.maps_url }}" target="_blank" rel="noreferrer">Buka Google Maps</a>
                     </div>

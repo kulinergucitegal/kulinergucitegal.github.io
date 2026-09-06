@@ -1,7 +1,11 @@
 # Bundler cache
 .bundle
 vendor
-Gemfile.lock
+# Gemfile.lock sengaja DI-COMMIT, tidak di-ignore. Tanpa itu, Gemfile hanya
+# menyebut rentang versi (~> 7.2) sehingga CI memasang Chirpy terbaru sementara
+# mesin lokal tertinggal di versi lama - build lokal jadi tidak mencerminkan
+# produksi, dan pembaruan tema bisa mengubah situs tanpa satu baris pun diubah.
+# Pembaruan kini jadi keputusan sadar lewat `bundle update jekyll-theme-chirpy`.
 
 # Jekyll cache
 .jekyll-cache

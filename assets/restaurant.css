@@ -5430,3 +5430,95 @@ html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover {
   background: #16a34a;
   color: #ffffff;
 }
+
+/* ==================================================================
+   Isi paket yang muncul saat baris diketuk.
+   Memakai <details> bawaan HTML: tanpa JavaScript, bisa dibuka lewat
+   keyboard, dan isinya tetap ada di HTML meski tertutup sehingga terbaca
+   mesin pencari. Baris tanpa data isi tetap memakai markup lama.
+   ================================================================== */
+/* Rantai selektor disamakan panjangnya dengan aturan baris menu yang sudah
+   ada (.menu-catalog-section .menu-main-card .simple-pricing-list
+   .menu-main-item), kalau tidak <li> tetap dipaksa jadi grid tiga kolom
+   sehingga seluruh isi baris terjepit di kolom pertama, dan tanda centangnya
+   muncul dua kali. */
+.menu-catalog-section .menu-main-card .simple-pricing-list .menu-main-item-detail {
+  display: block;
+  padding-left: 0;
+}
+
+.menu-catalog-section .menu-main-card .simple-pricing-list .menu-main-item-detail::before {
+  content: none;
+}
+
+.menu-catalog-section .menu-main-item-detail summary {
+  display: grid;
+  grid-template-columns: auto minmax(0.5rem, 1fr) auto auto;
+  align-items: baseline;
+  column-gap: 0.3rem;
+  padding-left: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+/* segitiga bawaan browser diganti caret sendiri */
+.menu-catalog-section .menu-main-item-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+/* tanda centang dipindah ke summary karena <li>-nya kini pembungkus */
+.menu-catalog-section .menu-main-item-detail summary::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0.28rem;
+  color: rgba(245, 158, 11, 0.92);
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.menu-main-item-caret {
+  font-size: 0.6rem;
+  color: rgba(245, 158, 11, 0.7);
+  transition: transform 180ms ease;
+}
+
+.menu-catalog-section .menu-main-item-detail details[open] .menu-main-item-caret {
+  transform: rotate(180deg);
+}
+
+.menu-catalog-section .menu-main-item-detail details[open] .menu-main-isi {
+  display: grid;
+}
+
+/* Menyetel `display` pada anak langsung <details> menimpa aturan bawaan
+   browser yang menyembunyikan isi saat tertutup, sehingga isinya justru selalu
+   tampak. Karena itu defaultnya disembunyikan dan baru ditampilkan saat
+   atribut [open] hadir. */
+.menu-main-isi {
+  display: none;
+  gap: 0.18rem;
+  margin: 0.35rem 0 0.5rem;
+  padding: 0.5rem 0.6rem 0.55rem 1.1rem;
+  border-left: 2px solid rgba(245, 158, 11, 0.35);
+  border-radius: 0 6px 6px 0;
+  background: rgba(245, 158, 11, 0.06);
+  list-style: none;
+}
+
+.menu-main-isi li {
+  color: var(--muted-foreground);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.menu-main-isi li::before {
+  content: "\2022";
+  margin-right: 0.4rem;
+  color: rgba(245, 158, 11, 0.75);
+}
+
+html[data-mode="dark"] .menu-main-isi {
+  background: rgba(245, 158, 11, 0.08);
+}

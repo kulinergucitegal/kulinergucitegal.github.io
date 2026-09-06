@@ -97,11 +97,34 @@ layout: compress
                             <h2>{{ section.title }}</h2>
                             <ul class="simple-pricing-list">
                               {% for item in section.items %}
-                                <li class="menu-main-item">
-                                  <span class="menu-main-item-name">{{ item.name }}{% if item.badge %} <em>{{ item.badge }}</em>{% endif %}</span>
-                                  <span class="menu-main-item-dots" aria-hidden="true"></span>
-                                  <span class="menu-main-item-price">{{ item.price }}</span>
-                                </li>
+                                {% if item.isi %}
+                                  {%- comment -%}
+                                    Isi paket disembunyikan di balik <details> agar kartu tidak
+                                    menjadi dua kali lebih tinggi, tapi tetap ada di HTML sehingga
+                                    terbaca mesin pencari meski dalam keadaan tertutup.
+                                  {%- endcomment -%}
+                                  <li class="menu-main-item menu-main-item-detail">
+                                    <details>
+                                      <summary>
+                                        <span class="menu-main-item-name">{{ item.name }}{% if item.badge %} <em>{{ item.badge }}</em>{% endif %}</span>
+                                        <span class="menu-main-item-dots" aria-hidden="true"></span>
+                                        <span class="menu-main-item-price">{{ item.price }}</span>
+                                        <i class="fas fa-chevron-down menu-main-item-caret" aria-hidden="true"></i>
+                                      </summary>
+                                      <ul class="menu-main-isi">
+                                        {% for bahan in item.isi %}
+                                          <li>{{ bahan }}</li>
+                                        {% endfor %}
+                                      </ul>
+                                    </details>
+                                  </li>
+                                {% else %}
+                                  <li class="menu-main-item">
+                                    <span class="menu-main-item-name">{{ item.name }}{% if item.badge %} <em>{{ item.badge }}</em>{% endif %}</span>
+                                    <span class="menu-main-item-dots" aria-hidden="true"></span>
+                                    <span class="menu-main-item-price">{{ item.price }}</span>
+                                  </li>
+                                {% endif %}
                               {% endfor %}
                             </ul>
                           </div>

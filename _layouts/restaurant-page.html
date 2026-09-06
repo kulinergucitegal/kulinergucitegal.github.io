@@ -69,9 +69,13 @@ layout: compress
                 <section class="restaurant-section restaurant-section-panel menu-catalog-section">
                   <div class="section-heading section-heading-center">
                     <div>
+                      {% assign jumlah_item = 0 %}
+                      {% for bagian in restaurant.menu_catalog.sections %}
+                        {% assign jumlah_item = jumlah_item | plus: bagian.items.size %}
+                      {% endfor %}
                       <p class="restaurant-eyebrow">Menu Utama</p>
                       <h1>Menu utama RM APAYAA Guci Tegal.</h1>
-                      <p class="restaurant-lead">Daftar menu dan harga lengkap yang bisa langsung dibaca tanpa memperbesar gambar. {{ restaurant.menu_catalog.note }}</p>
+                      <p class="restaurant-lead">{{ jumlah_item }} pilihan dari {{ restaurant.menu_catalog.sections.size }} kategori, lengkap dengan harganya. {{ restaurant.menu_catalog.note }}</p>
                     </div>
                   </div>
 
@@ -126,7 +130,7 @@ layout: compress
                       <div>
                         <p class="restaurant-eyebrow">Menu Prasmanan</p>
                         <h1>Menu prasmanan RM APAYAA untuk rombongan.</h1>
-                        <p class="restaurant-lead">Pilihan paket prasmanan lengkap dengan harga per pax dan rincian isi menunya. {{ restaurant.prasmanan_items.note }}.</p>
+                        <p class="restaurant-lead">{{ restaurant.prasmanan_items.items.size }} paket prasmanan, harga per pax sudah termasuk rincian lauknya. {{ restaurant.prasmanan_items.note }}.</p>
                       </div>
                     </div>
 
@@ -210,7 +214,7 @@ layout: compress
                       <div>
                         <p class="restaurant-eyebrow">Menu Box</p>
                         <h1>Menu box RM APAYAA untuk acara dan konsumsi praktis.</h1>
-                        <p class="restaurant-lead">Pilihan nasi box lengkap dengan harga per box dan rincian isinya. {{ restaurant.catering_items.note }}.</p>
+                        <p class="restaurant-lead">{{ restaurant.catering_items.items.size }} pilihan nasi box, harga per box sudah termasuk rincian isinya. {{ restaurant.catering_items.note }}.</p>
                       </div>
                     </div>
 

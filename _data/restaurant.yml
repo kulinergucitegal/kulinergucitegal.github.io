@@ -8,7 +8,7 @@ brand:
   phone_label: "+62 822-8889-8556"
   maps_url: "https://maps.google.com/?q=RM%20APAYAA%20Tuwel%20Bojong%20Tegal"
   address: "Jl. Raya Guci, Krajan Barat, Tuwel, Kec. Bojong, Kabupaten Tegal, Jawa Tengah 52465"
-  opening_hours: "Setiap hari, 09.00 - 20.00 WIB"
+  opening_hours: "Setiap hari, 08.30 - 20.00 WIB"
   accepts_reservations: true
   google_rating: "4.7"
   google_review_count: "591"
@@ -822,15 +822,15 @@ faqs:
     # CATATAN: kisaran harga di jawaban pertama ditulis manual. Kalau harga
     # termurah atau termahal berubah, perbarui di sini juga.
     - question: "Menu utama RM APAYAA apa saja?"
-      answer: "Ayam kampung, bebek, kambing muda, aneka sop, gurame, nila, bawal, cumi dan udang, nasi goreng, paket makan, aneka jus, dan kopi. Harga per item mulai 3 ribu untuk lalapan sampai 120 ribu untuk sate satu kodi."
+      answer: "Ayam kampung, bebek, kambing muda, aneka sop, gurame, nila, bawal, cumi dan udang, nasi goreng, paket makan, aneka jus, dan kopi. Harga paket mulai 15 ribu untuk paket ikan asin sampai 120 ribu untuk sate satu kodi."
     - question: "Jam berapa RM APAYAA buka?"
-      answer: "Buka setiap hari pukul 09.00 sampai 20.00 WIB. Khusus transit rombongan pagi bisa dibuka mulai pukul 04.00 dengan booking terlebih dahulu."
+      answer: "Buka setiap hari pukul 08.30 sampai 20.00 WIB. Khusus transit pagi rombongan Bus, bisa dibuka mulai pukul 04.00 Subuh dengan booking terlebih dahulu."
     - question: "Jam berapa RM APAYAA paling ramai?"
       answer: "Paling ramai saat akhir pekan, hari libur, dan musim liburan sekolah, terutama sekitar pukul 11.00 sampai 14.00. Pada jam tersebut waktu tunggu bisa 30 sampai 60 menit."
     - question: "Apakah bisa pesan terlebih dahulu sebelum sampai?"
       answer: "Bisa, dan justru disarankan. Kirim pesanan lewat WhatsApp admin sebelum berangkat agar makanan sudah siap begitu Anda tiba, sehingga tidak perlu menunggu di jam ramai."
     - question: "Apakah menu utama bisa dipesan untuk makan rombongan?"
-      answer: "Bisa, silakan booking lewat WhatsApp. Untuk rombongan di atas 30 orang, kami sarankan mengambil menu prasmanan agar penyajiannya lebih cepat dan merata."
+      answer: "Bisa, silakan booking lewat WhatsApp. Untuk rombongan di atas 30 orang, kami sarankan mengambil menu prasmanan yang lebih hemat."
   packages:
     - question: "Menu prasmanan RM APAYAA apa saja?"
       answer: "Menu prasmanan RM APAYAA mencakup nasi liwet, pecel sayur, ikan lele, ikan nila, ayam broiler, garang asem, rendang sapi, ayam kampung, dan sate kambing. Pilihan menu bisa dikonsultasikan sesuai kebutuhan rombongan."

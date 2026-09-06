@@ -451,7 +451,7 @@ layout: compress
                       {% if brand.google_rating %}
                         <span class="maps-order-rating-badge"><i class="fas fa-star" aria-hidden="true"></i> {{ brand.google_rating }} · {{ brand.google_review_count }} ulasan</span>
                       {% endif %}
-                      <span><i class="fas fa-clock" aria-hidden="true"></i> 09.00 - 20.00 WIB</span>
+                      <span><i class="fas fa-clock" aria-hidden="true"></i> {{ brand.open_time }} - {{ brand.close_time }} WIB</span>
                     </div>
                   </div>
                   <div class="maps-order-hero-media">

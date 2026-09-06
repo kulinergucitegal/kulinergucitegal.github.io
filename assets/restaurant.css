@@ -5186,7 +5186,7 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
 @media (max-width: 991.98px) {
   .menu-category-nav-shell {
     position: sticky;
-    top: 3rem; /* tinggi topbar sticky */
+    top: 3.5rem; /* tinggi topbar sticky, lihat blok header di akhir berkas */
     z-index: 20;
     margin-inline: calc(-1 * var(--menu-nav-bleed, 1rem));
     padding: 0.5rem var(--menu-nav-bleed, 1rem);
@@ -5223,7 +5223,7 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
 
   /* Sasaran anchor harus lolos dari topbar DAN nav yang menempel */
   .menu-catalog-section .menu-main-card {
-    scroll-margin-top: 8.5rem;
+    scroll-margin-top: 9rem;
   }
 }
 
@@ -5356,5 +5356,28 @@ html[data-mode="dark"] .menu-category-nav-shell::after {
     padding: 0.62rem 0.9rem;
     font-size: 0.88rem;
     line-height: 1.2;
+  }
+}
+
+/* ==================================================================
+   Header mobile.
+   Bar 48px terlalu mepet untuk logo sedetail ini - hanya menyisakan 7px
+   di atas dan bawah. Dinaikkan ke 56px, tinggi lazim app bar mobile.
+   Logo dinaikkan 34 -> 40px dan potongan lingkaran (.rounded-circle)
+   diganti kotak membulat: artwork logonya berbentuk kotak dan pita
+   bertuliskan "RM. Apayaa" membentang hampir selebar penuh, sehingga
+   potongan lingkaran memangkas kedua ujung pitanya.
+   Tinggi topbar berasal dari variabel Sass tema ($topbar-height: 3rem)
+   sehingga hanya bisa ditimpa dari sini. Dua nilai lain ikut bergantung
+   padanya dan sudah disesuaikan: posisi sticky nav kategori dan
+   scroll-margin-top kartu menu.
+   ================================================================== */
+.topbar-brand-logo {
+  border-radius: 0.7rem;
+}
+
+@media (max-width: 991.98px) {
+  #topbar-wrapper {
+    height: 3.5rem;
   }
 }

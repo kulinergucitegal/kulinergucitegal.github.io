@@ -189,6 +189,9 @@ layout: compress
                     <div>
                       <p class="restaurant-eyebrow">{{ restaurant.google_testimonials.eyebrow }}</p>
                       <h2>{{ restaurant.google_testimonials.title }}</h2>
+                      {% if restaurant.google_testimonials.subtitle %}
+                        <p class="restaurant-lead">{{ restaurant.google_testimonials.subtitle }}</p>
+                      {% endif %}
                     </div>
                   </div>
                   <div class="simple-testimonials-shell">

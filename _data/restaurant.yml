@@ -818,8 +818,13 @@ faqs:
     # ada: kalimat pembuka halaman dan CTA di bawahnya sudah menyampaikan hal
     # yang sama, dan mengulanginya membuat halaman terdengar ragu pada daftar
     # harganya sendiri.
+    #
+    # CATATAN: kisaran harga di jawaban pertama ditulis manual. Kalau harga
+    # termurah atau termahal berubah, perbarui di sini juga.
     - question: "Menu utama RM APAYAA apa saja?"
-      answer: "Menu utama RM APAYAA mencakup ayam, bebek, kambing muda, sop, gurame, seafood, nasi, paket makan, aneka minuman, jus, dan kopi."
+      answer: "Ayam kampung, bebek, kambing muda, aneka sop, gurame, nila, bawal, cumi dan udang, nasi goreng, paket makan, aneka jus, dan kopi. Harga per item mulai 3 ribu untuk lalapan sampai 120 ribu untuk sate satu kodi."
+    - question: "Jam berapa RM APAYAA buka?"
+      answer: "Buka setiap hari pukul 09.00 sampai 20.00 WIB. Khusus transit rombongan pagi bisa dibuka mulai pukul 04.00 dengan booking terlebih dahulu."
     - question: "Jam berapa RM APAYAA paling ramai?"
       answer: "Paling ramai saat akhir pekan, hari libur, dan musim liburan sekolah, terutama sekitar pukul 11.00 sampai 14.00. Pada jam tersebut waktu tunggu bisa 30 sampai 60 menit."
     - question: "Apakah bisa pesan terlebih dahulu sebelum sampai?"

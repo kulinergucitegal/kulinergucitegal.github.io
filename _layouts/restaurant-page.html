@@ -95,6 +95,20 @@ layout: compress
                           <div class="simple-pricing-content">
                             <span class="simple-pricing-icon" aria-hidden="true"><i class="{{ section.icon }}"></i></span>
                             <h2>{{ section.title }}</h2>
+                            {%- comment -%}
+                              Petunjuk hanya muncul di kategori yang memang punya data isi,
+                              dideteksi dari datanya sendiri supaya tidak perlu penanda manual.
+                            {%- endcomment -%}
+                            {% assign ada_isi = false %}
+                            {% for item in section.items %}
+                              {% if item.isi %}{% assign ada_isi = true %}{% endif %}
+                            {% endfor %}
+                            {% if ada_isi %}
+                              <p class="menu-main-hint">
+                                <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                                Klik nama paket untuk melihat isinya
+                              </p>
+                            {% endif %}
                             <ul class="simple-pricing-list">
                               {% for item in section.items %}
                                 {% if item.isi %}

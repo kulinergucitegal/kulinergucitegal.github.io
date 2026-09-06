@@ -814,21 +814,18 @@ faqs:
     - question: "Bagaimana cara reservasi atau tanya menu?"
       answer: "Pengunjung bisa langsung menghubungi admin melalui WhatsApp untuk tanya menu, reservasi tempat, paket rombongan, menu prasmanan, atau menu box."
   menu:
-    # Pertanyaan soal konfirmasi harga sengaja dihapus: kalimat pembuka halaman
-    # dan CTA di bawahnya sudah menyampaikan hal yang sama, dan mengulanginya
-    # untuk ketiga kali membuat halaman terdengar ragu pada daftar harganya
-    # sendiri. Diganti pertanyaan yang benar-benar ditanyakan pengunjung,
-    # bersumber dari ulasan Google dan konfirmasi pemilik.
-    - question: "Jam berapa RM APAYAA paling ramai?"
-      answer: "Paling ramai saat akhir pekan sekitar pukul 11.00 sampai 14.00. Di jam tersebut waktu tunggu bisa sekitar 30 menit."
-    - question: "Apakah bisa pesan lebih dulu sebelum sampai?"
-      answer: "Bisa, dan justru disarankan. Kirim pesanan lewat WhatsApp admin sebelum berangkat agar makanan sudah siap begitu Anda tiba, sehingga tidak perlu menunggu di jam ramai."
-    - question: "Apakah ada menu yang bisa habis?"
-      answer: "Bisa, tergantung ramainya hari itu. Ayam kampung biasanya paling cepat habis. Kalau ada menu tertentu yang ingin dipastikan, tanyakan ke admin sebelum berangkat."
-    - question: "Apakah menu utama bisa dipesan untuk makan rombongan?"
-      answer: "Bisa. Untuk rombongan sebaiknya booking lebih dulu lewat WhatsApp agar pilihan menu, jumlah porsi, dan waktu kedatangan bisa disiapkan."
+    # Urutan ditentukan pemilik. Pertanyaan soal konfirmasi harga sengaja tidak
+    # ada: kalimat pembuka halaman dan CTA di bawahnya sudah menyampaikan hal
+    # yang sama, dan mengulanginya membuat halaman terdengar ragu pada daftar
+    # harganya sendiri.
     - question: "Menu utama RM APAYAA apa saja?"
       answer: "Menu utama RM APAYAA mencakup ayam, bebek, kambing muda, sop, gurame, seafood, nasi, paket makan, aneka minuman, jus, dan kopi."
+    - question: "Jam berapa RM APAYAA paling ramai?"
+      answer: "Paling ramai saat akhir pekan, hari libur, dan musim liburan sekolah, terutama sekitar pukul 11.00 sampai 14.00. Pada jam tersebut waktu tunggu bisa 30 sampai 60 menit."
+    - question: "Apakah bisa pesan terlebih dahulu sebelum sampai?"
+      answer: "Bisa, dan justru disarankan. Kirim pesanan lewat WhatsApp admin sebelum berangkat agar makanan sudah siap begitu Anda tiba, sehingga tidak perlu menunggu di jam ramai."
+    - question: "Apakah menu utama bisa dipesan untuk makan rombongan?"
+      answer: "Bisa, silakan booking lewat WhatsApp. Untuk rombongan di atas 30 orang, kami sarankan mengambil menu prasmanan agar penyajiannya lebih cepat dan merata."
   packages:
     - question: "Menu prasmanan RM APAYAA apa saja?"
       answer: "Menu prasmanan RM APAYAA mencakup nasi liwet, pecel sayur, ikan lele, ikan nila, ayam broiler, garang asem, rendang sapi, ayam kampung, dan sate kambing. Pilihan menu bisa dikonsultasikan sesuai kebutuhan rombongan."

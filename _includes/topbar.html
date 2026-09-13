@@ -14,7 +14,10 @@
           class="topbar-brand-logo"
           style="object-fit: cover;"
         >
-        <span class="topbar-brand-label ms-2">{{ site.title }}</span>
+        <span class="topbar-brand-text ms-2">
+          <span class="topbar-brand-label">{{ site.title }}</span>
+          {% include versi-situs.html %}
+        </span>
       </a>
 
       <nav id="breadcrumb" aria-label="Breadcrumb" class="d-none d-lg-flex"></nav>

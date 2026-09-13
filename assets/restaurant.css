@@ -5574,31 +5574,29 @@ html[data-mode="dark"] .menu-main-isi {
   font-size: 0.74rem;
 }
 
-/* Penanda versi di bawah kalimat pembuka halaman menu. Sengaja kecil dan pudar:
-   bukan untuk dibaca pelanggan, tapi supaya ikut tertangkap saat halaman
-   di-screenshot sehingga admin bisa mencocokkannya dengan versi yang tayang. */
-.menu-versi {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin: 0.55rem 0 0;
-  padding: 0.18rem 0.55rem;
-  border: 1px solid rgba(245, 158, 11, 0.22);
-  border-radius: 999px;
+/* Penanda versi di header. Header menempel saat digulir, jadi penanda ini ikut
+   tertangkap di screenshot bagian mana pun. Sengaja kecil dan pudar: bukan
+   untuk dibaca pelanggan, tapi untuk admin mencocokkan screenshot dengan versi
+   yang sedang tayang. */
+.topbar-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.versi-situs {
   color: var(--muted-foreground);
-  font-size: 0.7rem;
-  line-height: 1.3;
-}
-
-.menu-versi i {
-  color: rgba(245, 158, 11, 0.7);
-  font-size: 0.66rem;
-}
-
-.menu-versi code {
-  padding: 0;
-  background: none;
-  color: rgba(245, 158, 11, 0.9);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+.versi-situs-sidebar {
+  display: block;
+  margin-top: 0.6rem;
 }

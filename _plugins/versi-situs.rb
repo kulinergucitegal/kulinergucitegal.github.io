@@ -1,9 +1,9 @@
-# Penanda versi yang tampil di halaman menu.
+# Penanda versi yang tampil di header situs.
 #
 # Pelanggan kadang mengirim tangkapan layar menu yang ternyata versi lama. Tanpa
 # penanda, tidak ada cara memastikan dari gambar saja apakah harganya masih
 # berlaku. Plugin ini mengambil hash pendek dan tanggal commit terakhir, lalu
-# menaruhnya di site.versi_situs untuk dirender include menu-versi.html.
+# menaruhnya di site.versi_situs untuk dirender include versi-situs.html di topbar.
 #
 # Diambil dari HEAD, bukan dari berkas tertentu, karena CI melakukan checkout
 # dangkal (fetch-depth 1) sehingga riwayat per berkas tidak tersedia. Akibatnya
@@ -18,13 +18,13 @@ Jekyll::Hooks.register :site, :post_read do |site|
   commit = `git rev-parse --short HEAD 2>#{File::NULL}`.strip
   next if commit.empty?
 
-  bulan = %w[Jan Feb Mar Apr Mei Jun Jul Agu Sep Okt Nov Des]
   iso = `git log -1 --format=%cI 2>#{File::NULL}`.strip
 
   tanggal =
     begin
       waktu = Time.iso8601(iso)
-      "#{waktu.day} #{bulan[waktu.month - 1]} #{waktu.year}"
+      # Format ringkas 13.09.26 supaya muat di bawah nama pada header mobile.
+      waktu.strftime("%d.%m.%y")
     rescue ArgumentError
       nil
     end

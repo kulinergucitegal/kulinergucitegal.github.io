@@ -1,0 +1,10 @@
+{%- comment -%}
+  Penanda versi di header, dibaca dari site.versi_situs yang diisi plugin
+  _plugins/versi-situs.rb. Ditaruh di header karena header menempel saat
+  digulir, jadi ikut tertangkap di screenshot bagian mana pun. Tidak dirender
+  kalau git tidak tersedia saat build.
+{%- endcomment -%}
+{%- assign versi = site.versi_situs -%}
+{%- if versi and versi.commit -%}
+  <span class="versi-situs {{ include.class }}">Versi {% if versi.tanggal %}{{ versi.tanggal }} &middot; {% endif %}{{ versi.commit }}</span>
+{%- endif -%}

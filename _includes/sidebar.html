@@ -12,6 +12,8 @@
 
     <a class="site-title d-block" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
+    {%- comment -%} Di desktop topbar disembunyikan, jadi penanda versi tampil di sini. {%- endcomment -%}
+    {% include versi-situs.html class='versi-situs-sidebar' %}
   </header>
   <!-- .profile-wrapper -->
 

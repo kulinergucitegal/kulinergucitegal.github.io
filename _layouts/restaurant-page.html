@@ -76,7 +76,6 @@ layout: compress
                       <p class="restaurant-eyebrow">Menu Utama</p>
                       <h1>Menu utama RM APAYAA Guci Tegal.</h1>
                       <p class="restaurant-lead">{{ jumlah_item }} pilihan dari {{ restaurant.menu_catalog.sections.size }} kategori, lengkap dengan harganya. {{ restaurant.menu_catalog.note }}</p>
-                      {% include menu-versi.html %}
                     </div>
                   </div>
 
@@ -172,7 +171,6 @@ layout: compress
                         <p class="restaurant-eyebrow">Menu Prasmanan</p>
                         <h1>Menu prasmanan RM APAYAA untuk rombongan.</h1>
                         <p class="restaurant-lead">{{ restaurant.prasmanan_items.items.size }} paket prasmanan, harga per pax sudah termasuk rincian lauknya. {{ restaurant.prasmanan_items.note }}.</p>
-                        {% include menu-versi.html %}
                       </div>
                     </div>
 
@@ -257,7 +255,6 @@ layout: compress
                         <p class="restaurant-eyebrow">Menu Box</p>
                         <h1>Menu box RM APAYAA untuk acara dan konsumsi praktis.</h1>
                         <p class="restaurant-lead">{{ restaurant.catering_items.items.size }} pilihan nasi box, harga per box sudah termasuk rincian isinya. {{ restaurant.catering_items.note }}.</p>
-                        {% include menu-versi.html %}
                       </div>
                     </div>
 

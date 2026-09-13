@@ -29,4 +29,6 @@ package-lock.json
 # Misc
 .DS_Store
 _sass/dist
-assets/js/dist
+assets/js/dist/*
+# Pengecualian: service worker penghapus diri yang menimpa bawaan Chirpy.
+!assets/js/dist/sw.min.js

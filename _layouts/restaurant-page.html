@@ -76,6 +76,7 @@ layout: compress
                       <p class="restaurant-eyebrow">Menu Utama</p>
                       <h1>Menu utama RM APAYAA Guci Tegal.</h1>
                       <p class="restaurant-lead">{{ jumlah_item }} pilihan dari {{ restaurant.menu_catalog.sections.size }} kategori, lengkap dengan harganya. {{ restaurant.menu_catalog.note }}</p>
+                      {% include menu-versi.html %}
                     </div>
                   </div>
 
@@ -150,6 +151,8 @@ layout: compress
                     </div>
                   {% endif %}
 
+                  {% include menu-posters.html group='menu' %}
+
                   <div class="restaurant-cta menu-catalog-cta">
                     <div>
                       <p class="restaurant-eyebrow">Konsultasi Menu</p>
@@ -158,8 +161,6 @@ layout: compress
                     </div>
                     <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                   </div>
-
-                  {% include menu-posters.html group='menu' %}
                 </section>
 
                 <script defer src="{{ '/assets/menu-category-nav.js' | relative_url }}"></script>
@@ -171,6 +172,7 @@ layout: compress
                         <p class="restaurant-eyebrow">Menu Prasmanan</p>
                         <h1>Menu prasmanan RM APAYAA untuk rombongan.</h1>
                         <p class="restaurant-lead">{{ restaurant.prasmanan_items.items.size }} paket prasmanan, harga per pax sudah termasuk rincian lauknya. {{ restaurant.prasmanan_items.note }}.</p>
+                        {% include menu-versi.html %}
                       </div>
                     </div>
 
@@ -235,6 +237,8 @@ layout: compress
 
                     {% include order-terms.html %}
 
+                    {% include menu-posters.html group='prasmanan' %}
+
                     <div class="restaurant-cta prasmanan-cta">
                       <div>
                         <p class="restaurant-eyebrow">Konsultasi Menu</p>
@@ -243,8 +247,6 @@ layout: compress
                       </div>
                       <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                     </div>
-
-                    {% include menu-posters.html group='prasmanan' %}
                   </section>
 
                   <script defer src="{{ '/assets/paket-card-focus.js' | relative_url }}"></script>
@@ -255,6 +257,7 @@ layout: compress
                         <p class="restaurant-eyebrow">Menu Box</p>
                         <h1>Menu box RM APAYAA untuk acara dan konsumsi praktis.</h1>
                         <p class="restaurant-lead">{{ restaurant.catering_items.items.size }} pilihan nasi box, harga per box sudah termasuk rincian isinya. {{ restaurant.catering_items.note }}.</p>
+                        {% include menu-versi.html %}
                       </div>
                     </div>
 
@@ -324,6 +327,8 @@ layout: compress
 
                     {% include order-terms.html %}
 
+                    {% include menu-posters.html group='box' %}
+
                     <div class="restaurant-cta catering-cta">
                       <div>
                         <p class="restaurant-eyebrow">Konsultasi Menu</p>
@@ -332,8 +337,6 @@ layout: compress
                       </div>
                       <a class="restaurant-button restaurant-button-primary" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
                     </div>
-
-                    {% include menu-posters.html group='box' %}
                   </section>
 
                   <script defer src="{{ '/assets/paket-card-focus.js' | relative_url }}"></script>

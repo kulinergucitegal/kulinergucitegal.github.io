@@ -1,16 +1,18 @@
-# Penanda versi yang tampil di header situs.
+# Penanda versi yang tampil di header situs, formatnya "v1309 646b495".
 #
 # Pelanggan kadang mengirim tangkapan layar menu yang ternyata versi lama. Tanpa
 # penanda, tidak ada cara memastikan dari gambar saja apakah harganya masih
-# berlaku. Plugin ini mengambil hash pendek dan tanggal commit terakhir, lalu
-# menaruhnya di site.versi_situs untuk dirender include versi-situs.html di topbar.
+# berlaku. Plugin ini menaruh penanda di site.versi_situs untuk dirender include
+# versi-situs.html di topbar (mobile) dan sidebar (desktop).
 #
-# Diambil dari HEAD, bukan dari berkas tertentu, karena CI melakukan checkout
-# dangkal (fetch-depth 1) sehingga riwayat per berkas tidak tersedia. Akibatnya
-# penanda berganti di setiap deploy - itu justru yang dibutuhkan: dua tangkapan
-# layar dengan penanda berbeda pasti berasal dari versi yang berbeda.
-
-require "time"
+# - v1309: tanggal dan bulan saat situs dibangun, dalam WIB. Build di CI berjalan
+#   tepat setelah push, jadi ini tanggal push terakhir. Sengaja tanpa pemisah
+#   dan tahun supaya tidak langsung terbaca sebagai tanggal oleh pelanggan.
+#   Dipakai waktu build, bukan tanggal commit, karena commit bisa dibuat
+#   beberapa hari sebelum di-push.
+# - 646b495: hash pendek HEAD, pembeda pastinya kalau sehari ada dua kali push.
+#   Diambil dari HEAD, bukan dari berkas tertentu, karena CI melakukan checkout
+#   dangkal (fetch-depth 1) sehingga riwayat per berkas tidak tersedia.
 
 Jekyll::Hooks.register :site, :post_read do |site|
   # File::NULL bernilai "NUL" di Windows dan "/dev/null" di Linux. Menulis
@@ -18,17 +20,9 @@ Jekyll::Hooks.register :site, :post_read do |site|
   commit = `git rev-parse --short HEAD 2>#{File::NULL}`.strip
   next if commit.empty?
 
-  iso = `git log -1 --format=%cI 2>#{File::NULL}`.strip
-
-  tanggal =
-    begin
-      waktu = Time.iso8601(iso)
-      # Format v1309 (tanggal+bulan) supaya ringkas dan tidak langsung terbaca
-      # sebagai tanggal oleh pelanggan. Kode commit tetap jadi pembeda pastinya.
-      waktu.strftime("v%d%m")
-    rescue ArgumentError
-      nil
-    end
+  # Runner CI memakai UTC; tanpa konversi, push setelah 17.00 WIB tercatat
+  # sebagai tanggal kemarin.
+  tanggal = Time.now.getlocal("+07:00").strftime("v%d%m")
 
   site.config["versi_situs"] = { "commit" => commit, "tanggal" => tanggal }
 end

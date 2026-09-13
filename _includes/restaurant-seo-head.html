@@ -54,6 +54,14 @@
 
 {% capture restaurant_styles %}
   {% if page.layout == 'landing' or page.layout == 'restaurant-page' or page.layout == 'restaurant-tourism-post' %}
+    {%- comment -%}
+      Font dimuat tanpa menahan tampilan. Dulu lewat @import di restaurant.css:
+      kalau fonts.googleapis.com lambat atau timeout, seluruh restaurant.css ikut
+      tertahan dan halaman tampil tanpa gaya. Sekarang halaman langsung tampil
+      dengan font cadangan, lalu berganti ke Inter begitu fontnya tiba.
+    {%- endcomment -%}
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Source+Serif+4:wght@500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="{{ '/assets/restaurant.css' | relative_url }}">
   {% endif %}
 {% endcapture %}

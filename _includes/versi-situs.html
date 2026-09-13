@@ -6,5 +6,5 @@
 {%- endcomment -%}
 {%- assign versi = site.versi_situs -%}
 {%- if versi and versi.commit -%}
-  <span class="versi-situs {{ include.class }}">Versi {% if versi.tanggal %}{{ versi.tanggal }} &middot; {% endif %}{{ versi.commit }}</span>
+  <span class="versi-situs {{ include.class }}">{% if versi.tanggal %}{{ versi.tanggal }} &middot; {% endif %}{{ versi.commit }}</span>
 {%- endif -%}

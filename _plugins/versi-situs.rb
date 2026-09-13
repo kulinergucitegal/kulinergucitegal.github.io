@@ -23,8 +23,9 @@ Jekyll::Hooks.register :site, :post_read do |site|
   tanggal =
     begin
       waktu = Time.iso8601(iso)
-      # Format ringkas 13.09.26 supaya muat di bawah nama pada header mobile.
-      waktu.strftime("%d.%m.%y")
+      # Format v1309 (tanggal+bulan) supaya ringkas dan tidak langsung terbaca
+      # sebagai tanggal oleh pelanggan. Kode commit tetap jadi pembeda pastinya.
+      waktu.strftime("v%d%m")
     rescue ArgumentError
       nil
     end

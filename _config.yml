@@ -139,10 +139,13 @@ assets:
     # only works if `assets.self_host.enabled` is 'true'
     env: # [development | production]
 
+# PWA sengaja DIMATIKAN. Service worker Chirpy menyajikan halaman dari cache
+# (cache-first), sehingga pengunjung terus melihat menu versi lama setelah
+# deploy. Pengunjung lama dibersihkan oleh assets/js/dist/sw.min.js.
 pwa:
-  enabled: true # the option for PWA feature (installable)
+  enabled: false # the option for PWA feature (installable)
   cache:
-    enabled: true # the option for PWA offline cache
+    enabled: false # the option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
     # Usually its value is the `baseurl` of another website that
     # shares the same domain name as the current website.

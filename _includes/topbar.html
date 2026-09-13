@@ -16,7 +16,7 @@
         >
         <span class="topbar-brand-text ms-2">
           <span class="topbar-brand-label">{{ site.title }}</span>
-          {% include versi-situs.html %}
+          <span class="topbar-brand-tagline">Kuliner Guci Tegal{% if site.versi_situs.commit %}<span class="topbar-brand-sep" aria-hidden="true"> &middot; </span>{% include versi-situs.html %}{% endif %}</span>
         </span>
       </a>
 

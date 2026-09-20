@@ -5674,7 +5674,13 @@ picture {
   .simple-preview-location,
   .simple-preview-cta-band {
     content-visibility: auto;
-    contain-intrinsic-size: auto 600px;
+    /* HANYA tingginya yang boleh dikira-kira. Sempat ditulis
+       "contain-intrinsic-size: auto 600px", padahal nilai tunggal berlaku untuk
+       lebar SEKALIGUS tinggi: bagian yang dilewati jadi dianggap selebar 600px,
+       kolom grid pembungkusnya ikut melebar jadi 653px, dan seluruh isi beranda
+       meluber keluar layar ponsel. Lebarnya harus tetap mengikuti layar. */
+    contain-intrinsic-width: auto none;
+    contain-intrinsic-height: auto 600px;
   }
 }
 

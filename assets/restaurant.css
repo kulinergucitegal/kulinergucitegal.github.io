@@ -5658,3 +5658,22 @@ body,
 picture {
   display: contents;
 }
+
+/* Bagian beranda di bawah layar pertama dilewati dulu saat halaman dibuka.
+   Browser baru menghitung tata letaknya ketika bagian itu mendekati layar,
+   sehingga waktu "Style & Layout" saat pembukaan (2,7 detik di HP kelas bawah
+   menurut Lighthouse) tidak dibayar sekaligus di awal.
+
+   contain-intrinsic-size memberi perkiraan tinggi sementara supaya bilah
+   gulir tidak melompat. Sengaja hanya di beranda dan hanya untuk layar kecil:
+   kartu menu memakai CSS columns, yang perhitungan kolomnya bisa kacau kalau
+   isinya dilewati. */
+@media (max-width: 991.98px) {
+  .simple-preview-pricing,
+  .simple-testimonials-section,
+  .simple-preview-location,
+  .simple-preview-cta-band {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+}

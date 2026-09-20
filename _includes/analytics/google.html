@@ -1,0 +1,8 @@
+{%- comment -%}
+  Sengaja dikosongkan, menimpa berkas bawaan theme.
+
+  Berkas asli memuat skrip gtag (186 KB) langsung di setiap halaman. Situs ini
+  memuatnya lewat _includes/google-analytics.html, yang menunda pemuatan sampai
+  halaman selesai tampil demi skor performa mobile. Tanpa penimpaan ini, skrip
+  itu tetap ikut termuat lebih awal dan penundaannya jadi sia-sia.
+{%- endcomment -%}

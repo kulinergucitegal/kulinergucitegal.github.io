@@ -5650,3 +5650,11 @@ body,
   display: inline-block;
   vertical-align: -0.125em;
 }
+
+/* Foto kini dibungkus <picture> (lihat _includes/gambar.html) supaya browser
+   bisa memilih versi .webp. display: contents membuat pembungkus itu tidak ikut
+   jadi kotak tata letak, sehingga semua aturan yang sudah menata <img> di dalam
+   kartu, galeri, dan poster tetap berlaku persis seperti sebelumnya. */
+picture {
+  display: contents;
+}

@@ -1,0 +1,153 @@
+---
+---
+/* Font Awesome versi ringkas: hanya ikon yang benar-benar dipakai situs ini.
+   Menggantikan all.min.css dari CDN jsDelivr (24 KB CSS + 120 KB font solid +
+   116 KB font brands) yang menahan tampilan ~990 ms di mobile dan membuat
+   tampilan situs bergantung pada server luar. Ikon merek (WhatsApp, Instagram,
+   TikTok, Facebook) sudah diganti SVG inline.
+
+   Cara membuat ulang kalau ada ikon baru: jalankan skrip pembuat subset, yang
+   membaca semua kelas "fas fa-..." dari template lalu memotong font aslinya
+   dengan pyftsubset. Kalau menambah ikon tanpa membuat ulang berkas ini,
+   ikonnya tidak akan muncul.
+
+   Ikon berasal dari Font Awesome Free (CC BY 4.0, https://fontawesome.com). */
+
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("{{ '/assets/fonts/fa-solid-ringkas.woff2' | relative_url }}") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("{{ '/assets/fonts/fa-regular-ringkas.woff2' | relative_url }}") format("woff2");
+}
+
+.fa,
+.fas,
+.far,
+.fa-solid,
+.fa-regular {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.fa,
+.fas,
+.fa-solid {
+  font-weight: 900;
+}
+
+.far,
+.fa-regular {
+  font-weight: 400;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-li {
+  position: absolute;
+  left: -2em;
+  top: 0.25em;
+  width: 2em;
+  line-height: inherit;
+  text-align: center;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-spin {
+  animation: fa-spin 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-spin {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-angle-left::before { content: "\f104"; }
+.fa-angle-right::before { content: "\f105"; }
+.fa-angle-up::before { content: "\f106"; }
+.fa-bars::before { content: "\f0c9"; }
+.fa-bowl-food::before { content: "\e4c6"; }
+.fa-bowl-rice::before { content: "\e2eb"; }
+.fa-box-open::before { content: "\f49e"; }
+.fa-calendar::before { content: "\f133"; }
+.fa-check::before { content: "\f00c"; }
+.fa-check-circle::before { content: "\f058"; }
+.fa-chevron-down::before { content: "\f078"; }
+.fa-circle::before { content: "\f111"; }
+.fa-circle-check::before { content: "\f058"; }
+.fa-clipboard::before { content: "\f328"; }
+.fa-clock::before { content: "\f017"; }
+.fa-code::before { content: "\f121"; }
+.fa-coffee::before { content: "\f0f4"; }
+.fa-cube::before { content: "\f1b2"; }
+.fa-cubes::before { content: "\f1b3"; }
+.fa-drumstick-bite::before { content: "\f6d7"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-facebook-square::before { content: "\f082"; }
+.fa-file-code::before { content: "\f1c9"; }
+.fa-fire::before { content: "\f06d"; }
+.fa-fish::before { content: "\f578"; }
+.fa-folder::before { content: "\f07b"; }
+.fa-folder-open::before { content: "\f07c"; }
+.fa-github::before { content: "\f09b"; }
+.fa-glass-water::before { content: "\e4f4"; }
+.fa-hand-pointer::before { content: "\f25a"; }
+.fa-hashtag::before { content: "\0023"; }
+.fa-home::before { content: "\f015"; }
+.fa-image::before { content: "\f03e"; }
+.fa-instagram::before { content: "\f16d"; }
+.fa-link::before { content: "\f0c1"; }
+.fa-linkedin::before { content: "\f08c"; }
+.fa-location-dot::before { content: "\f3c5"; }
+.fa-map-location-dot::before { content: "\f5a0"; }
+.fa-mastodon::before { content: "\f4f6"; }
+.fa-mountain-sun::before { content: "\e52f"; }
+.fa-mug-hot::before { content: "\f7b6"; }
+.fa-play::before { content: "\f04b"; }
+.fa-plus::before { content: "\002b"; }
+.fa-retweet::before { content: "\f079"; }
+.fa-rss::before { content: "\f09e"; }
+.fa-search::before { content: "\f002"; }
+.fa-shrimp::before { content: "\e448"; }
+.fa-spinner::before { content: "\f110"; }
+.fa-stack-overflow::before { content: "\f16c"; }
+.fa-star::before { content: "\f005"; }
+.fa-thumbtack::before { content: "\f08d"; }
+.fa-triangle-exclamation::before { content: "\f071"; }
+.fa-utensils::before { content: "\f2e7"; }
+.fa-weibo::before { content: "\f18a"; }
+.fa-whatsapp::before { content: "\f232"; }

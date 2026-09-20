@@ -21,7 +21,8 @@
       <div class="menu-main-poster-stack">
         {% for path in poster_paths %}
           <figure class="menu-main-poster-image">
-            <img src="{{ path | relative_url }}" alt="{{ poster_alts[forloop.index0] }}" loading="lazy" decoding="async">
+            {% assign alt_poster = poster_alts[forloop.index0] %}
+            {% include gambar.html src=path alt=alt_poster %}
           </figure>
         {% endfor %}
       </div>

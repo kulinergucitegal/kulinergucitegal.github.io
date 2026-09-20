@@ -32,7 +32,11 @@ toc:
   js: https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js
 
 fontawesome:
-  css: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/css/all.min.css
+  # Diarahkan ke subset lokal, lihat assets/fontawesome-ringkas.css. Versi CDN
+  # memuat 24 KB CSS + 236 KB font untuk ribuan ikon, padahal situs ini memakai
+  # 55 ikon; berkas lokalnya 4 KB CSS + 5,6 KB font dan tidak menahan tampilan.
+  # Menambah ikon baru: jalankan tools/buat-fontawesome-ringkas.py.
+  css: /assets/fontawesome-ringkas.css
 
 search:
   js: https://cdn.jsdelivr.net/npm/simple-jekyll-search@1/dest/simple-jekyll-search.min.js

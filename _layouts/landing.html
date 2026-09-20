@@ -45,7 +45,7 @@ layout: compress
                       rel="noreferrer"
                       aria-label="Tonton video RM. APAYAA di TikTok"
                     >
-                      <img src="{{ '/assets/img/posts/front-rm-apayaa.jpg' | relative_url }}" alt="Video suasana RM. APAYAA">
+                      {% include gambar.html src='/assets/img/posts/front-rm-apayaa.jpg' alt='Video suasana RM. APAYAA' lebar='1200' tinggi='630' lazy=false prioritas=true %}
                       <span class="simple-video-overlay"></span>
                       <span class="simple-video-play" aria-hidden="true">
                         <i class="fas fa-play"></i>
@@ -170,7 +170,7 @@ layout: compress
                           {% for item in restaurant.gallery.items limit:4 %}
                             <article class="simple-preview-gallery-card">
                               <div class="simple-preview-gallery-image">
-                                <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" loading="lazy" decoding="async">
+                                {% include gambar.html src=item.image alt=item.title lebar='1200' tinggi='630' %}
                               </div>
                               <div class="simple-preview-gallery-body">
                                 <h3>{{ item.title }}</h3>

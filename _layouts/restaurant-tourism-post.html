@@ -55,7 +55,8 @@ layout: compress
               <article class="restaurant-section restaurant-section-panel tourism-article{% if page.hero_minimal %} tourism-article-connected{% endif %}">
                 {% if page.image.path %}
                   <figure class="tourism-article-cover">
-                    <img src="{{ page.image.path | relative_url }}" alt="{{ page.image.alt | default: page.title }}" width="1200" height="630" loading="eager" decoding="async">
+                    {% assign alt_gambar = page.image.alt | default: page.title %}
+                    {% include gambar.html src=page.image.path alt=alt_gambar lebar='1200' tinggi='630' lazy=false prioritas=true %}
                   </figure>
                 {% endif %}
 

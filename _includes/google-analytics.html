@@ -1,11 +1,42 @@
 {% assign google_analytics_id = site.analytics.google.id %}
 {% if google_analytics_id %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}"></script>
+  {%- comment -%}
+    Skrip Google Analytics (186 KB) sengaja baru dimuat setelah halaman selesai
+    tampil. Sebelumnya dimuat bersamaan dan menyita thread utama ~1.040 ms di
+    mobile - penyumbang terbesar skor performa rendah. Kunjungan tetap tercatat,
+    hanya terkirim beberapa ratus milidetik lebih lambat.
+  {%- endcomment -%}
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ google_analytics_id }}');
+
+    (function () {
+      var dimuat = false;
+      function muatGtag() {
+        if (dimuat) return;
+        dimuat = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}';
+        document.head.appendChild(s);
+      }
+      // Jeda singkat setelah load supaya pengukuran performa (dan mata pengguna)
+      // melihat halaman lebih dulu; tetap dimuat walau pengunjung diam saja.
+      function jadwalkan() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(muatGtag, { timeout: 3000 });
+        } else {
+          setTimeout(muatGtag, 1200);
+        }
+      }
+      if (document.readyState === 'complete') {
+        jadwalkan();
+      } else {
+        window.addEventListener('load', jadwalkan);
+      }
+    })();
 
     document.addEventListener('click', function(e) {
       var el = e.target.closest('a[href*="wa.me"]');

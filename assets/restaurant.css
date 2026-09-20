@@ -5582,6 +5582,20 @@ html[data-mode="dark"] .menu-main-isi {
    Bootstrap (d-inline-flex, ms-2). Bootstrap dimuat dari CDN jsDelivr; kalau
    CDN itu gagal atau diblokir jaringan, kelas utilitasnya hilang dan teks
    jatuh ke bawah logo menutupi judul halaman. */
+/* Theme memakai Lato + Source Sans Pro dari Google Fonts. Keduanya dimatikan
+   di _data/origin/cors.yml karena menahan tampilan ~820 ms di mobile, jadi
+   elemen bawaan theme diarahkan ke Inter yang memang sudah dipakai halaman. */
+body,
+#sidebar,
+#topbar,
+.site-title,
+.site-subtitle,
+#core-wrapper h1,
+#core-wrapper h2,
+#core-wrapper h3 {
+  font-family: var(--font-sans);
+}
+
 #topbar {
   padding-inline: 1rem;
 }
@@ -5627,4 +5641,12 @@ html[data-mode="dark"] .menu-main-isi {
 .versi-situs-sidebar {
   display: block;
   margin-top: 0.6rem;
+}
+
+/* Ikon WhatsApp SVG (lihat _includes/ikon-whatsapp.html) disejajarkan seperti
+   ikon Font Awesome yang digantikannya. */
+.ikon-wa,
+.ikon-sosial {
+  display: inline-block;
+  vertical-align: -0.125em;
 }

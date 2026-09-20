@@ -92,13 +92,13 @@ layout: compress
                     <h2>{% if page.cta_title %}{{ page.cta_title }}{% else %}Mau mampir ke {{ brand.name }} sebelum atau setelah dari Guci?{% endif %}</h2>
                     <p>{{ page.cta_text | default: brand.description }}</p>
                   </div>
-                  <a class="restaurant-button simple-preview-cta-button" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Admin</a>
+                  <a class="restaurant-button simple-preview-cta-button" href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">{% include ikon-whatsapp.html %} Chat Admin</a>
                 </div>
               </section>
 
               <div class="maps-order-sticky-cta">
                 <a href="{{ whatsapp_link }}" target="_blank" rel="noreferrer">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                  {% include ikon-whatsapp.html %}
                   Chat Admin
                 </a>
               </div>

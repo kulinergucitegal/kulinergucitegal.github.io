@@ -43,7 +43,6 @@ layout: compress
                       href="https://www.tiktok.com/@kulinergucitegal"
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="Tonton video RM. APAYAA di TikTok"
                     >
                       {% include gambar.html src='/assets/img/posts/front-rm-apayaa.jpg' alt='Video suasana RM. APAYAA' lebar='1200' tinggi='630' lazy=false prioritas=true %}
                       <span class="simple-video-overlay"></span>
@@ -53,6 +52,14 @@ layout: compress
                       <span class="simple-video-copy">
                         <strong>Suasana singgah sebelum Guci</strong>
                         <span>Area makan, parkir, dan tempat singgah keluarga di jalur Tuwel Guci.</span>
+                        {%- comment -%}
+                          Dulu tujuan link ini disampaikan lewat aria-label, tapi aria-label
+                          menggantikan teks yang terlihat sehingga pembaca layar menyebut
+                          nama yang sama sekali berbeda dari tulisan di kartu. Kalimat ini
+                          ditambahkan sebagai teks tersembunyi supaya nama linknya tetap
+                          memuat judul kartu, lalu menjelaskan bahwa link menuju TikTok.
+                        {%- endcomment -%}
+                        <span class="teks-pembaca-layar">Tonton videonya di TikTok.</span>
                       </span>
                     </a>
                     <div class="simple-video-actions">
@@ -228,12 +235,7 @@ layout: compress
                     </div>
                   </div>
                   <div class="simple-preview-map-card">
-                    <iframe
-                      title="Peta RM. APAYAA"
-                      src="https://www.google.com/maps?q=RM%20APAYAA%20Tuwel%20Bojong%20Tegal&z=13&output=embed"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe>
+                    {% include peta-statis.html %}
                   </div>
                 </section>
 

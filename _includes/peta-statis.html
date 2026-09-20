@@ -1,0 +1,40 @@
+{%- comment -%}
+  Peta statis yang membuka Google Maps saat diketuk.
+
+  Sebelumnya peta Google disematkan langsung (iframe). Sematan itu mengunduh
+  sekitar 468 KB dan menjalankan skrip pihak ketiga di setiap kunjungan, padahal
+  hampir semua tamu hanya butuh melihat posisinya lalu menekan "buka di Maps"
+  untuk memakai navigasi di ponselnya. Gambar ini sekitar 20 KB dan tidak
+  menjalankan apa pun.
+
+  Gambarnya dibuat oleh tools/buat-peta-statis.py dari petak OpenStreetMap;
+  keterangan sumber tercetak di sudut gambar dan wajib dipertahankan.
+{%- endcomment -%}
+{%- assign brand = site.data.restaurant.brand -%}
+<a
+  class="peta-statis"
+  href="{{ brand.maps_url }}"
+  target="_blank"
+  rel="noreferrer"
+>
+  <picture>
+    <source srcset="{{ '/assets/img/peta/peta-rm-apayaa.webp' | relative_url }}" type="image/webp">
+    <img
+      src="{{ '/assets/img/peta/peta-rm-apayaa.jpg' | relative_url }}"
+      alt="Peta lokasi RM. APAYAA di jalur Tuwel, Bojong, Tegal"
+      width="768"
+      height="512"
+      loading="lazy"
+      decoding="async">
+  </picture>
+  {%- comment -%}
+    Keterangan sumber ditulis sebagai teks, bukan hanya dicetak di gambarnya:
+    gambar dipangkas mengikuti bentuk wadah, sehingga tulisan di sudut gambar
+    bisa ikut terpotong sementara syarat pencantuman sumber tetap berlaku.
+  {%- endcomment -%}
+  <span class="peta-statis-sumber">&copy; OpenStreetMap</span>
+  <span class="peta-statis-aksi">
+    <i class="fas fa-map-location-dot" aria-hidden="true"></i>
+    Buka di Google Maps
+  </span>
+</a>

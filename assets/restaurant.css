@@ -5677,3 +5677,112 @@ picture {
     contain-intrinsic-size: auto 600px;
   }
 }
+
+/* Teks khusus pembaca layar: tidak terlihat, tapi tetap terbaca dan tetap
+   dihitung sebagai bagian nama sebuah link. Dipakai untuk menjelaskan tujuan
+   link tanpa menimpa tulisan yang terlihat memakai aria-label. Tidak memakai
+   display: none, karena itu justru menyembunyikannya dari pembaca layar. */
+.teks-pembaca-layar {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Hijau WhatsApp dengan tulisan putih. Nada #22c55e hanya berkontras 2,28:1
+   dengan putih, di bawah syarat 4,5:1 sehingga tulisannya sulit dibaca di
+   layar terang atau oleh mata yang lelah. Nada ini berkontras 5,02:1 dan
+   tetap terbaca sebagai hijau WhatsApp. Dipakai hanya di tombol bertulisan
+   putih; bidang hijau dengan tulisan gelap tidak berubah. */
+:root {
+  --wa-hijau: #15803d;
+  --wa-hijau-gelap: #166534;
+}
+
+.simple-video-actions .simple-video-action-wa,
+html[data-mode="dark"] .simple-video-actions .simple-video-action-wa,
+.maps-order-sticky-cta a {
+  background: var(--wa-hijau);
+}
+
+.simple-video-actions .simple-video-action-wa:hover,
+html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover,
+.maps-order-sticky-cta a:hover {
+  background: var(--wa-hijau-gelap);
+}
+
+/* Peta statis pengganti peta sematan Google (lihat _includes/peta-statis.html).
+   Mewarisi ukuran dari wadah yang sama seperti iframe sebelumnya, supaya tinggi
+   bagian lokasi di beranda dan halaman maps tidak berubah. */
+.peta-statis {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.peta-statis img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+
+.peta-statis-sumber {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.45rem;
+  padding: 0.12rem 0.4rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #3f3f46;
+  font-size: 0.6rem;
+  line-height: 1.4;
+}
+
+.peta-statis-aksi {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.35);
+}
+
+.peta-statis:hover .peta-statis-aksi {
+  background: var(--primary);
+  color: #111111;
+}
+
+.simple-preview-map-card .peta-statis,
+.simple-preview-map-card .peta-statis img {
+  min-height: 320px;
+}
+
+.maps-order-hero-media .peta-statis,
+.maps-order-hero-media .peta-statis img {
+  min-height: 500px;
+}
+
+@media (max-width: 991.98px) {
+  .maps-order-hero-media .peta-statis,
+  .maps-order-hero-media .peta-statis img {
+    min-height: 360px;
+  }
+}

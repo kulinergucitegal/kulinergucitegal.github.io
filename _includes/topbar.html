@@ -4,7 +4,6 @@
       <a
         href="{{ '/' | relative_url }}"
         class="d-inline-flex d-lg-none align-items-center text-decoration-none topbar-brand-mobile"
-        aria-label="{{ site.title }}"
       >
         <img
           src="{{ site.avatar | relative_url }}"
@@ -16,7 +15,7 @@
         >
         <span class="topbar-brand-text">
           <span class="topbar-brand-label">{{ site.title }}</span>
-          <span class="topbar-brand-tagline">Kuliner Guci Tegal{% if site.versi_situs.commit %}<span class="topbar-brand-sep" aria-hidden="true"> &middot; </span>{% include versi-situs.html %}{% endif %}</span>
+          <span class="topbar-brand-tagline">Kuliner Guci Tegal{% if site.versi_situs.commit %}<span class="topbar-brand-sep" aria-hidden="true"> &middot; </span><span aria-hidden="true">{% include versi-situs.html %}</span>{% endif %}</span>
         </span>
       </a>
 

@@ -117,6 +117,7 @@
 .fa-cubes::before { content: "\f1b3"; }
 .fa-drumstick-bite::before { content: "\f6d7"; }
 .fa-envelope::before { content: "\f0e0"; }
+.fa-expand::before { content: "\f065"; }
 .fa-facebook-square::before { content: "\f082"; }
 .fa-file-code::before { content: "\f1c9"; }
 .fa-fire::before { content: "\f06d"; }
@@ -151,3 +152,4 @@
 .fa-utensils::before { content: "\f2e7"; }
 .fa-weibo::before { content: "\f18a"; }
 .fa-whatsapp::before { content: "\f232"; }
+.fa-xmark::before { content: "\f00d"; }

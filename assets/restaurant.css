@@ -5808,3 +5808,202 @@ html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover,
 }
 
 
+
+/* ==================================================================
+   Galeri suasana: kisi diam yang bisa diketuk.
+
+   Versi sebelumnya berjalan otomatis (marquee 32 detik sekali putar).
+   Tiga masalahnya: di ponsel tidak ada hover sehingga gerakannya mustahil
+   dihentikan, judul kartu terpotong oleh gradasi di tepi, dan foto mendatar
+   1200x630 dipaksa masuk bingkai tegak 4:5 sehingga hanya sepertiga bagian
+   tengahnya terlihat - papan nama dan luas parkir justru terpangkas.
+   Bingkai sekarang mendatar 3:2 mengikuti bentuk asli foto, dan seluruh
+   6 foto ditampilkan (dulu dibatasi 4, sehingga "Parkir Luas" dan "Toilet"
+   tidak pernah muncul).
+   ================================================================== */
+.galeri-kisi {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+@media (min-width: 992px) {
+  .galeri-kisi {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+}
+
+.galeri-kartu {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 8px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 42px rgba(var(--shadow-color), 0.08);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.galeri-kartu:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 48px rgba(var(--shadow-color), 0.16);
+}
+
+.galeri-kartu:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.galeri-gambar {
+  position: relative;
+  display: block;
+}
+
+.galeri-gambar img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.galeri-perbesar {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.72);
+  color: #ffffff;
+  font-size: 0.72rem;
+}
+
+.galeri-isi {
+  display: block;
+  padding: 0.7rem 0.75rem 0.85rem;
+}
+
+.galeri-isi strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.92rem;
+}
+
+.galeri-isi > span {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+html[data-mode="dark"] .galeri-kartu {
+  border-color: rgba(245, 158, 11, 0.2);
+  background: rgba(23, 23, 23, 0.92);
+}
+
+/* Tampilan foto besar. Dibuat sendiri, bukan memakai pustaka dari luar,
+   supaya tidak menambah unduhan pihak ketiga yang baru saja dihapus demi
+   skor kecepatan. */
+.galeri-tampil {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 1rem;
+  background: rgba(9, 9, 11, 0.94);
+}
+
+.galeri-tampil[hidden] {
+  display: none;
+}
+
+.galeri-tampil img {
+  max-width: min(100%, 1100px);
+  max-height: 72vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.galeri-tampil-teks {
+  max-width: 34rem;
+  color: #f4f4f5;
+  text-align: center;
+}
+
+.galeri-tampil-teks strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.galeri-tampil-teks span {
+  color: rgba(244, 244, 245, 0.75);
+  font-size: 0.85rem;
+}
+
+.galeri-tampil-tutup,
+.galeri-tampil-nav button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(244, 244, 245, 0.35);
+  border-radius: 999px;
+  background: rgba(24, 24, 27, 0.9);
+  color: #f4f4f5;
+  cursor: pointer;
+}
+
+.galeri-tampil-tutup {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  font-size: 1rem;
+}
+
+.galeri-tampil-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.galeri-tampil-nav button {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.galeri-tampil-nav span {
+  color: rgba(244, 244, 245, 0.8);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.galeri-tampil-tutup:focus-visible,
+.galeri-tampil-nav button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+body.galeri-terbuka {
+  overflow: hidden;
+}
+
+/* Tombol melayang "Chat Admin" punya z-index tinggi dan tetap menimpa foto
+   yang sedang dilihat. Disembunyikan selama foto terbuka. */
+body.galeri-terbuka .maps-order-sticky-cta,
+body.galeri-terbuka #back-to-top {
+  display: none;
+}

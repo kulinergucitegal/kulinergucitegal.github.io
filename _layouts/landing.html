@@ -170,24 +170,38 @@ layout: compress
                       <h2>{{ restaurant.gallery.title }}</h2>
                     </div>
                   </div>
-                  <div class="simple-preview-marquee-shell">
-                    <div class="simple-preview-marquee-track">
-                      {% for cycle in (1..2) %}
-                        <div class="simple-preview-marquee-group">
-                          {% for item in restaurant.gallery.items limit:4 %}
-                            <article class="simple-preview-gallery-card">
-                              <div class="simple-preview-gallery-image">
-                                {% include gambar.html src=item.image alt=item.title lebar='1200' tinggi='630' %}
-                              </div>
-                              <div class="simple-preview-gallery-body">
-                                <h3>{{ item.title }}</h3>
-                                <p>{{ item.subtitle }}</p>
-                              </div>
-                            </article>
-                          {% endfor %}
-                        </div>
-                      {% endfor %}
-                    </div>
+                  {%- comment -%}
+                    Galeri diam yang bisa diketuk, menggantikan galeri berjalan
+                    otomatis. Yang lama bergerak tanpa henti 32 detik sekali
+                    putar: di ponsel tidak ada cara menghentikannya, judul kartu
+                    terpotong di tepi, dan fotonya dipaksa masuk bingkai tegak
+                    4:5 padahal aslinya mendatar - hanya sepertiga tengah foto
+                    yang terlihat, sehingga papan nama dan luas parkir justru
+                    terpangkas. Versi lama ada di tag git galeri-sebelum-kisi.
+                  {%- endcomment -%}
+                  <div class="galeri-kisi">
+                    {% for item in restaurant.gallery.items %}
+                      <button
+                        type="button"
+                        class="galeri-kartu"
+                        data-galeri-gambar="{{ item.image | relative_url }}"
+                        data-galeri-webp="{{ item.image | replace: '.jpg', '.webp' | relative_url }}"
+                        data-galeri-judul="{{ item.title }}"
+                        data-galeri-teks="{{ item.subtitle }}"
+                      >
+                        <span class="galeri-gambar">
+                          {% include gambar.html src=item.image alt=item.title lebar='1200' tinggi='630' %}
+                          <span class="galeri-perbesar" aria-hidden="true">
+                            <i class="fas fa-expand"></i>
+                          </span>
+                        </span>
+                        <span class="galeri-isi">
+                          <strong>{{ item.title }}</strong>
+                          <span>{{ item.subtitle }}</span>
+                          <span class="teks-pembaca-layar">Ketuk untuk melihat foto lebih besar.</span>
+                        </span>
+                      </button>
+                    {% endfor %}
                   </div>
                 </section>
 
@@ -299,5 +313,7 @@ layout: compress
         targets.forEach(function (t) { io.observe(t); });
       }());
     </script>
+
+    <script defer src="{{ '/assets/galeri.js' | relative_url }}"></script>
   </body>
 </html>

@@ -252,13 +252,15 @@ layout: compress
                     <p class="restaurant-eyebrow">Lokasi</p>
                     <h2>Mudah ditemukan di jalur Guci, Tegal.</h2>
                     <p>{{ brand.address }}. {% include jam-buka.html %} dan siap menerima tamu keluarga maupun rombongan.</p>
-                    <div class="simple-preview-actions">
-                      <a class="restaurant-button restaurant-button-primary" href="{{ brand.maps_url }}" target="_blank" rel="noreferrer">Buka Google Maps</a>
-                    </div>
                   </div>
                   <div class="simple-preview-map-card">
-                    {% comment %} Tombolnya dimatikan: bagian ini sudah punya tombol "Buka Google Maps" di sebelah kiri. {% endcomment %}
-                    {% include peta-statis.html tombol=false %}
+                    {%- comment -%}
+                      Tombol "Buka Google Maps" yang berdiri sendiri di kolom teks
+                      sudah dihapus: tujuannya sama persis dengan tombol di sudut
+                      peta, dan tombol di peta lebih tepat karena menempel pada
+                      objek yang diketuk. Seluruh peta juga bisa diketuk.
+                    {%- endcomment -%}
+                    {% include peta-statis.html %}
                   </div>
                 </section>
 

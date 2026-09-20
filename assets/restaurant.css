@@ -5763,16 +5763,19 @@ html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover,
    pemakaian tangkapan layar Google. */
 .peta-statis-aksi {
   position: absolute;
-  right: 0.9rem;
-  top: 0.9rem;
+  right: 0.75rem;
+  top: 0.75rem;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.6rem 1rem;
+  /* Kini satu-satunya penanda bahwa peta bisa diketuk, jadi dibuat cukup
+     besar untuk jempol (tinggi sekitar 44px). */
+  min-height: 2.75rem;
+  padding: 0.65rem 1.05rem;
   border-radius: 999px;
   background: #111111;
   color: #ffffff;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 700;
   box-shadow: 0 10px 24px rgba(17, 17, 17, 0.35);
 }

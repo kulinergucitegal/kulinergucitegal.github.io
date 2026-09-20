@@ -190,7 +190,15 @@ layout: compress
                         data-galeri-teks="{{ item.subtitle }}"
                       >
                         <span class="galeri-gambar">
-                          {% include gambar.html src=item.image alt=item.title lebar='1200' tinggi='630' %}
+                          {%- comment -%}
+                            Kartu memakai versi kecil (640px, dibuat oleh
+                            tools/buat-thumbnail.py). Kartunya hanya selebar
+                            ~200px di ponsel, jadi foto penuh 1200px membuang
+                            ratusan KB dan memperlambat halaman. Foto penuh baru
+                            diunduh saat pengunjung mengetuk fotonya.
+                          {%- endcomment -%}
+                          {% assign gambar_kecil = item.image | replace: '.jpg', '-kecil.jpg' %}
+                          {% include gambar.html src=gambar_kecil alt=item.title lebar='640' tinggi='336' %}
                           <span class="galeri-perbesar" aria-hidden="true">
                             <i class="fas fa-expand"></i>
                           </span>

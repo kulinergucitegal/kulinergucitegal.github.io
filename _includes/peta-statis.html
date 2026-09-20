@@ -36,8 +36,15 @@
     pemakaian tangkapan layar Google.
   {%- endcomment -%}
   <span class="peta-statis-sumber">Data peta &copy;2026 Google</span>
-  <span class="peta-statis-aksi">
-    <i class="fas fa-map-location-dot" aria-hidden="true"></i>
-    Buka di Google Maps
-  </span>
+  {%- comment -%}
+    tombol=false menyembunyikan tombol di sudut peta. Dipakai di bagian yang
+    sudah punya tombol "Buka Google Maps" sendiri, supaya tidak ada dua tombol
+    bertujuan sama bersebelahan. Petanya tetap bisa diketuk.
+  {%- endcomment -%}
+  {%- unless include.tombol == false -%}
+    <span class="peta-statis-aksi">
+      <i class="fas fa-map-location-dot" aria-hidden="true"></i>
+      Buka di Google Maps
+    </span>
+  {%- endunless -%}
 </a>

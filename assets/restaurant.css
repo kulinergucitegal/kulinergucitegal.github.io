@@ -5735,24 +5735,30 @@ html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover,
   height: 100%;
   min-height: inherit;
   object-fit: cover;
+  /* Tepi bawah dikunci supaya logo "Google Maps" dan baris "Data peta ©2026"
+     yang tercetak di gambar tidak pernah ikut terpotong. */
+  object-position: center bottom;
 }
 
 .peta-statis-sumber {
   position: absolute;
   left: 0.5rem;
-  bottom: 0.45rem;
-  padding: 0.12rem 0.4rem;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.82);
+  bottom: 0.4rem;
+  padding: 0.1rem 0.38rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.85);
   color: #3f3f46;
-  font-size: 0.6rem;
-  line-height: 1.4;
+  font-size: 0.58rem;
+  line-height: 1.5;
 }
 
+/* Tombol sengaja di sudut ATAS. Di sudut bawah ia menutupi logo "Google Maps"
+   dan baris "Data peta" yang tercetak di gambar, padahal keterangan itu syarat
+   pemakaian tangkapan layar Google. */
 .peta-statis-aksi {
   position: absolute;
   right: 0.9rem;
-  bottom: 0.9rem;
+  top: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -5775,6 +5781,14 @@ html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover,
   min-height: 320px;
 }
 
+/* Peta di halaman maps mengikuti bentuk gambarnya sendiri, tidak dipaksa
+   setinggi 500px seperti peta sematan dulu. Kalau dipaksa tinggi, sisi kiri
+   dan kanan terpangkas banyak sehingga keterangan Google di tepi bawah ikut
+   hilang. */
+/* Peta mengisi penuh kolomnya seperti peta sematan dulu. Sempat dicoba
+   mengikuti bentuk asli gambar, tapi hasilnya peta jadi kecil dan menyisakan
+   ruang kosong di bawah. Pemangkasan kiri-kanan aman karena logo Google ada
+   di tengah bawah gambar, dan object-position mengunci tepi bawahnya. */
 .maps-order-hero-media .peta-statis,
 .maps-order-hero-media .peta-statis img {
   min-height: 500px;
@@ -5786,3 +5800,5 @@ html[data-mode="dark"] .simple-video-actions .simple-video-action-wa:hover,
     min-height: 360px;
   }
 }
+
+

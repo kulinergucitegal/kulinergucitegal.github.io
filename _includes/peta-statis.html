@@ -7,8 +7,10 @@
   untuk memakai navigasi di ponselnya. Gambar ini sekitar 20 KB dan tidak
   menjalankan apa pun.
 
-  Gambarnya dibuat oleh tools/buat-peta-statis.py dari petak OpenStreetMap;
-  keterangan sumber tercetak di sudut gambar dan wajib dipertahankan.
+  Gambarnya adalah tangkapan layar Google Maps milik pemilik usaha, dipotong
+  oleh tools/potong-peta-google.py. Logo "Google Maps" dan baris "Data peta
+  ©2026" di tepi bawah gambar wajib tetap terlihat, jadi gambar ditampilkan
+  dengan tepi bawah dikunci (object-position di .peta-statis img).
 {%- endcomment -%}
 {%- assign brand = site.data.restaurant.brand -%}
 <a
@@ -22,17 +24,18 @@
     <img
       src="{{ '/assets/img/peta/peta-rm-apayaa.jpg' | relative_url }}"
       alt="Peta lokasi RM. APAYAA di jalur Tuwel, Bojong, Tegal"
-      width="768"
-      height="512"
+      width="1024"
+      height="557"
       loading="lazy"
       decoding="async">
   </picture>
   {%- comment -%}
-    Keterangan sumber ditulis sebagai teks, bukan hanya dicetak di gambarnya:
-    gambar dipangkas mengikuti bentuk wadah, sehingga tulisan di sudut gambar
-    bisa ikut terpotong sementara syarat pencantuman sumber tetap berlaku.
+    Keterangan data peta ditulis ulang sebagai teks. Versi yang tercetak di
+    gambar berada agak ke kanan, sehingga ikut terpangkas saat gambar dipotong
+    mengikuti bentuk wadah di layar lebar - padahal keterangan ini syarat
+    pemakaian tangkapan layar Google.
   {%- endcomment -%}
-  <span class="peta-statis-sumber">&copy; OpenStreetMap</span>
+  <span class="peta-statis-sumber">Data peta &copy;2026 Google</span>
   <span class="peta-statis-aksi">
     <i class="fas fa-map-location-dot" aria-hidden="true"></i>
     Buka di Google Maps

@@ -27,111 +27,13 @@ brand:
       label: "kapasitas total tamu"
     - value: "3 bus"
       label: "muat parkir besar"
-home:
-  hero:
-    eyebrow: "Kuliner Guci Tegal"
-    title: "RM. APAYAA"
-    description: "Singgah sebelum Guci dengan rasa tenang, tempat nyaman, dan pilihan menu yang siap dinikmati bersama. Rumah makan keluarga di jalur Tuwel Guci Bojong dengan menu khas, area makan nyaman, dan layanan rombongan untuk berbagai acara."
-    primary_label: "Pesan via WhatsApp"
-    secondary_label: "Lihat Menu"
-    secondary_url: "/menu-utama/"
-    pills:
-      - "Menu keluarga"
-      - "Reservasi rombongan"
-      - "Lokasi strategis"
-  highlights:
-    - title: "Menu yang akrab untuk keluarga"
-      text: "Pilihan sate kambing muda, ayam kampung, sop hangat, gurame, hingga minuman disusun agar cepat dipahami pengunjung."
-    - title: "Siap untuk rombongan"
-      text: "Area lesehan, parkir bus, dan paket layanan membuat koordinasi kunjungan lebih mudah."
-    - title: "Lokasi strategis sebelum naik ke Guci"
-      text: "Cocok untuk makan dulu sebelum masuk area wisata atau saat perjalanan pulang."
-menu_items:
-  - name: "Sate Kambing Muda"
-    category: "Menu unggulan"
-    description: "Daging empuk dengan bumbu kecap pedas manis yang pas untuk makan keluarga."
-    price: "Harga tanya admin"
-    badge: "Favorit pelanggan"
-    image: "/assets/img/menus/utama/menu-utama-1.jpg"
-  - name: "Ayam Kampung"
-    category: "Menu utama"
-    description: "Pilihan ayam kampung goreng atau bakar dengan sambal rumahan khas RM. APAYAA."
-    price: "Harga tanya admin"
-    badge: "Cocok untuk rombongan"
-    image: "/assets/img/menus/utama/menu-utama-2.jpg"
-  - name: "Sop Balungan Sapi"
-    category: "Menu kuah"
-    description: "Kuah gurih hangat untuk udara pegunungan, cocok dinikmati setelah perjalanan ke Guci."
-    price: "Harga tanya admin"
-    badge: "Hangat dan gurih"
-    image: "/assets/img/menus/utama/menu-utama-1.jpg"
-  - name: "Sop Kambing"
-    category: "Menu kuah"
-    description: "Racikan rempah yang kaya rasa, pas untuk santap siang maupun sore."
-    price: "Harga tanya admin"
-    badge: "Rempah khas"
-    image: "/assets/img/menus/utama/menu-paket.jpg"
-  - name: "Gurame Goreng dan Bakar"
-    category: "Menu keluarga"
-    description: "Ikan gurame untuk makan bersama dengan pilihan sambal dan pelengkap segar."
-    price: "Harga tanya admin"
-    badge: "Menu sharing"
-    image: "/assets/img/posts/front-rm-apayaa.jpg"
-  - name: "Aneka Minuman"
-    category: "Pelengkap"
-    description: "Minuman segar untuk melengkapi pengalaman makan keluarga dan tamu wisata."
-    price: "Harga tanya admin"
-    badge: "Teman santai"
-    image: "/assets/img/menus/utama/aneka-minuman.jpg"
 menu_catalog:
   note: "Harga dapat berubah sewaktu-waktu, silakan konfirmasi ke admin sebelum memesan."
   cta: "Silakan chat admin untuk memastikan ketersediaan menu, porsi, dan waktu penyajian sebelum datang."
-  cards:
-    - title: "Lauk Utama"
-      tone: "utama"
-      icon: "fas fa-utensils"
-      description: "Menu ayam, bebek, kambing, nasi, sayur, dan sop untuk tamu harian."
-      price: "Mulai 6k"
-      price_note: "harga per item"
-      button_label: "Tanya lauk utama"
-      message: "Halo RM. APAYAA, saya ingin tanya pilihan lauk utama hari ini."
-      points:
-        - "Ayam kampung goreng 29k / bakar 32k"
-        - "Bebek goreng 31k / bakar 34k"
-        - "Sate kambing 5 tusuk 35k"
-        - "Sop iga, sop sapi, nasi goreng, dan sayur"
-    - title: "Ikan & Seafood"
-      tone: "prasmanan"
-      icon: "fas fa-fish"
-      badge: "Favorit"
-      description: "Pilihan ikan dan seafood untuk makan bersama, dari gurame sampai udang saus padang."
-      price: "Mulai 13k"
-      price_note: "harga per item"
-      button_label: "Tanya ikan & seafood"
-      message: "Halo RM. APAYAA, saya ingin tanya menu ikan dan seafood."
-      points:
-        - "Gurame S/M/L goreng, bakar, asam manis"
-        - "Nila S/M/L goreng atau bakar"
-        - "Bawal goreng 13k / bakar 16k"
-        - "Cumi dan udang tepung atau saus padang"
-    - title: "Paket & Minuman"
-      tone: "box"
-      icon: "fas fa-mug-hot"
-      description: "Menu paket, tambahan, jus, kopi, dan minuman segar untuk melengkapi makan."
-      price: "Mulai 3k"
-      price_note: "paket dan minuman"
-      button_label: "Tanya paket & minuman"
-      message: "Halo RM. APAYAA, saya ingin tanya menu paket dan minuman."
-      points:
-        - "Paket ayam, bebek, nila, bawal, sate"
-        - "Tempe mendoan, bakwan, kentang, nuget"
-        - "Jeruk, lemon tea, teh poci, es batu"
-        - "Jus melon, mangga, strawberry, naga, alpukat"
   sections:
     - title: "Menu Paket"
       anchor: "menu-paket"
       icon: "fas fa-box-open"
-      image: "/assets/img/menus/utama/menu-paket.jpg"
       items:
         - name: "Paket Ayam Kampung Goreng"
           price: "38k"
@@ -233,7 +135,6 @@ menu_catalog:
     - title: "Ayam & Bebek"
       anchor: "ayam-bebek"
       icon: "fas fa-drumstick-bite"
-      image: "/assets/img/menus/utama/menu-utama-1.jpg"
       items:
         - name: "Garang Asem Ayam Kampung"
           price: "32k"
@@ -257,7 +158,6 @@ menu_catalog:
     - title: "Kambing Muda"
       anchor: "kambing-muda"
       icon: "fas fa-fire"
-      image: "/assets/img/menus/utama/menu-utama-1.jpg"
       items:
         - name: "Sate 1 Kodi (20 Tusuk)"
           price: "125k"
@@ -273,7 +173,6 @@ menu_catalog:
     - title: "Sayur & Sop"
       anchor: "sayur-sop"
       icon: "fas fa-bowl-food"
-      image: "/assets/img/menus/utama/menu-utama-1.jpg"
       items:
         - name: "Asem Asem Iga"
           price: "37k"
@@ -294,7 +193,6 @@ menu_catalog:
     - title: "Nasi"
       anchor: "nasi"
       icon: "fas fa-bowl-rice"
-      image: "/assets/img/menus/utama/menu-utama-1.jpg"
       items:
         - name: "Nasi Putih"
           price: "6k"
@@ -307,7 +205,6 @@ menu_catalog:
     - title: "Gurame"
       anchor: "gurame"
       icon: "fas fa-fish"
-      image: "/assets/img/menus/utama/menu-utama-2.jpg"
       items:
         - name: "Gurame (S) Goreng"
           price: "45k"
@@ -331,7 +228,6 @@ menu_catalog:
     - title: "Nila & Bawal"
       anchor: "nila-bawal"
       icon: "fas fa-fish"
-      image: "/assets/img/menus/utama/menu-utama-2.jpg"
       items:
         - name: "Nila (S) Goreng"
           price: "16k"
@@ -352,7 +248,6 @@ menu_catalog:
     - title: "Cumi & Udang"
       anchor: "cumi-udang"
       icon: "fas fa-shrimp"
-      image: "/assets/img/menus/utama/menu-utama-2.jpg"
       items:
         - name: "Cumi Tepung"
           price: "21k"
@@ -365,7 +260,6 @@ menu_catalog:
     - title: "Tambahan"
       anchor: "tambahan"
       icon: "fas fa-plus"
-      image: "/assets/img/menus/utama/menu-utama-2.jpg"
       items:
         - name: "Tempe Mendoan / Porsi (Isi 4)"
           price: "12k"
@@ -384,7 +278,6 @@ menu_catalog:
     - title: "Aneka Minuman"
       anchor: "aneka-minuman"
       icon: "fas fa-mug-hot"
-      image: "/assets/img/menus/utama/aneka-minuman.jpg"
       items:
         - name: "Jeruk Panas / Es"
           price: "10k / 12k"
@@ -403,7 +296,6 @@ menu_catalog:
     - title: "Aneka Jus"
       anchor: "aneka-jus"
       icon: "fas fa-glass-water"
-      image: "/assets/img/menus/utama/aneka-minuman.jpg"
       items:
         - name: "Jus Melon"
           price: "14k"
@@ -418,7 +310,6 @@ menu_catalog:
     - title: "Kopi"
       anchor: "kopi"
       icon: "fas fa-coffee"
-      image: "/assets/img/menus/utama/aneka-minuman.jpg"
       items:
         - name: "Kopi Hitam"
           price: "8k"
@@ -479,8 +370,6 @@ prasmanan_items:
       description: "Harga paling ringan di daftar prasmanan."
       badge: "Hemat"
       badge_tone: "value"
-      image: "/assets/img/menus/utama/menu-paket.jpg"
-      image_position: "center center"
       menu:
         - "Nasi liwet"
         - "Telor balado"
@@ -490,8 +379,6 @@ prasmanan_items:
     - name: "Pecel Sayur"
       price: "21k"
       description: "Satu-satunya yang dapat rempeyek. Lauknya telor ceplok, bukan daging."
-      image: "/assets/img/covers/cover-menu-utama-rm-apayaa.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Pecel sayur"
@@ -502,8 +389,6 @@ prasmanan_items:
     - name: "Ikan Lele"
       price: "22k"
       description: "Mulai paket ini, sambal dan lalapan sudah ikut."
-      image: "/assets/img/menus/utama/menu-utama-2.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Ikan lele goreng"
@@ -516,8 +401,6 @@ prasmanan_items:
       description: "Paling banyak dipesan. Buah mulai masuk dari paket ini."
       badge: "Terlaris"
       badge_tone: "best"
-      image: "/assets/img/covers/cover-menu-prasmanan-rm-apayaa.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Ikan nila goreng"
@@ -529,8 +412,6 @@ prasmanan_items:
     - name: "Ayam Broiler"
       price: "28k"
       description: "Sayurnya bisa dipilih, sop atau asem."
-      image: "/assets/img/menus/utama/menu-utama-2.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Ayam broiler goreng"
@@ -543,8 +424,6 @@ prasmanan_items:
     - name: "Garang Asem"
       price: "32k"
       description: "Satu-satunya lauk berkuah di daftar prasmanan."
-      image: "/assets/img/covers/cover-menu-catering-rm-apayaa.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Garang asem"
@@ -558,8 +437,6 @@ prasmanan_items:
       description: "Satu-satunya lauk daging sapi."
       badge: "Favorit"
       badge_tone: "favorite"
-      image: "/assets/img/menus/utama/menu-utama-1.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Rendang sapi"
@@ -571,8 +448,6 @@ prasmanan_items:
     - name: "Ayam Kampung"
       price: "39k"
       description: "Naik kelas dari broiler, isinya sama lengkapnya."
-      image: "/assets/img/covers/cover-menu-bukber-rm-apayaa.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Ayam kampung goreng"
@@ -587,8 +462,6 @@ prasmanan_items:
       description: "Paket tertinggi. Sayurnya sop baso, bukan sayur asem."
       badge: "Premium"
       badge_tone: "premium"
-      image: "/assets/img/menus/utama/menu-utama-1.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "5 tusuk sate kambing"
@@ -616,8 +489,6 @@ catering_items:
       description: "Harga paling ringan untuk konsumsi jumlah besar."
       badge: "Hemat"
       badge_tone: "value"
-      image: "/assets/img/menus/utama/menu-paket.jpg"
-      image_position: "center center"
       menu:
         - "Nasi liwet"
         - "Telor ceplok balado"
@@ -627,8 +498,6 @@ catering_items:
     - name: "Ayam Broiler 1/8"
       price: "22k"
       description: "Potongan seperdelapan ayam, untuk porsi standar."
-      image: "/assets/img/menus/utama/menu-utama-2.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Ayam broiler goreng 1/8"
@@ -639,8 +508,6 @@ catering_items:
     - name: "Ikan Nila"
       price: "25k"
       description: "Sayurnya urab, bukan tumis."
-      image: "/assets/img/covers/cover-menu-prasmanan-rm-apayaa.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Ikan nila goreng"
@@ -653,8 +520,6 @@ catering_items:
       description: "Potongannya dua kali lipat dari yang 1/8. Paling banyak dipesan."
       badge: "Terlaris"
       badge_tone: "best"
-      image: "/assets/img/covers/cover-menu-catering-rm-apayaa.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Ayam broiler goreng 1/4"
@@ -667,8 +532,6 @@ catering_items:
       description: "Satu-satunya lauk daging sapi di daftar box."
       badge: "Favorit"
       badge_tone: "favorite"
-      image: "/assets/img/menus/utama/menu-utama-1.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Rendang sapi"
@@ -679,8 +542,6 @@ catering_items:
     - name: "Ayam Kampung"
       price: "38k"
       description: "Ayam kampung, untuk acara yang ingin naik satu tingkat."
-      image: "/assets/img/covers/cover-menu-bukber-rm-apayaa.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "Ayam kampung goreng"
@@ -691,8 +552,6 @@ catering_items:
     - name: "Sate Ayam"
       price: "28k"
       description: "Seribu lebih murah dari Ayam Broiler 1/4, isinya tanpa sayur."
-      image: "/assets/img/menus/utama/menu-paket.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "5 tusuk sate ayam"
@@ -704,8 +563,6 @@ catering_items:
       description: "Box tertinggi. Satu-satunya yang dapat buah jeruk."
       badge: "Premium"
       badge_tone: "premium"
-      image: "/assets/img/menus/utama/menu-utama-1.jpg"
-      image_position: "center center"
       menu:
         - "Nasi putih"
         - "5 tusuk sate kambing"
@@ -734,13 +591,6 @@ facilities:
     capacity: "Maksimal 3 bus besar"
     description: "Area parkir lega untuk motor, mobil keluarga, hingga rombongan bus pariwisata."
     image: "/assets/img/posts/parkiran-rm-apayaa.jpg"
-testimonials:
-  - quote: "Enak buat transit sebelum naik ke Guci. Tempatnya lega dan pilihan menunya aman untuk makan ramai-ramai."
-    author: "Kunjungan keluarga"
-  - quote: "Nilai plusnya ada lesehan luas dan parkir bus. Cocok kalau datang rombongan tanpa ribet."
-    author: "Koordinator trip"
-  - quote: "Fokus website sekarang terasa lebih jelas: lihat menu, cek fasilitas, lalu langsung chat admin."
-    author: "Arah pengalaman baru"
 google_testimonials:
   eyebrow: "Testimoni"
   title: "Kesan pengunjung RM. APAYAA."
@@ -773,9 +623,6 @@ google_testimonials:
 gallery:
   eyebrow: "Galeri suasana"
   title: "Suasana restoran dan area singgah."
-  closing_quote: "Tempat yang terlihat rapi, lega, dan siap menerima tamu membuat keputusan singgah terasa jauh lebih mudah."
-  closing_name: "Pengalaman visual homepage"
-  closing_role: "Galeri RM. APAYAA"
   items:
     - image: "/assets/img/posts/front-rm-apayaa.jpg"
       title: "Tampilan Depan"
@@ -820,8 +667,10 @@ faqs:
     # yang sama, dan mengulanginya membuat halaman terdengar ragu pada daftar
     # harganya sendiri.
     #
-    # CATATAN: kisaran harga di jawaban pertama ditulis manual. Kalau harga
-    # termurah atau termahal berubah, perbarui di sini juga.
+    # CATATAN: kisaran harga di jawaban pertama ditulis manual, begitu juga
+    # jawaban pertama di `packages` dan `menu_box`, dan deskripsi "Sate Ayam"
+    # di `catering_items`.
+    # Kalau harga berubah, perbarui di sana juga.
     - question: "Menu utama RM APAYAA apa saja?"
       answer: "Ayam kampung, bebek, kambing muda, aneka sop, gurame, nila, bawal, cumi dan udang, nasi goreng, paket makan, aneka jus, dan kopi. Harga mulai 17 ribu untuk paket ikan asin sampai 125 ribu untuk sate satu kodi."
     - question: "Jam berapa RM APAYAA buka?"
